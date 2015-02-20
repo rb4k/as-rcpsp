@@ -1,84 +1,84 @@
-class ProductMachinesController < ApplicationController
+class ProcedureUsersController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
-  # GET /product_machines
-  # GET /product_machines.json
+  # GET /procedure_users
+  # GET /procedure_users.json
   def index
-    @product_machines = ProductMachine.all
+    @procedure_users = ProcedureUser.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @product_machines }
+      format.json { render json: @procedure_users }
     end
   end
 
-  # GET /product_machines/1
-  # GET /product_machines/1.json
+  # GET /procedure_users/1
+  # GET /procedure_users/1.json
   def show
-    @product_machine = ProductMachine.find(params[:id])
+    @procedure_user = ProcedureUser.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product_machine }
+      format.json { render json: @procedure_user }
     end
   end
 
-  # GET /product_machines/new
-  # GET /product_machines/new.json
+  # GET /procedure_users/new
+  # GET /procedure_users/new.json
     def new
-      @product_machine = ProductMachine.new
+      @procedure_user = ProcedureUser.new
 
       respond_to do |format|
         format.html # new.html.erb
-        format.json { render json: @product_machine }
+        format.json { render json: @procedure_user }
       end
     end
 
-  # GET /product_machines/1/edit
+  # GET /procedure_users/1/edit
   def edit
-    @product_machine = ProductMachine.find(params[:id])
+    @procedure_user = ProcedureUser.find(params[:id])
   end
 
-  # POST /product_machines
-  # POST /product_machines.json
+  # POST /procedure_users
+  # POST /procedure_users.json
     def create
-      @product_machine = ProductMachine.new(params[:product_machine])
+      @procedure_user = ProcedureUser.new(params[:procedure_user])
 
       respond_to do |format|
-        if @product_machine.save
-          format.html { redirect_to @product_machine, notice: 'Produkt wurde erfolgreich angelegt!' }
-          format.json { render json: @product_machine, status: :created, location: @product_machine }
+        if @procedure_user.save
+          format.html { redirect_to @procedure_user, notice: 'Vorgang wurde erfolgreich angelegt!' }
+          format.json { render json: @procedure_user, status: :created, location: @procedure_user }
         else
           format.html { render action: "new" }
-          format.json { render json: @product_machine.errors, status: :unprocessable_entity }
+          format.json { render json: @procedure_user.errors, status: :unprocessable_entity }
         end
       end
     end
 
-  # PUT /product_machines/1
-  # PUT /product_machines/1.json
+  # PUT /procedure_users/1
+  # PUT /procedure_users/1.json
   def update
-    @product_machine = ProductMachine.find(params[:id])
+    @procedure_user = ProcedureUser.find(params[:id])
 
     respond_to do |format|
-      if @product_machine.update_attributes(params[:product_machine])
-        format.html { redirect_to @product_machine, notice: 'Produkt-Maschine-Relation wurde erfolgreich aktualisiert.' }
+      if @procedure_user.update_attributes(params[:procedure_user])
+        format.html { redirect_to @procedure_user, notice: 'Vorgang-Mitarbeiter-Relation wurde erfolgreich aktualisiert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @product_machine.errors, status: :unprocessable_entity }
+        format.json { render json: @procedure_user.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /product_machines/1
-  # DELETE /product_machines/1.json
+  # DELETE /procedure_users/1
+  # DELETE /procedure_users/1.json
     def destroy
-      @product_machine = ProductMachine.find(params[:id])
-      @product_machine.destroy
+      @procedure_user = ProcedureUser.find(params[:id])
+      @procedure_user.destroy
 
      respond_to do |format|
-       format.html { redirect_to product_machines_url }
+       format.html { redirect_to procedure_users_url }
        format.json { head :no_content }
      end
    end
