@@ -9,11 +9,6 @@ namespace :db do
                          password_confirmation: "foobar")
     admin.toggle!(:admin)
 
-    User.create!(name: "Stefan Helber",
-                 email: "stefan.helber@prod.uni-hannover.de",
-                 password: "foobar",
-                 password_confirmation: "foobar")
-
 
     User.create!(name: "Susi Sorglos",
                  email: "susi@sorglos.de",
@@ -21,7 +16,7 @@ namespace :db do
                  password_confirmation: "foobar")
 
 
-    99.times do |n|
+    9.times do |n|
 #      name = Faker::Name.name
       name = "Nutzer-#{n+1}"
       email = "example-#{n+1}@railstutorial.org"
@@ -31,7 +26,7 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-
+'{
 
     S1 = Site.create!(name: "Frankfurt(M)",
                       codename: "FRA")
@@ -160,6 +155,6 @@ namespace :db do
     P5M1 = ProductMachine.create!(product_id: 5, machine_id:1)
     P3M2 = ProductMachine.create!(product_id: 3, machine_id:2)
     P4M2 = ProductMachine.create!(product_id: 4, machine_id:2)
-
+}'
   end
 end
