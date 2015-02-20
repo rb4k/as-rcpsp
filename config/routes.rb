@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  resources :procedures
+
   post "periods/change", as: :change_periods
 
   resources :translinks
