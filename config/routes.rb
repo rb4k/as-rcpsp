@@ -9,7 +9,6 @@ SampleApp::Application.routes.draw do
   resources :supplysites
   resources :sites
 
-  resources :products
   resources :machines
   resources :periods
   resources :product_periods

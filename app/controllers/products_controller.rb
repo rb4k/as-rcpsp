@@ -1,87 +1,87 @@
-class ProductsController < ApplicationController
+class ProceduresController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
-  # GET /products
-  # GET /products.json
+  # GET /Procedures
+  # GET /Procedures.json
   def index
-    @products = Product.all
+    @Procedures = Procedure.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @products }
+      format.json { render json: @Procedures }
     end
   end
 
-  # GET /products/1
-  # GET /products/1.json
+  # GET /Procedures/1
+  # GET /Procedures/1.json
   def show
-    @product = Product.find(params[:id])
+    @Procedure = Procedure.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product }
+      format.json { render json: @Procedure }
     end
   end
 
-  # GET /products/new
-  # GET /products/new.json
+  # GET /Procedures/new
+  # GET /Procedures/new.json
   def new
-    @product = Product.new
+    @Procedure = Procedure.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @product }
+      format.json { render json: @Procedure }
     end
   end
 
-  # GET /products/1/edit
+  # GET /Procedures/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @Procedure = Procedure.find(params[:id])
   end
 
-  # POST /products
-  # POST /products.json
+  # POST /Procedures
+  # POST /Procedures.json
   def create
-    @product = Product.new(params[:product])
+    @Procedure = Procedure.new(params[:Procedure])
     @periods = Period.all
     respond_to do |format|
-      if @product.save
+      if @Procedure.save
         @periods.each { |pe|
-          ProductPeriod.create(product_id: @product.id, period_id: pe.id, demand: 0)
+          ProcedurePeriod.create(Procedure_id: @Procedure.id, period_id: pe.id, demand: 0)
           }
-        format.html { redirect_to @product, notice: 'Produkt wurde erfolgreich angelegt!' }
-        format.json { render json: @product, status: :created, location: @product }
+        format.html { redirect_to @Procedure, notice: 'Vorgang wurde erfolgreich angelegt!' }
+        format.json { render json: @Procedure, status: :created, location: @Procedure }
       else
         format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @Procedure.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /products/1
-  # PUT /products/1.json
+  # PUT /Procedures/1
+  # PUT /Procedures/1.json
   def update
-    @product = Product.find(params[:id])
+    @Procedure = Procedure.find(params[:id])
 
     respond_to do |format|
-      if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Produkt   wurde erfolgreich aktualisiert.' }
+      if @Procedure.update_attributes(params[:Procedure])
+        format.html { redirect_to @Procedure, notice: 'Vorgang   wurde erfolgreich aktualisiert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @Procedure.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
+  # DELETE /Procedures/1
+  # DELETE /Procedures/1.json
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
+    @Procedure = Procedure.find(params[:id])
+    @Procedure.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to Procedures_url }
       format.json { head :no_content }
     end
   end
