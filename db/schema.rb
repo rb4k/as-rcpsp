@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20150220172822) do
     t.string   "prot"
   end
 
-  create_table "procedure_users", :force => true do |t|
+  create_table "product_machines", :force => true do |t|
     t.integer  "product_id"
     t.integer  "machine_id"
     t.datetime "created_at", :null => false
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20150220172822) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "topologics", :force => true do |t|
+  create_table "product_products", :force => true do |t|
     t.integer  "from_product_id"
     t.integer  "to_product_id"
     t.integer  "coefficient"
