@@ -4,26 +4,20 @@
       <%= link_to "Operations Management 1.0", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path, id: "main_links" %></li>
+          <li><%= link_to "Startseite", root_path, id: "main_links" %></li>
           <li><%= link_to "Hilfe", help_path, id: "main_links" %></li>
 
           <% if signed_in? %>
-              <li><%= link_to "Nutzer", users_path, id: "main_links" %></li>
+              <li><%= link_to "Mitarbeiter", users_path, id: "main_links" %></li>
               <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Apps <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Transportplanung", transport_start_path %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "MLCLSP", mlclsp_start_path %></li>
-                </ul>
-              </li>
-              <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Konto <b class="caret"></b>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Menü <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profil", current_user %></li>
                   <li><%= link_to "Einstellungen", edit_user_path(current_user) %></li>
+                  <% if current_user.admin? %>
+                  <li><%= link_to "Verwaltung", rcpsp_start_path %></li>
+                  <% end %>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Logout", signout_path, method: "delete" %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @procedure.name %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @procedure.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @procedure.updated_at %>
+</p>
+
+<p>
+  <b>Kapabe:</b>
+  <%= @procedure.kapabe %>
+</p>
+
+<p>
+  <b>Prot:</b>
+  <%= @procedure.prot %>
+</p>
+
+
+<%= link_to 'Edit', edit_procedure_path(@procedure) %> |
+<%= link_to 'Back', procedures_path %>

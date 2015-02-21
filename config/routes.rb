@@ -1,20 +1,13 @@
 SampleApp::Application.routes.draw do
 
-  resources :procedures
-
   post "periods/change", as: :change_periods
 
   resources :translinks
-  resources :demandsites
-  resources :supplysites
-  resources :sites
 
-  resources :machines
+  resources :procedures
+  resources :topologics
   resources :periods
-  resources :product_periods
-  resources :product_products
-  resources :product_machines
-  resources :machine_periods
+  resources :procedure_users
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -27,8 +20,7 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/transport_start', to: 'static_pages#transport_start'
-  match '/mlclsp_start', to: 'static_pages#mlclsp_start'
+  match '/rcpsp_start', to: 'static_pages#rcpsp_start'
 
 
   match 'translinks/read_and_show_ofv', :to => 'translinks#read_and_show_ofv'

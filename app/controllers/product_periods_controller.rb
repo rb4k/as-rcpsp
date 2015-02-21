@@ -196,7 +196,7 @@ class ProductPeriodsController < ApplicationController
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 
-    render 'static_pages/mlclsp_start'
+    render 'static_pages/rcpsp_start'
 
 
   end

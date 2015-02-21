@@ -1,0 +1,29 @@
+<% provide(:title, 'RCPSP') %>
+<h1>Projektplanung mit dem RCPSP</h1>
+<p>
+  Projektübersicht <br> <br>
+
+  <%= link_to "Verwaltung der Vorgänge", procedures_path %><br>
+  <%= link_to "Verwaltung der Mitarbeiter", users_path %><br>
+  <%= link_to "Verwaltung der Perioden", periods_path %><br>
+  <%= link_to "Verwaltung der Vorgangsrelationen", topologic_path %><br>
+  <%= link_to "Einteilung der Mitarbeiter zu Vorgängen", procedure_users_path %><br>
+
+</p>
+
+<br>
+
+
+<% if signed_in? %>
+
+    <p>
+
+      Start der Projektplanung
+
+      <%= button_to "Optimiere", :controller => 'product_periods', :action => 'delete_old_plan', :action => 'optimize' %>
+      <%= button_to "Lies die Ergebnisse ein", :controller => 'product_periods', :action => 'read_optimization_results' %>
+      <%= button_to "Lies den Zielfunktionswert ein", :controller => 'product_periods', :action => 'read_and_show_ofv' %>
+
+    </p>
+
+<% end %>
