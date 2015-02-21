@@ -1,0 +1,31 @@
+<h1>Übersicht der Zuordnung der Mitarbeiter zu den Vorgängen</h1>
+<table id="procedure_users" class="display">
+  <thead>
+  <tr>
+    <th>Vorgang</th>
+    <th>Mitarbeiter</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+
+
+  <% @procedure_users.each do |procedure_user| %>
+      <tr>
+        <td><%= procedure_user.procedure.name %></td>
+        <td><%= procedure_user.user.name %></td>
+        <td><%= link_to 'Löschen', procedure_user, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'Mitarbeiter einem Vorgang neu zuordnen', new_procedure_user_path %><br>  <br>
+
+
+<%= link_to 'Zurück zur Projektplanung', rcpsp_start_path %>
+

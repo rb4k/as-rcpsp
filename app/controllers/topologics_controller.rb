@@ -1,4 +1,4 @@
-class TopologicController < ApplicationController
+class TopologicsController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
   # GET /procedure_procedures

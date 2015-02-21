@@ -23,11 +23,6 @@ SampleApp::Application.routes.draw do
   match '/rcpsp_start', to: 'static_pages#rcpsp_start'
 
 
-  match 'translinks/read_and_show_ofv', :to => 'translinks#read_and_show_ofv'
-  match 'translinks/read_transportation_quantities', :to => 'translinks#read_transportation_quantities'
-  match 'translinks/optimize', :to => 'translinks#optimize'
-  match 'translinks/delete_transportation_quantities', :to => 'translinks#delete_transportation_quantities'
-
   match 'product_periods/read_and_show_ofv', :to => 'product_periods#read_and_show_ofv'
   match 'product_periods/read_optimization_results', :to => 'product_periods#read_optimization_results'
   match 'product_periods/optimize', :to => 'product_periods#optimize'

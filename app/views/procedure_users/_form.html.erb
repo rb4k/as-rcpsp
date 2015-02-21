@@ -1,0 +1,30 @@
+<%= form_for(@procedure_user) do |f| %>
+    <% if @procedure_user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@procedure_user.errors.count, "error") %> prohibited this procedure_user from being
+            saved:</h2>
+
+          <ul>
+            <% @procedure_user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= f.label 'Vorgang' %><br />
+      <%= f.collection_select :procedure_id, Procedure.all, :id, :name %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label 'Mitarbeiter' %><br />
+      <%= f.collection_select :user_id, User.all, :id, :name %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Mitarbeiter einem Vorgang zuordnen oder aktualisieren' %>
+    </div>
+<% end %>
