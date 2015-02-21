@@ -15,44 +15,44 @@ class TopologicsController < ApplicationController
   # GET /procedure_procedures/1
   # GET /procedure_procedures/1.json
   def show
-    @procedure_procedure = Topologic.find(params[:id])
+    @topologic = Topologic.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @procedure_procedure }
+      format.json { render json: @topologic }
     end
   end
 
   # GET /procedure_procedures/new
   # GET /procedure_procedures/new.json
   def new
-    @procedure_procedure = Topologic.new
+    @topologic = Topologic.new
   #  @procedure_procedure.build_from_procedure
   #  @procedure_procedure.build_to_procedure
 
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @procedure_procedure }
+      format.json { render json: @topologic }
     end
   end
 
   # GET /procedure_procedures/1/edit
   def edit
-    @procedure_procedure = Topologic.find(params[:id])
+    @topologic = Topologic.find(params[:id])
   end
 
   # POST /procedure_procedures
   # POST /procedure_procedures.json
   def create
-    @procedure_procedure = Topologic.new(params[:procedure_procedure])
+    @topologic = Topologic.new(params[:procedure])
     respond_to do |format|
-      if @procedure_procedure.save
-        format.html { redirect_to @procedure_procedure, notice: 'Vorgang wurde erfolgreich angelegt!' }
-        format.json { render json: @procedure_procedure, status: :created, location: @procedure_procedure }
+      if @topologic.save
+        format.html { redirect_to @topologic, notice: 'Vorgang wurde erfolgreich angelegt!' }
+        format.json { render json: @topologic, status: :created, location: @topologic }
       else
         format.html { render action: "new" }
-        format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+        format.json { render json: @topologic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,15 +60,15 @@ class TopologicsController < ApplicationController
   # PUT /procedure_procedures/1
   # PUT /procedure_procedures/1.json
   def update
-    @procedure_procedure = Topologic.find(params[:id])
+    @topologic = Topologic.find(params[:id])
 
     respond_to do |format|
-      if @procedure_procedure.update_attributes(params[:procedure_procedure])
-        format.html { redirect_to @procedure_procedure, notice: 'Vorgang wurde erfolgreich aktualisiert.' }
+      if @topologic.update_attributes(params[:topologic])
+        format.html { redirect_to @topologic, notice: 'Vorgang wurde erfolgreich aktualisiert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+        format.json { render json: @topologic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -76,11 +76,11 @@ class TopologicsController < ApplicationController
   # DELETE /procedure_procedures/1
   # DELETE /procedure_procedures/1.json
   def destroy
-    @procedure_procedure = Topologic.find(params[:id])
-    @procedure_procedure.destroy
+    @topologic = Topologic.find(params[:id])
+    @topologic.destroy
 
     respond_to do |format|
-      format.html { redirect_to procedure_procedures_url }
+      format.html { redirect_to topologics_url }
       format.json { head :no_content }
     end
   end

@@ -13,11 +13,11 @@
 
 
 
-  <% @procedure_procedures.each do |procedure_procedure| %>
+  <% @procedure_procedures.each do |topologic| %>
       <tr>
-        <td><%= procedure_procedure.prepro.name %></td>
-        <td><%= procedure_procedure.sucpro.name %></td>
-        <td><%= link_to 'Ändern', edit_topologic_path(procedure_procedure) %></td>
+        <td><%= topologic.prepro.name %></td>
+        <td><%= topologic.sucpro.name %></td>
+        <td><%= link_to 'Ändern', edit_topologic_path(topologic) %></td>
         <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
 
 

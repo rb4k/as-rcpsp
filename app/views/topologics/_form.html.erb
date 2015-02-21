@@ -1,11 +1,11 @@
-<%= form_for(@procedure_procedure) do |f| %>
-    <% if @procedure_procedure.errors.any? %>
+<%= form_for(@topologic) do |f| %>
+    <% if @topologic.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@procedure_procedure.errors.count, "error") %> prohibited this procedure_procedure from being
+          <h2><%= pluralize(@topologic.errors.count, "error") %> prohibited this topologic from being
             saved:</h2>
 
           <ul>
-            <% @procedure_procedure.errors.full_messages.each do |msg| %>
+            <% @topologic.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
