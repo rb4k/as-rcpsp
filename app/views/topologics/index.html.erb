@@ -1,0 +1,36 @@
+<h1>Übersicht der topologischen Reihenfolge</h1>
+<table id="procedure_periods" class="display">
+  <thead>
+  <tr>
+    <th>Von Vorgang</th>
+    <th>Zu Vorgang</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+
+
+  <% @procedure_procedures.each do |procedure_procedure| %>
+      <tr>
+        <td><%= procedure_procedure.from_procedure.name %></td>
+        <td><%= procedure_procedure.to_procedure.name %></td>
+        <td><%= procedure_procedure.coefficient %></td>
+        <td><%= link_to 'Ändern', edit_procedure_procedure_path(procedure_procedure) %></td>
+        <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'Neue topologische Reihenfolge anlegen', new_procedure_procedure_path %><br>  <br>
+
+
+<%= link_to 'Zurück zur Projektplanung', rcpsp_start_path %>
+

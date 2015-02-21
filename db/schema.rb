@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20150220172822) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "product_products", :force => true do |t|
+  create_table "topologics", :force => true do |t|
     t.integer  "from_product_id"
     t.integer  "to_product_id"
     t.integer  "coefficient"
