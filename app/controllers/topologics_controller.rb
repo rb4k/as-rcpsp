@@ -4,11 +4,11 @@ class TopologicsController < ApplicationController
   # GET /procedure_procedures
   # GET /procedure_procedures.json
   def index
-    @procedure_procedures = Topologic.all
+    @topologics = Topologic.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @procedure_procedures }
+      format.json { render json: @topologics }
     end
   end
 
@@ -45,7 +45,7 @@ class TopologicsController < ApplicationController
   # POST /procedure_procedures
   # POST /procedure_procedures.json
   def create
-    @topologic = Topologic.new(params[:procedure])
+    @topologic = Topologic.new(params[:topologic])
     respond_to do |format|
       if @topologic.save
         format.html { redirect_to @topologic, notice: 'Vorgang wurde erfolgreich angelegt!' }
