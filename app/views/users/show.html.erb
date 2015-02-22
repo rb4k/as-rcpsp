@@ -9,3 +9,14 @@
     </section>
   </aside>
 </div>
+
+<p>
+  <b>Arbeitszeit pro Woche:</b>
+  <%= @user.capacity %>
+</p>
+
+<% if current_user?(@user) ^ current_user.admin? %>
+    <%= button_to 'Einstellung', edit_user_path(@user), :class => "button", :method => :get %>
+<% end %>
+
+  <%= button_to 'Zurück', users_path, :class => "button", :method => :get %>

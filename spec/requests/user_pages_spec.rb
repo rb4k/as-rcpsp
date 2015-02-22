@@ -15,8 +15,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_selector('title', text: 'Alle Nutzer') }
-    it { should have_selector('h1', text: 'Alle Nutzer') }
+    it { should have_selector('title', text: 'Alle Mitarbeiter') }
+    it { should have_selector('h1', text: 'Alle Mitarbeiter') }
 
     describe "pagination" do
 

@@ -24,7 +24,7 @@ describe "Authentication" do
       before { sign_in user }
 
       it { should have_selector('title', text: user.name) }
-      it { should have_link('Nutzer', href: users_path) }
+      it { should have_link('Mitarbeiter', href: users_path) }
       it { should have_link('Profil', href: user_path(user)) }
       it { should have_link('Einstellungen', href: edit_user_path(user)) }
       it { should have_link('Logout', href: signout_path) }

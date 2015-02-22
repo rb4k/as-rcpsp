@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: :destroy
+  before_filter :admin_user, only: [:edit, :update, :destroy]
 
 
   def show
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Willkommen zur Transportplanung!"
+      flash[:success] = "Willkommen zur Projektplanung!"
       redirect_to @user
     else
       render 'new'

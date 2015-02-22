@@ -3,58 +3,45 @@
 class RcpspController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
-  before_filter :current_user#, only: [:admin]
+  before_filter :current_user#, only: [:admin_user]
 
   def optimize
 
-    if File.exist?("MLCLSP_Input.inc")
-      File.delete("MLCLSP_Input.inc")
+    if File.exist?("RCSPSP_Input.inc")
+      File.delete("RCPSP_Input.inc")
     end
-    f=File.new("MLCLSP_Input.inc", "w")
-    printf(f, "set k / \n")
-    @products = Product.all
-    @products.each { |prod| printf(f, prod.name + "\n") }
+    f=File.new("RCPSP_Input.inc", "w")
+    printf(f, "set i / \n")
+    @procedures = Procedure.all
+    @procedures.each { |proc| printf(f, proc.name + "\n") }
     printf(f, "/" + "\n\n")
 
-    printf(f, "set t / \n")
-    @periods = Period.all
-    @periods.each { |per| printf(f, "t"+per.name + "\n") }
-    printf(f, "/" + "\n\n")
+    printf(f, "set t0*t200 /"+ "\n\n")
+
+    #@periods = Period.all
+    #@periods.each { |per| printf(f, "t"+per.name + "\n") }
+    #printf(f, "/" + "\n\n")
 
 
-    printf(f, "set j / \n")
-    @machines = Machine.all
-    @machines.each { |mac| printf(f, mac.name + "\n") }
+    printf(f, "set r / \n")
+    @users = User.all
+    @users.each { |us| printf(f, us.name + "\n") }
     printf(f, "/;\n\n")
 
 
-    printf(f, "KT(k,t)=yes;\n")
-    printf(f, "JT(j,t)=yes;\n\n")
-    printf(f, "KJ(k,j)=no;\n")
-    printf(f, "KK(k,k)=no;\n\n")
+    printf(f, "VN(h,i)=no;\n\n")
 
-    printf(f, "set kta / \n")
-    @product_periods = ProductPeriod.all
-    @product_periods.each { |prod_per| printf(f, "kta" + prod_per.id.to_s + "\n") }
-    printf(f, "/;" + "\n\n")
+    @procedure_procedures = ProcedureProcedure.all
+    @procedure_procedures.each { |proc_proc|
+      printf(f, "VN('" + proc_proc.prepro.name+"','" + proc_proc.sucpro.name+"')=yes;\n")
+    }
 
-    printf(f, "KTaKT(kta,k,t)=no;" + "\n\n")
-    @product_periods.each { |prod_per| printf(f, "KTaKT('kta" + prod_per.id.to_s + "','" + prod_per.product.name + "','t" + prod_per.period.name + "')=yes;\n") }
-    printf(f, "\n\n")
+    printf(f, "\n")
 
 
-    printf(f, "set jta / \n")
-    @machine_periods = MachinePeriod.all
-    @machine_periods.each { |mac_per| printf(f, "jta" + mac_per.id.to_s + "\n") }
-    printf(f, "/;" + "\n\n")
 
-    printf(f, "JTaJT(jta,j,t)=no;" + "\n\n")
-    @machine_periods.each { |mac_per| printf(f, "JTaJT('jta" + mac_per.id.to_s + "','" + mac_per.machine.name + "','t" + mac_per.period.name + "')=yes;\n") }
-    printf(f, "\n\n")
-
-
-    @product_machines = ProductMachine.all
-    @product_machines.each { |pro_mac| printf(f, "KJ('" + pro_mac.product.name+"','" + pro_mac.machine.name+"')=yes;\n") }
+    @procedure_users = ProcedureUser.all
+    @procedure_users.each { |proc_us| printf(f, "KP('" + proc_us.procedure.name+"','" + proc_us.user.name+"')=yes;\n") }
 
     printf(f, "\n")
 
