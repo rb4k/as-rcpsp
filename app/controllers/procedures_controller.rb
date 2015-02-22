@@ -36,7 +36,7 @@ class ProceduresController < ApplicationController
     @procedure = Procedure.new(params[:procedure])
     respond_to do |format|
       if @procedure.save
-        format.html { redirect_to @procedure, notice: 'Procedure was successfully created.' }
+        format.html { redirect_to @procedure, notice: 'Vorgang wurde angelegt' }
         format.json { render json: @procedure, status: :created, location: @procedure }
       else
         format.html { render action: "new" }
@@ -50,7 +50,7 @@ class ProceduresController < ApplicationController
     @procedure = Procedure.find(params[:id])
     respond_to do |format|
       if @procedure.update_attributes(params[:procedure])
-        format.html { redirect_to @procedure, notice: 'Procedure was successfully updated.' }
+        format.html { redirect_to @procedure, notice: 'Vorgang wurde aktualisiert' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

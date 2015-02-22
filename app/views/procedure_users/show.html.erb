@@ -1,4 +1,4 @@
-<!--<p id="notice"><%= notice %></p> -->
+
 
 
 <p>
@@ -14,5 +14,5 @@
 
 
 
-<%= link_to 'Ändern', edit_procedure_user_path(@procedure_user) %> |
-<%= link_to 'Zurück', procedure_users_path %>
+<%= button_to 'Ändern', edit_procedure_user_path(@procedure_user), :class => "button", :method => :get %>
+<%= button_to 'Zurück', procedure_users_path, :class => "button", :method => :get %>

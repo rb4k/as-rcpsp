@@ -1,4 +1,4 @@
-<h1>Listing procedures</h1>
+<h1>Übersicht der Vorgänge</h1>
 
 <table id="procedures" class="display">
   <thead>
@@ -16,8 +16,6 @@
 <% @procedures.each do |procedure| %>
   <tr>
     <td><%= procedure.name %></td>
-    <td><%= procedure.created_at %></td>
-    <td><%= procedure.updated_at %></td>
     <td><%= procedure.kapabe %></td>
     <td><%= procedure.prot %></td>
     <td><%= link_to 'Anzeigen', procedure %></td>
@@ -30,6 +28,6 @@
 
 <br />
 
-<%= link_to 'Neues Produkt anlegen', new_procedure_path %>
-<%= link_to 'Zurück zur Projektplanung', rcpsp_start_path %>
+<%= button_to 'Neues Produkt anlegen', new_procedure_path, :class => "button", :method => :get %>
+<%= button_to 'Zurück zur Projektplanung', rcpsp_start_path, :class => "button", :method => :get %>
 

@@ -16,6 +16,8 @@
       <tr>
         <td><%= procedure_user.procedure.name %></td>
         <td><%= procedure_user.user.name %></td>
+        <td><%= link_to 'Anzeigen', procedure_user %></td>
+        <td><%= link_to 'Ändern', edit_procedure_user_path(procedure_user) %></td>
         <td><%= link_to 'Löschen', procedure_user, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
       </tr>
   <% end %>
@@ -24,8 +26,6 @@
 
 <br/>
 
-<%= link_to 'Mitarbeiter einem Vorgang neu zuordnen', new_procedure_user_path %><br>  <br>
-
-
-<%= link_to 'Zurück zur Projektplanung', rcpsp_start_path %>
+<%= button_to 'Mitarbeiter einem Vorgang neu zuordnen', new_procedure_user_path, :class => "button", :method => :get %>
+<%= button_to 'Zurück zur Projektplanung', rcpsp_start_path, :class => "button", :method => :get %>
 
