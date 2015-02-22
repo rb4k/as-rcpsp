@@ -3,7 +3,7 @@ Given /^a user visits the signin page$/ do
 end
 
 When /^he submits invalid signin information$/ do
-  click_button "Hier geht's hinein!"
+  click_button "Anmelden"
 end
 
 Then /^he should see an error message$/ do
@@ -18,7 +18,7 @@ end
 When /^the user submits valid signin information$/ do
   fill_in "Email",    with: @user.email
   fill_in "Password", with: @user.password
-  click_button "Hier geht's hinein!"
+  click_button "Anmelden"
 end
 
 Then /^he should see his profile page$/ do
@@ -36,7 +36,7 @@ When /^the user clicks the logout link$/ do
 end
 
 Then /^he should see the home page$/ do
-  page.should have_content("Transportplanung 1.1")
+  page.should have_content("Projektplanung")
 end
 
 

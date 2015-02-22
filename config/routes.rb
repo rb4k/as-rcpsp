@@ -2,7 +2,6 @@ SampleApp::Application.routes.draw do
 
   post "periods/change", as: :change_periods
 
-  resources :translinks
 
   resources :procedures
   resources :procedure_procedures
@@ -10,6 +9,7 @@ SampleApp::Application.routes.draw do
   resources :procedure_users
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :rcpsp
 
   root to: 'static_pages#home'
 
@@ -23,11 +23,11 @@ SampleApp::Application.routes.draw do
   match '/rcpsp_start', to: 'static_pages#rcpsp_start'
 
 
-  match 'product_periods/read_and_show_ofv', :to => 'product_periods#read_and_show_ofv'
-  match 'product_periods/read_optimization_results', :to => 'product_periods#read_optimization_results'
-  match 'product_periods/optimize', :to => 'product_periods#optimize'
-  match 'product_periods/delete_old_plan', :to => 'product_periods#delete_old_plan'
-  match 'product_periods/show_index_page', :to => 'product_periods#show_index_page'
+  match 'rcpsp/read_and_show_ofv', :to => 'rcpsp#read_and_show_ofv'
+  match 'rcpsp/read_optimization_results', :to => 'rcpsp#read_optimization_results'
+  match 'rcpsp/optimize', :to => 'rcpsp#optimize'
+  match 'rcpsp/delete_old_plan', :to => 'rcpsp#delete_old_plan'
+  match 'rcpsp/show_index_page', :to => 'rcpsp#show_index_page'
 
 
 

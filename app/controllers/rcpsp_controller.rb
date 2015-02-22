@@ -1,9 +1,9 @@
 #encoding: UTF-8
 
-class ProductPeriodsController < ApplicationController
+class RcpspController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
-  before_filter :current_user, only: [:admin]
+  before_filter :current_user#, only: [:admin]
 
   def optimize
 
@@ -109,7 +109,7 @@ class ProductPeriodsController < ApplicationController
       File.delete("MLCLSP_solution.txt")
     end
 
-    system "C:\\GAMS\\win64\\23.9\\gams MLCLSP_omapps"
+    system "C:\\GAMS\\win64\\23.9\\gams RCPSP1"
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 
