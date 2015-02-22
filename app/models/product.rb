@@ -6,6 +6,6 @@ class Product < ActiveRecord::Base
   has_many :reverse_product_products, foreign_key: "to_product_id", class_name: "ProductProduct", :dependent => :destroy
   has_many :product_machines, :dependent => :destroy
 
-#  accepts_nested_attributes_for :topologics
+#  accepts_nested_attributes_for :procedure_procedures
 
 end

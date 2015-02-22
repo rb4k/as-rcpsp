@@ -1,6 +1,4 @@
 class ProceduresController < ApplicationController
-  respond_to :html, :json
-  before_filter :signed_in_user
 # GET /procedures
 # GET /procedures.json
   def index
@@ -36,13 +34,9 @@ class ProceduresController < ApplicationController
 # POST /procedures.json
   def create
     @procedure = Procedure.new(params[:procedure])
-    @periods = Period.all
     respond_to do |format|
       if @procedure.save
-        @periods.each { |pe|
-          ProcedurePeriod.create(procedure_id: @procedure.id, period_id: pe.id, demand: 0)
-        }
-        format.html { redirect_to @procedure, notice: 'Vorgang wurde erfolgreich angelegt!' }
+        format.html { redirect_to @procedure, notice: 'Procedure was successfully created.' }
         format.json { render json: @procedure, status: :created, location: @procedure }
       else
         format.html { render action: "new" }
@@ -56,7 +50,7 @@ class ProceduresController < ApplicationController
     @procedure = Procedure.find(params[:id])
     respond_to do |format|
       if @procedure.update_attributes(params[:procedure])
-        format.html { redirect_to @procedure, notice: 'Vorgang wurde erfolgreich aktualisiert.' }
+        format.html { redirect_to @procedure, notice: 'Procedure was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,12 +67,5 @@ class ProceduresController < ApplicationController
       format.html { redirect_to procedures_url }
       format.json { head :no_content }
     end
-  end
-end
-private
-def signed_in_user
-  unless signed_in?
-    store_location
-    redirect_to signin_path, notice: "Bitte melden Sie sich an."
   end
 end

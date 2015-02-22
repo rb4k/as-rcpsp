@@ -1,6 +1,6 @@
-class CreateTopologics < ActiveRecord::Migration
+class CreateProcedureProcedures < ActiveRecord::Migration
   def change
-    create_table :topologics do |t|
+    create_table :procedure_procedures do |t|
       t.integer :prepro_id
       t.integer :sucpro_id
 

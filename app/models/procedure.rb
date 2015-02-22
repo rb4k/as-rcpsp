@@ -3,7 +3,7 @@ class Procedure < ActiveRecord::Base
 
 
   has_many :procedure_users, :dependent => :destroy
-  has_many :topologics, foreign_key: "prepro_id", :dependent => destroy
-  has_many :reverse_topologics, foreign_key: "sucpro_id", class_name: "Topologic", :dependent => :destroy
+  has_many :procedure_procedures, foreign_key: "prepro_id", :dependent => :destroy
+  has_many :reverse_procedure_procedures, foreign_key: "sucpro_id", class_name: "ProcedureProcedure", :dependent => :destroy
 
 end

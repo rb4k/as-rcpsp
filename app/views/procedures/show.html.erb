@@ -6,25 +6,15 @@
 </p>
 
 <p>
-  <b>Created at:</b>
-  <%= @procedure.created_at %>
-</p>
-
-<p>
-  <b>Updated at:</b>
-  <%= @procedure.updated_at %>
-</p>
-
-<p>
-  <b>Kapabe:</b>
+  <b>Kapazitätsbedarf:</b>
   <%= @procedure.kapabe %>
 </p>
 
 <p>
-  <b>Prot:</b>
+  <b>Vorgangsdauer:</b>
   <%= @procedure.prot %>
 </p>
 
 
-<%= link_to 'Edit', edit_procedure_path(@procedure) %> |
-<%= link_to 'Back', procedures_path %>
+<%= link_to 'Ändern', edit_procedure_path(@procedure) %> |
+<%= link_to 'Zurück', procedures_path %>

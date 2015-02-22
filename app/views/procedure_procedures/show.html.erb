@@ -1,0 +1,20 @@
+<!--<p id="notice"><%= notice %></p> -->
+
+
+
+
+<p>
+  <b>Von Vorgang:</b>
+  <%= @procedure_procedure.prepro.name %>
+</p>
+
+
+<p>
+  <b>Zu Vorgang:</b>
+  <%= @procedure_procedure.sucpro.name %>
+</p>
+
+
+
+<%= link_to 'Ändern', edit_procedure_procedure_path(@procedure_procedure) %> |
+<%= link_to 'Zurück', procedure_procedures_path %>

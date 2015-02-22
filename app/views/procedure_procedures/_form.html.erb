@@ -1,32 +1,25 @@
-<%= form_for(@topologic) do |f| %>
-    <% if @topologic.errors.any? %>
+<%= form_for(@procedure_procedure) do |f| %>
+    <% if @procedure_procedure.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@topologic.errors.count, "error") %> prohibited this topologic from being
+          <h2><%= pluralize(@procedure_procedure.errors.count, "error") %> prohibited this procedure_procedure from being
             saved:</h2>
-
           <ul>
-            <% @topologic.errors.full_messages.each do |msg| %>
+            <% @procedure_procedure.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
     <% end %>
-
-
     <div class="field">
       <%= f.label 'Von Vorgang' %><br />
       <%= f.collection_select :prepro_id, Procedure.all, :id, :name %>
     </div>
-
-
     <div class="field">
       <%= f.label 'Zu Vorgang' %><br />
       <%= f.collection_select :sucpro_id, Procedure.all, :id, :name %>
     </div>
 
-
-
     <div class="actions">
-      <%= f.submit 'Topologische Reihenfolge anlegen oder aktualisieren' %>
+      <%= f.submit 'Vorgang-Vorgang-Relation anlegen oder aktualisieren' %>
     </div>
 <% end %>

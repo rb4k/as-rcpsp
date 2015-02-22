@@ -5,7 +5,7 @@ SampleApp::Application.routes.draw do
   resources :translinks
 
   resources :procedures
-  resources :topologics
+  resources :procedure_procedures
   resources :periods
   resources :procedure_users
   resources :users
