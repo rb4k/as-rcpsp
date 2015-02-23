@@ -12,14 +12,14 @@
         <%= f.label :email %>
         <%= f.text_field :email %>
 
+        <%= f.label :capacity, "Kapazität" %>
+        <%= f.text_field :capacity %>
+
         <%= f.label :password %>
         <%= f.password_field :password %>
 
         <%= f.label :password_confirmation, "Bestätigung" %>
         <%= f.password_field :password_confirmation %>
-
-        <%= f.label :capacity %>
-        <%= f.text_field :capacity %>
 
         <%= f.submit "Speichere Änderungen", class: "btn btn-large btn-primary" %>
     <% end %>

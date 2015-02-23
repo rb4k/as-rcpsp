@@ -1,13 +1,17 @@
 <% provide(:title, 'RCPSP') %>
 <h1>Projektplanung mit dem RCPSP</h1>
 <p>
-  Projektübersicht <br> <br>
+Auf dieser Seite werden die Grunddaten zur Durchführung der Prpjektplanung angepasst und die Optimierung durchgeführt: <br> <br>
+
+  <%= link_to "Verwaltung der Mitarbeiter", users_path %><br>
+
+  <br>
 
   <%= link_to "Verwaltung der Vorgänge", procedures_path %><br>
-  <%= link_to "Verwaltung der Mitarbeiter", users_path %><br>
-  <%= link_to "Verwaltung der Perioden", periods_path %><br>
   <%= link_to "Verwaltung der Vorgangsrelationen", procedure_procedures_path %><br>
   <%= link_to "Einteilung der Mitarbeiter zu Vorgängen", procedure_users_path %><br>
+  <%= link_to "Verwaltung der Perioden", periods_path %><br>
+
 
 </p>
 

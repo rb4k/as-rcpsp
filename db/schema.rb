@@ -37,15 +37,15 @@ ActiveRecord::Schema.define(:version => 20150220172822) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "kapabe"
-    t.string   "prot"
+    t.integer  "kapabe"
+    t.integer  "prot"
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "capacity"
-    t.string   "ocr"
+    t.integer  "ocr"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.string   "password_digest"

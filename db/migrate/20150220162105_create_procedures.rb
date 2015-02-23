@@ -4,8 +4,8 @@ class CreateProcedures < ActiveRecord::Migration
       t.string :name
       t.datetime :created_at
       t.datetime :updated_at
-      t.string :kapabe
-      t.string :prot
+      t.integer :kapabe
+      t.integer :prot
 
       t.timestamps
     end

@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :capacity
 
-      t.string :ocr
+      t.integer :ocr
 
       t.timestamps
     end

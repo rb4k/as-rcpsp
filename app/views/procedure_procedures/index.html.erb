@@ -1,4 +1,4 @@
-<h1>Übersicht der Vorgange-Vorgange-Relationen</h1>
+<h1>Übersicht der Relationen zwischen den Vorgängen</h1>
 <table id="procedure_periods" class="display">
   <thead>
   <tr>
@@ -13,6 +13,7 @@
       <tr>
         <td><%= procedure_procedure.prepro.name %></td>
         <td><%= procedure_procedure.sucpro.name %></td>
+        <td><%= link_to 'Anzeigen', procedure_procedure %></td>
         <td><%= link_to 'Ändern', edit_procedure_procedure_path(procedure_procedure) %></td>
         <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
       </tr>
@@ -20,5 +21,5 @@
   </tbody>
 </table>
 <br/>
-<%= button_to 'Neue Vorgang-Vorgang-Relation anlegen', new_procedure_procedure_path, :class => "button", :method => :get %>
+<%= button_to 'Neue Relation anlegen', new_procedure_procedure_path, :class => "button", :method => :get %>
 <%= button_to 'Zurück zur Projektplanung', rcpsp_start_path, :class => "button", :method => :get %>

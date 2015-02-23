@@ -14,15 +14,16 @@
 
 
     <div class="field">
-      <%= f.label 'Vorgang' %><br />
-      <%= f.collection_select :procedure_id, Procedure.all, :id, :name %>
+      <%= f.label 'Mitarbeiter' %><br />
+      <%= f.collection_select :user_id, User.all, :id, :name %>
     </div>
 
 
     <div class="field">
-      <%= f.label 'Mitarbeiter' %><br />
-      <%= f.collection_select :user_id, User.all, :id, :name %>
+      <%= f.label 'Vorgang' %><br />
+      <%= f.collection_select :procedure_id, Procedure.all, :id, :name %>
     </div>
+
 
     <div class="actions">
       <%= f.submit 'Mitarbeiter einem Vorgang zuordnen oder aktualisieren' %>
