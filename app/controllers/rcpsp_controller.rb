@@ -98,6 +98,7 @@ class RcpspController < ApplicationController
 
     system "C:\\GAMS\\win64\\23.9\\gams RCPSP1"
 
+
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 
     render 'static_pages/rcpsp_start'
