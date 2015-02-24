@@ -12,10 +12,10 @@
         <%= f.label :email %>
         <%= f.text_field :email %>
 
-        <%= f.label :capacity, "Kapazität" %>
+        <%= f.label :capacity, "Bereitstellung von Kapazität" %>
         <%= f.text_field :capacity %>
 
-        <%= f.label :password %>
+        <%= f.label :password, "Passwort" %>
         <%= f.password_field :password %>
 
         <%= f.label :password_confirmation, "Bestätigung" %>
@@ -24,6 +24,6 @@
         <%= f.submit "Speichere Änderungen", class: "btn btn-large btn-primary" %>
     <% end %>
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+    <a href="http://gravatar.com/emails">Profilbild bearbeiten</a>
   </div>
 </div>
