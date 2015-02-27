@@ -2,7 +2,7 @@ SampleApp::Application.routes.draw do
 
   post "periods/change", as: :change_periods
 
-
+  resources :projects
   resources :procedures
   resources :procedure_procedures
   resources :periods
