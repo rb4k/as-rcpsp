@@ -1,0 +1,31 @@
+<h1>Übersicht der Ressourcen</h1>
+
+<table id="resources" class="display">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Aktuelle Gesamtkapazität</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+<% @resources.each do |resource| %>
+  <tr>
+    <td><%= resource.name %></td>
+    <td><%= resource.totalcapa %></td>
+    <td><%= link_to 'Anzeigen', resource %></td>
+    <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>
+    <td><%= link_to 'Löschen', resource, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= button_to 'Neue Ressource anlegen', new_resource_path, :class => "button", :method => :get %>
+<%= button_to 'Zurück zur Projektplanung', rcpsp_start_path, :class => "button", :method => :get %>
+

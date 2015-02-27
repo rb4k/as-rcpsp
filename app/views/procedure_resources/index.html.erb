@@ -1,0 +1,31 @@
+<h1>Übersicht der Zuordnung der Vorgänge zu den Ressourcen</h1>
+<table id="procedure_resources" class="display">
+  <thead>
+  <tr>
+    <th>Vorgang</th>
+    <th>Ressource</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+
+
+  <% @procedure_resources.each do |procedure_resource| %>
+      <tr>
+        <td><%= procedure_resource.procedure.name %></td>
+        <td><%= procedure_resource.resource.name %></td>
+        <td><%= link_to 'Anzeigen', procedure_resource %></td>
+        <td><%= link_to 'Ändern', edit_procedure_resource_path(procedure_resource) %></td>
+        <td><%= link_to 'Löschen', procedure_resource, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= button_to 'Vorgang einer Ressource neu zuordnen', new_procedure_resource_path, :class => "button", :method => :get %>
+<%= button_to 'Zurück zur Projektplanung', rcpsp_start_path, :class => "button", :method => :get %>
+

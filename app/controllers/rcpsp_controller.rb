@@ -40,8 +40,8 @@ class RcpspController < ApplicationController
 
 
 
-    @procedure_users = ProcedureUser.all
-    @procedure_users.each { |proc_us| printf(f, "KP('" + proc_us.procedure.name+"','" + proc_us.user.name+"')=yes;\n") }
+    @procedure_resources = ProcedureResource.all
+    @procedure_resources.each { |proc_us| printf(f, "KP('" + proc_us.procedure.name+"','" + proc_us.user.name+"')=yes;\n") }
 
     printf(f, "\n")
 

@@ -1,0 +1,18 @@
+<h1>Vorgangs-Ressourcen-Zuordnung</h1>
+
+
+<p>
+  <b>Vorgang:</b>
+  <%= @procedure_resource.procedure.name %>
+</p>
+
+
+<p>
+  <b>Ressource:</b>
+  <%= @procedure_resource.resource.name %>
+</p>
+
+
+
+<%= button_to 'Ändern', edit_procedure_resource_path(@procedure_resource), :class => "button", :method => :get %>
+<%= button_to 'Zurück', procedure_resources_path, :class => "button", :method => :get %>

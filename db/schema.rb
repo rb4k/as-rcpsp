@@ -11,49 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150220172822) do
-
-  create_table "periods", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "procedure_procedures", :force => true do |t|
-    t.integer  "prepro_id"
-    t.integer  "sucpro_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "procedure_users", :force => true do |t|
-    t.integer  "procedure_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "procedures", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "kapabe"
-    t.integer  "prot"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "capacity"
-    t.integer  "ocr"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.boolean  "admin",           :default => false
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+ActiveRecord::Schema.define(:version => 0) do
 
 end

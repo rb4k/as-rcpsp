@@ -1,0 +1,31 @@
+<%= form_for(@procedure_resource) do |f| %>
+    <% if @procedure_resource.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@procedure_resource.errors.count, "error") %> prohibited this procedure_resource from being
+            saved:</h2>
+
+          <ul>
+            <% @procedure_resource.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= f.label 'Vorgang' %><br />
+      <%= f.collection_select :procedure_id, Procedure.all, :id, :name %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label 'Ressource' %><br />
+      <%= f.collection_select :resource_id, Resource.all, :id, :name %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit 'Vorgang zur Ressource zuordnen oder aktualisieren' %>
+    </div>
+<% end %>

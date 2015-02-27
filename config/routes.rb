@@ -4,9 +4,10 @@ SampleApp::Application.routes.draw do
 
 
   resources :procedures
+  resources :resources
   resources :procedure_procedures
   resources :periods
-  resources :procedure_users
+  resources :procedure_resources
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :rcpsp

@@ -1,0 +1,15 @@
+<h1>Ressource</h1>
+
+<p>
+  <b>Name:</b>
+  <%= @resource.name %>
+</p>
+
+<p>
+  <b>Aktuelle Gesamkapazität:</b>
+  <%= @procedure.kapabe %>
+</p>
+
+
+<%= button_to 'Ändern', edit_resource_path(@resource), :class => "button", :method => :get %>
+<%= button_to 'Zurück', resources_path, :class => "button", :method => :get %>
