@@ -15,6 +15,16 @@
   <%= @user.capacity %>
 </p>
 
+<p>
+  <b>Zuordnung zum Projekt:</b>
+  <%= @user.project_id %>
+</p>
+
+<p>
+  <b>Rolle im Projekt:</b>
+  <%= @user.resource_id %>
+</p>
+
 <% if current_user?(@user) %>
     <%= button_to 'Einstellung', edit_user_path(current_user), :class => "button", :method => :get %>
 <% end %>

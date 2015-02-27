@@ -15,8 +15,16 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+    <div class="field">
+      <%= f.label 'Kosten je Kapazität' %><br />
+      <%= f.text_field :cost %>
+    </div>
+    <div class="field">
+      <%= f.label 'Zusatzkosten je Kapazität' %><br />
+      <%= f.text_field :totalcapa %>
+    </div>
   <div class="field">
-    <%= f.label 'Gesamte Kapazität' %><br />
+    <%= f.label 'Aktuelle Gesamtkapazität' %><br />
     <%= f.text_field :totalcapa %>
   </div>
   <div class="actions">

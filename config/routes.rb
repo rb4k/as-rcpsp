@@ -3,11 +3,11 @@ SampleApp::Application.routes.draw do
   post "periods/change", as: :change_periods
 
   resources :projects
+  resources :procedure_resources
   resources :procedures
   resources :resources
   resources :procedure_procedures
   resources :periods
-  resources :procedure_resources
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :rcpsp

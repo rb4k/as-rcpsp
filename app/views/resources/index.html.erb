@@ -4,6 +4,8 @@
   <thead>
   <tr>
     <th>Name</th>
+    <th>Kosten</th>
+    <th>Zusatzkosten</th>
     <th>Aktuelle Gesamtkapazität</th>
     <th></th>
     <th></th>
@@ -15,6 +17,8 @@
 <% @resources.each do |resource| %>
   <tr>
     <td><%= resource.name %></td>
+    <td><%= resource.cost %></td>
+    <td><%= resource.ocr %></td>
     <td><%= resource.totalcapa %></td>
     <td><%= link_to 'Anzeigen', resource %></td>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>

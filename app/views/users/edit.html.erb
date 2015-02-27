@@ -15,6 +15,12 @@
         <%= f.label :capacity, "Bereitstellung von Kapazität" %>
         <%= f.text_field :capacity %>
 
+        <%= f.label :project_id, "Welches Projekt?" %>
+        <%= f.collection_select :project_id, Project.all, :id, :name %>
+
+        <%= f.label :resource_id, "Welche Ressource?" %>
+        <%= f.collection_select :resource_id, Resource.all, :id, :name %>
+
         <%= f.label :password, "Passwort" %>
         <%= f.password_field :password %>
 
