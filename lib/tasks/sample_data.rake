@@ -6,14 +6,18 @@ namespace :db do
     admin = User.create!(name: "Example User",
                          email: "example@railstutorial.org",
                          password: "foobar",
-                         password_confirmation: "foobar")
+                         password_confirmation: "foobar",
+                         project_id: 1,
+                         resource_id: 1)
     admin.toggle!(:admin)
 
 
     User.create!(name: "Susi Sorglos",
                  email: "susi@sorglos.de",
                  password: "foobar",
-                 password_confirmation: "foobar")
+                 password_confirmation: "foobar",
+                 project_id: 2,
+                 resource_id: 2)
 
 
     9.times do |n|
@@ -21,140 +25,66 @@ namespace :db do
       name = "Nutzer-#{n+1}"
       email = "example-#{n+1}@railstutorial.org"
       password = "password"
+      project_id = rand(1..3)
+      resource_id = rand(1..10)
       User.create!(name: name,
                    email: email,
                    password: password,
-                   password_confirmation: password)
-    end
-'{
-
-    S1 = Site.create!(name: "Frankfurt(M)",
-                      codename: "FRA")
-    S2 = Site.create!(name: "Berlin-Tegel",
-                      codename: "TLX")
-    S3 = Site.create!(name: "München",
-                      codename: "MUC")
-    S4 = Site.create!(name: "Bremen",
-                      codename: "BRE")
-    S5 = Site.create!(name: "Cottbus",
-                      codename: "CBU")
-    S6 = Site.create!(name: "Düsseldorf",
-                      codename: "DUS")
-    S7 = Site.create!(name: "Hamburg",
-                      codename: "HAM")
-    S8 = Site.create!(name: "Stuttgart",
-                      codename: "STR")
-
-
-    (10..99).each do |n|
-      name = "Beispielort-#{n}"
-      codename = "C#{n}"
-      Site.create!(name: name,
-                   codename: codename)
+                   password_confirmation: password,
+                   project_id: project_id,
+                   resource_id: resource_id)
     end
 
 
-    SuSi1 = Supplysite.create!(site_id: S1.id, supply_quantity: 20)
-
-    SuSi2 = Supplysite.create!(site_id: S2.id, supply_quantity: 25)
-
-    SuSi3 = Supplysite.create!(site_id: S3.id, supply_quantity: 21)
-
-    DeSi1 = Demandsite.create!(site_id: S4.id, demand_quantity: 15)
-
-    DeSi2 = Demandsite.create!(site_id: S5.id, demand_quantity: 17)
-
-    DeSi3 = Demandsite.create!(site_id: S6.id, demand_quantity: 22)
-
-    DeSi4 = Demandsite.create!(site_id: S7.id, demand_quantity: 12)
-
-    TraLi1 = Translink.create!(supplysite_id: SuSi1.id, demandsite_id: DeSi1.id, unit_cost: 6, transport_quantity: 0.0)
-    TraLi2 = Translink.create!(supplysite_id: SuSi1.id, demandsite_id: DeSi2.id, unit_cost: 2, transport_quantity: 0.0)
-    TraLi3 = Translink.create!(supplysite_id: SuSi1.id, demandsite_id: DeSi3.id, unit_cost: 6, transport_quantity: 0.0)
-    TraLi4 = Translink.create!(supplysite_id: SuSi1.id, demandsite_id: DeSi4.id, unit_cost: 7, transport_quantity: 0.0)
-    TraLi5 = Translink.create!(supplysite_id: SuSi2.id, demandsite_id: DeSi1.id, unit_cost: 4, transport_quantity: 0.0)
-    TraLi6 = Translink.create!(supplysite_id: SuSi2.id, demandsite_id: DeSi2.id, unit_cost: 9, transport_quantity: 0.0)
-    TraLi7 = Translink.create!(supplysite_id: SuSi2.id, demandsite_id: DeSi3.id, unit_cost: 5, transport_quantity: 0.0)
-    TraLi8 = Translink.create!(supplysite_id: SuSi2.id, demandsite_id: DeSi4.id, unit_cost: 3, transport_quantity: 0.0)
-    TraLi9 = Translink.create!(supplysite_id: SuSi3.id, demandsite_id: DeSi1.id, unit_cost: 8, transport_quantity: 0.0)
-    TraLi10 = Translink.create!(supplysite_id: SuSi3.id, demandsite_id: DeSi2.id, unit_cost: 8, transport_quantity: 0.0)
-    TraLi11 = Translink.create!(supplysite_id: SuSi3.id, demandsite_id: DeSi3.id, unit_cost: 1, transport_quantity: 0.0)
-    TraLi12 = Translink.create!(supplysite_id: SuSi3.id, demandsite_id: DeSi4.id, unit_cost: 6, transport_quantity: 0.0)
+    P1 = Project.create!(name: "Gartenbau",
+                      deadline: DateTime.new(2015, 8, 29, 22, 35, 0),
+                      closed: false)
+    P2 = Project.create!(name: "Hausbau",
+                      deadline: DateTime.new(2015, 12, 29, 22, 35, 0),
+                      closed: false)
+    P3 = Project.create!(name: "Fabrikbau",
+                      deadline: DateTime.new(2015, 9, 29, 22, 35, 0),
+                      closed: false)
 
 
-    Prod1 = Product.create!(name: "P1", setup_time: 20, processing_time: 1,
-                            setup_cost: 200, holding_cost: 40,
-                            initial_inventory: 50, lead_time_periods: 1)
 
-    Prod2 = Product.create!(name: "P2", setup_time: 30, processing_time: 1,
-                            setup_cost: 500, holding_cost: 35,
-                            initial_inventory: 120, lead_time_periods: 1)
-
-    Prod3 = Product.create!(name: "P3", setup_time: 10, processing_time: 1,
-                            setup_cost: 300, holding_cost: 15,
-                            initial_inventory: 100, lead_time_periods: 1)
-
-    Prod4 = Product.create!(name: "P4", setup_time: 20, processing_time: 1,
-                            setup_cost: 1000, holding_cost: 4,
-                            initial_inventory: 110, lead_time_periods: 1)
-
-    Prod5 = Product.create!(name: "P5", setup_time: 10, processing_time: 1,
-                            setup_cost: 300, holding_cost: 3,
-                            initial_inventory: 80, lead_time_periods: 1)
-
-
-    (1..4).each do |n|
-      name = "#{n}"
-      Period.create!(name: name)
+    (1..30).each do |n|
+      name = "Beispielvorgang-#{n}"
+      kapabe = n+5
+      prot = n+1
+      Procedure.create!(name: name,
+                   kapabe: kapabe,
+                   prot: prot)
     end
 
-    (1..2).each do |n|
-      name = "m#{n}"
-      Machine.create!(name: name, overtime_cost: 200)
+    (1..10).each do |n|
+      name = "Ressource-#{n}"
+      ocr = n+3
+      cost = n+2
+      Resource.create!(name: name,
+                   ocr: ocr,
+                   cost: cost)
     end
 
-    (1..2).each do |m|
-      (1..4).each do |n|
-        MachinePeriod.create!(machine_id: m, period_id: n, capacity: 150)
-      end
+
+    ProPro1 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 2)
+    ProPro2 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 3)
+    ProPro3 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 4)
+    ProPro4 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 5)
+    ProPro5 = ProcedureProcedure.create!(prepro_id: 3, sucpro_id: 6)
+    ProPro6 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 7)
+    ProPro7 = ProcedureProcedure.create!(prepro_id: 5, sucpro_id: 8)
+    ProPro8 = ProcedureProcedure.create!(prepro_id: 6, sucpro_id: 8)
+    ProPro9 = ProcedureProcedure.create!(prepro_id: 7, sucpro_id: 9)
+    ProPro10 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
+    ProPro11 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
+
+
+    (1..30).each do |n|
+      procedure_id = n
+      resource_id = rand(1..10)
+      ProcedureResource.create!(resource_id: resource_id, procedure_id: procedure_id)
     end
 
-    P1t1 = ProductPeriod.create!(product_id: 1, period_id: 1, demand: 10)
-    P1t2 = ProductPeriod.create!(product_id: 1, period_id: 2, demand: 20)
-    P1t3 = ProductPeriod.create!(product_id: 1, period_id: 3, demand: 30)
-    P1t4 = ProductPeriod.create!(product_id: 1, period_id: 4, demand: 80)
-
-    P2t1 = ProductPeriod.create!(product_id: 2, period_id: 1, demand: 20)
-    P2t2 = ProductPeriod.create!(product_id: 2, period_id: 2, demand: 80)
-    P2t3 = ProductPeriod.create!(product_id: 2, period_id: 3, demand: 50)
-    P2t4 = ProductPeriod.create!(product_id: 2, period_id: 4, demand: 90)
-
-    P3t1 = ProductPeriod.create!(product_id: 3, period_id: 1, demand: 0)
-    P3t2 = ProductPeriod.create!(product_id: 3, period_id: 2, demand: 0)
-    P3t3 = ProductPeriod.create!(product_id: 3, period_id: 3, demand: 30)
-    P3t4 = ProductPeriod.create!(product_id: 3, period_id: 4, demand: 0)
-
-    P4t1 = ProductPeriod.create!(product_id: 4, period_id: 1, demand: 0)
-    P4t2 = ProductPeriod.create!(product_id: 4, period_id: 2, demand: 0)
-    P4t3 = ProductPeriod.create!(product_id: 4, period_id: 3, demand: 0)
-    P4t4 = ProductPeriod.create!(product_id: 4, period_id: 4, demand: 80)
-
-    P5t1 = ProductPeriod.create!(product_id: 5, period_id: 1, demand: 0)
-    P5t2 = ProductPeriod.create!(product_id: 5, period_id: 2, demand: 0)
-    P5t3 = ProductPeriod.create!(product_id: 5, period_id: 3, demand: 0)
-    P5t4 = ProductPeriod.create!(product_id: 5, period_id: 4, demand: 0)
-
-    P3P1 = ProductProduct.create!(from_product_id: 3, to_product_id:1, coefficient: 1 )
-    P3P2 = ProductProduct.create!(from_product_id: 3, to_product_id:2, coefficient: 1 )
-    P4P1 = ProductProduct.create!(from_product_id: 4, to_product_id:1, coefficient: 1 )
-    P5P3 = ProductProduct.create!(from_product_id: 5, to_product_id:3, coefficient: 1 )
-    P5P4 = ProductProduct.create!(from_product_id: 5, to_product_id:4, coefficient: 1 )
-
-    P1M1 = ProductMachine.create!(product_id: 1, machine_id:1)
-    P2M1 = ProductMachine.create!(product_id: 2, machine_id:1)
-    P5M1 = ProductMachine.create!(product_id: 5, machine_id:1)
-    P3M2 = ProductMachine.create!(product_id: 3, machine_id:2)
-    P4M2 = ProductMachine.create!(product_id: 4, machine_id:2)
-}'
   end
 end
