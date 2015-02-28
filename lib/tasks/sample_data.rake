@@ -7,6 +7,7 @@ namespace :db do
                          email: "example@railstutorial.org",
                          password: "foobar",
                          password_confirmation: "foobar",
+                         capacity: 35,
                          project_id: 1,
                          resource_id: 1)
     admin.toggle!(:admin)
@@ -16,6 +17,7 @@ namespace :db do
                  email: "susi@sorglos.de",
                  password: "foobar",
                  password_confirmation: "foobar",
+                 capacity: 40,
                  project_id: 2,
                  resource_id: 2)
 
@@ -25,12 +27,14 @@ namespace :db do
       name = "Nutzer-#{n+1}"
       email = "example-#{n+1}@railstutorial.org"
       password = "password"
+      capacity = rand(25..40)
       project_id = rand(1..3)
       resource_id = rand(1..10)
       User.create!(name: name,
                    email: email,
                    password: password,
                    password_confirmation: password,
+                   capacity: capacity,
                    project_id: project_id,
                    resource_id: resource_id)
     end
