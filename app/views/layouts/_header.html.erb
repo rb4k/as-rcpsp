@@ -6,6 +6,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Startseite", root_path, id: "main_links" %></li>
           <li><%= link_to "Hilfe", help_path, id: "main_links" %></li>
+          <li><%= link_to "Projekte", projects_path, id: "main_links" %></li>
 
           <% if signed_in? %>
               <li><%= link_to "Mitarbeiter", users_path, id: "main_links" %></li>
