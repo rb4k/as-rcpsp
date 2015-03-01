@@ -10,10 +10,16 @@
           </ul>
         </div>
     <% end %>
+
+    <div class="field">
+      <%= f.label 'Projektzugehörigkeit' %><br />
+      <%= f.collection_select :project_id, Project.all, :id, :name %>
+    </div>
     <div class="field">
       <%= f.label 'Von Vorgang' %><br />
-      <%= f.collection_select :prepro_id, Procedure.all, :id, :name %>
+      <%= f.collection_select :sucpro_id, Procedure.all, :id, :name %>
     </div>
+    <!-- User.sum(:capacity, :conditions => {:resource_id => resource}) -->
     <div class="field">
       <%= f.label 'Zu Vorgang' %><br />
       <%= f.collection_select :sucpro_id, Procedure.all, :id, :name %>

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20150227155800) do
   end
 
   create_table "procedure_procedures", :force => true do |t|
+    t.integer  "project_id"
     t.integer  "prepro_id"
     t.integer  "sucpro_id"
     t.datetime "created_at", :null => false
@@ -29,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20150227155800) do
   create_table "procedure_resources", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "procedure_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "procedure_users", :force => true do |t|
+    t.integer  "procedure_id"
+    t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

@@ -17,7 +17,7 @@
   </div>
     <div class="field">
       <%= f.label 'Projektzugehörigkeit' %><br />
-      <%= f.text_field :project_id %>
+      <%= f.collection_select :project_id, Project.all, :id, :name %>
     </div>
   <div class="field">
     <%= f.label 'Kapazitätsbedarf' %><br />

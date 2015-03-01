@@ -2,6 +2,7 @@
 <table id="procedure_periods" class="display">
   <thead>
   <tr>
+    <th>Projektzugehörigkeit</th>
     <th>Von Vorgang</th>
     <th>Zu Vorgang</th>   
     <th></th>
@@ -11,6 +12,7 @@
   <tbody>
   <% @procedure_procedures.each do |procedure_procedure| %>
       <tr>
+        <td><%= procedure_procedure.project.name %></td>
         <td><%= procedure_procedure.prepro.name %></td>
         <td><%= procedure_procedure.sucpro.name %></td>
         <td><%= link_to 'Anzeigen', procedure_procedure %></td>
