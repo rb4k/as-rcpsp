@@ -6,6 +6,12 @@
 </p>
 
 <p>
+  <b>Projektzugehörigkeit:</b>
+<td><%= project = Project.find(@procedure.project_id)
+        project.name %></td>
+</p>
+
+<p>
   <b>Kapazitätsbedarf:</b>
   <%= @procedure.kapabe %>
 </p>

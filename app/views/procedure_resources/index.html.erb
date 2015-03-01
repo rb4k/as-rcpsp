@@ -12,8 +12,8 @@
 
   <% @procedure_resources.each do |procedure_resource| %>
       <tr>
-        <td><%= procedure_resource.procedure.name %></td>
-        <td><%= procedure_resource.resource.name %></td>
+        <td><%= procedure_resource.procedure_id %></td>
+        <td><%= procedure_resource.resource_id %></td>
         <td><%= link_to 'Anzeigen', procedure_resource %></td>
         <td><%= link_to 'Ändern', edit_procedure_resource_path(procedure_resource) %></td>
         <td><%= link_to 'Löschen', procedure_resource, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>

@@ -16,6 +16,7 @@
   <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
+        <td><%= project.deadline %></td>
         <td><%= project.closed %></td>
         <td><%= link_to 'Anzeigen', project %></td>
         <td><%= link_to 'Ändern', edit_project_path(project) %></td>

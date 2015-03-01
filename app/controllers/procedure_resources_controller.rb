@@ -42,7 +42,7 @@ class ProcedureResourcesController < ApplicationController
   # POST /procedure_resources
   # POST /procedure_resources.json
     def create
-      @procedure_resource = ProcedureResource.new(params[:procedure_resources])
+      @procedure_resource = ProcedureResource.new(params[:procedure_resource])
 
       respond_to do |format|
         if @procedure_resource.save
@@ -61,7 +61,7 @@ class ProcedureResourcesController < ApplicationController
     @procedure_resource = ProcedureResource.find(params[:id])
 
     respond_to do |format|
-      if @procedure_resource.update_attributes(params[:procedure_resources])
+      if @procedure_resource.update_attributes(params[:procedure_resource])
         format.html { redirect_to @procedure_resource, notice: 'Vorgang-Ressourcen-Relation wurde erfolgreich aktualisiert.' }
         format.json { head :no_content }
       else

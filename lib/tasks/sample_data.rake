@@ -56,9 +56,11 @@ namespace :db do
       name = "Beispielvorgang-#{n}"
       kapabe = n+5
       prot = n+1
+      project_id = rand(1..3)
       Procedure.create!(name: name,
                    kapabe: kapabe,
-                   prot: prot)
+                   prot: prot,
+                   project_id: project_id)
     end
 
     (1..10).each do |n|

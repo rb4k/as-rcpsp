@@ -6,6 +6,7 @@ class CreateProcedures < ActiveRecord::Migration
       t.datetime :updated_at
       t.integer :kapabe
       t.integer :prot
+      t.integer :project_id
 
       t.timestamps
     end
