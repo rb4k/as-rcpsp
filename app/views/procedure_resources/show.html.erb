@@ -3,13 +3,15 @@
 
 <p>
   <b>Vorgang:</b>
-  <%= @procedure_resource.procedure_id %>
+<td><%= procedure = Procedure.find(@procedure_resource.procedure_id)
+        procedure.name %></td>
 </p>
 
 
 <p>
   <b>Ressource:</b>
-  <%= @procedure_resource.resource_id %>
+<td><%= resource = Resource.find(@procedure_resource.resource_id)
+        resource.name %></td>
 </p>
 
 

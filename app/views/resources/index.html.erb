@@ -19,7 +19,7 @@
     <td><%= resource.name %></td>
     <td><%= resource.cost %></td>
     <td><%= resource.ocr %></td>
-    <td><%= User.sum(:capacity) %></td> <!--Falsch, da die Summe der Ressource über die User notwendig ist!-->
+    <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
     <td><%= link_to 'Anzeigen', resource %></td>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>
     <td><%= link_to 'Löschen', resource, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>

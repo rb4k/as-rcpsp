@@ -12,8 +12,10 @@
 
   <% @procedure_resources.each do |procedure_resource| %>
       <tr>
-        <td><%= procedure_resource.procedure_id %></td>
-        <td><%= procedure_resource.resource_id %></td>
+        <td><%= procedure = Procedure.find(procedure_resource.procedure_id)
+                procedure.name %></td>
+        <td><%= resource = Resource.find(procedure_resource.resource_id)
+                resource.name %></td>
         <td><%= link_to 'Anzeigen', procedure_resource %></td>
         <td><%= link_to 'Ändern', edit_procedure_resource_path(procedure_resource) %></td>
         <td><%= link_to 'Löschen', procedure_resource, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>

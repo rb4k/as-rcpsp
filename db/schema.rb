@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(:version => 20150227155800) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "procedure_users", :force => true do |t|
-    t.integer  "procedure_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "procedures", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
