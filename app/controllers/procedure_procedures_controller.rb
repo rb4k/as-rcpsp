@@ -31,6 +31,8 @@ class ProcedureProceduresController < ApplicationController
     end
   end
 # GET /procedure_procedures/1/edit
+
+
   def edit
     @procedure_procedure = ProcedureProcedure.find(params[:id])
   end
