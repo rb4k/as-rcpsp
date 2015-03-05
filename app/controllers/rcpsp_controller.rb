@@ -7,27 +7,29 @@ class RcpspController < ApplicationController
 
   def optimize
 
-    if File.exist?("RCSPSP_Input.inc")
-      File.delete("RCPSP_Input.inc")
+    if File.exist?("RCSPSP1_Input.inc")
+      File.delete("RCPSP1_Input.inc")
     end
-    f=File.new("RCPSP_Input.inc", "w")
-    printf(f, "set i / \n")
+    f=File.new("RCPSP1_Input.inc", "w")
+
+    @resources = Resource.all
     @procedures = Procedure.all
-    @procedures.each { |proc| printf(f, proc.name + "\n") }
-    printf(f, "/" + "\n\n")
-
-    printf(f, "set t0*t200 /"+ "\n\n")
-
+    @procedure_procedures = ProcedureProcedure.all
+    @procedure_resources = ProcedureResource.all
 
     printf(f, "set r / \n")
-    @resources = Resource.all
     @resources.each { |res| printf(f, res.name + "\n") }
-    printf(f, "/;\n\n")
+    printf(f, "/;" + "\n\n")
 
+    printf(f, "set i / \n")
+    @procedures.each { |proc| printf(f, proc.name + "\n") }
+    printf(f, "/;" + "\n\n")
+
+    printf(f, "set t / t0*t200 /;"+ "\n\n")
 
     printf(f, "VN(h,i)=no;\n\n")
 
-    @procedure_procedures = ProcedureProcedure.all
+
     @procedure_procedures.each { |proc_proc|
       printf(f, "VN('" + proc_proc.prepro.name+"','" + proc_proc.sucpro.name+"')=yes;\n")
     }
@@ -41,42 +43,27 @@ class RcpspController < ApplicationController
     printf(f, "\n")
     printf(f, "k(i,r)=0;\n\n")
 
-    @procedure_resources = ProcedureResource.all
     @procedure_resources.each { |k|
       printf(f, "k('" + k.procedure.name + "','" + k.resource.name + "')= "+ k.procedure.kapabe.to_s + ";\n")
     }
 
     printf(f, "\n")
 
-    @machines.each { |mac|
-      printf(f, "oc('" + mac.name + "')= "+ mac.overtime_cost.to_s + ";\n")
+    @resources.each { |grenze|
+      printf(f, "KP('" + grenze.name + "')= "+ User.sum(:capacity, :conditions => {:resource_id => grenze}).to_s + ";\n")
     }
 
     printf(f, "\n")
-
-
-    @machine_periods = MachinePeriod.all
-    @machine_periods.each { |mac_per|
-      printf(f, "C('" +mac_per.machine.name+"','t" + mac_per.period.name+"')= "+ mac_per.capacity.to_s + ";\n")
-    }
-
-    printf(f, "\n")
-
-
-    @product_periods = ProductPeriod.all
-    @product_periods.each { |pro_per|
-      printf(f, "d('" +pro_per.product.name+"','t" + pro_per.period.name+"')= "+ pro_per.demand.to_s + ";\n")
-    }
 
 
     f.close
 
 
-    if File.exist?("MLClSP_solution.txt")
-      File.delete("MLCLSP_solution.txt")
-    end
+   # if File.exist?("RCPSP1_solution.txt")
+   #   File.delete("RCPSP1_solution.txt")
+   # end
 
-    system "C:\\GAMS\\win64\\23.9\\gams RCPSP1"
+    system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
 
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
@@ -87,34 +74,34 @@ class RcpspController < ApplicationController
   end
 
   def delete_old_plan
-    if File.exist?("MLCLSP_solution_kt.txt")
-      File.delete("MLCLSP_solution_kt.txt")
+    if File.exist?("RCPSP1_solution_kt.txt")
+      File.delete("RCPSP1_solution_kt.txt")
     end
-    if File.exist?("MLCLSP_solution_jt.txt")
-      File.delete("MLCLSP_solution_jt.txt")
+    if File.exist?("RCPSP1_solution_jt.txt")
+      File.delete("RCPSP1_solution_jt.txt")
     end
-    if File.exist?("MLCLSP_ofv.txt")
-      File.delete("MLCLSP_ofv.txt")
+    if File.exist?("RCPSP1_ofv.txt")
+      File.delete("RCPSP1_ofv.txt")
     end
-    @product_periods = ProductPeriod.all
-    @product_periods.each { |pro_per|
-      pro_per.production=nil
-      pro_per.inventory=nil
-      pro_per.setup=nil
-      pro_per.save
-    }
-    @machine_periods = MachinePeriod.all
-    @machine_periods.each { |mac_per|
-      mac_per.overtime=nil
-      mac_per.save
-    }
-    @objective_function_value=nil
-    render :template => "product_periods/index"
+    #@product_periods = ProductPeriod.all
+    #@product_periods.each { |pro_per|
+     # pro_per.production=nil
+     # pro_per.inventory=nil
+     # pro_per.setup=nil
+     # pro_per.save
+    #}
+    #@machine_periods = MachinePeriod.all
+    #@machine_periods.each { |mac_per|
+    #  mac_per.overtime=nil
+    #  mac_per.save
+    #}
+    #@objective_function_value=nil
+    #render :template => "product_periods/index"
   end
 
   def read_optimization_results
-    if (File.exist?("MLCLSP_solution_kt.txt") and File.exists?("MLCLSP_solution_jt.txt"))
-      fi=File.open("MLCLSP_solution_kt.txt", "r")
+    if (File.exist?("RCPSP1_solution_kt.txt") and File.exists?("RCPSP1_solution_jt.txt"))
+      fi=File.open("RCPSP1_solution_kt.txt", "r")
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0].delete "kta "
@@ -128,7 +115,7 @@ class RcpspController < ApplicationController
         product_period.save
       }
       fi.close
-      fi=File.open("MLCLSP_solution_jt.txt", "r")
+      fi=File.open("RCPSP1_solution_jt.txt", "r")
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0].delete "jta "
@@ -161,3 +148,10 @@ class RcpspController < ApplicationController
 
   end
 
+private
+def signed_in_user
+  unless signed_in?
+    store_location
+    redirect_to signin_path, notice: "Bitte melden Sie sich an."
+  end
+end

@@ -125,3 +125,14 @@ k('Beispielvorgang-28','Ressource-10')= 33;
 k('Beispielvorgang-29','Ressource-6')= 34;
 k('Beispielvorgang-30','Ressource-1')= 35;
 
+KP('Ressource-1')= 105;
+KP('Ressource-2')= 40;
+KP('Ressource-3')= 35;
+KP('Ressource-4')= 40;
+KP('Ressource-5')= 74;
+KP('Ressource-6')= 0;
+KP('Ressource-7')= 0;
+KP('Ressource-8')= 32;
+KP('Ressource-9')= 0;
+KP('Ressource-10')= 53;
+

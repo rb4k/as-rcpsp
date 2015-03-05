@@ -1,8 +1,6 @@
 * Ressourcenbeschraenkte Projektplanung in diskreter Zeit
 * Zwei Modellvarianten:
 * Variante 1: Minimierung der Projektdauer bei gegebenen Kapazitaeten
-* Variante 2: Minimierung der Kosten fuer Zusatzkapazitaet bei
-*             gegebener Deadline
 
 set
     i Vorgang
@@ -23,9 +21,7 @@ parameter
     SA(i)   Spaetester Anfangszeitpunkt
     k(i,r)  Kapazitaetsbedarf von Vorgang i auf Ressource r
     KP(r)   Kapazitaet je Periode von Ressource r
-    oc(r)   Kosten einer Einheit Zusatzkapazitaet
     ihilf
-    Deadline
     MinimaleDauer   ;
 
 binary variables
@@ -34,82 +30,8 @@ binary variables
 free variables
     z       Zielfunktionswert;
 
-positive variables
-    O(r,t)  Zusatzkapazitaet von Ressource r in Periode t;
 
-
-* Daten der Instanz
-
-set r /A, B/;
-
-set i / i1*i12/;
-
-* Achtung: Erste Periode/erster Zeitpunkt muss 0 sein
-
-set t /t0*t200/;
-
-
-VN(h,i)=no;
-
-* Achtung: Topologische Sortierung erforderlich
-
-VN('i1','i2')=yes;
-VN('i1','i5')=yes;
-VN('i1','i8')=yes;
-VN('i1','i10')=yes;
-VN('i2','i3')=yes;
-VN('i2','i6')=yes;
-VN('i3','i4')=yes;
-VN('i4','i7')=yes;
-VN('i4','i12')=yes;
-VN('i5','i6')=yes;
-VN('i6','i7')=yes;
-VN('i7','i12')=yes;
-VN('i8','i9')=yes;
-VN('i9','i12')=yes;
-VN('i10','i11')=yes;
-VN('i11','i12')=yes;
-
-parameter
-        d(i) /
-         i1      3
-         i2      2
-         i3      4
-         i4      2
-         i5      3
-         i6      4
-         i7      2
-         i8      3
-         i9      5
-         i10     3
-         i11     2
-         i12     2/;
-
-
-Deadline=21;
-
-k(i,r)=0;
-
-k('i1','A')=1;
-k('i2','A')=2;
-k('i3','B')=1;
-k('i4','A')=1;
-k('i5','B')=1;
-k('i6','A')=2;
-k('i7','B')=1;
-k('i8','A')=2;
-k('i9','A')=1;
-k('i10','A')=1;
-k('i11','B')=1;
-k('i12','A')=1;
-
-KP('A')=2;
-KP('B')=1;
-
-oc('A')=15000;
-oc('B')=10000;
-
-
+$include "RCPSP1_Input.inc";
 
 * Zeitrechnung
 * Achtung: Topologische Sortierung wird unterstellt
@@ -117,6 +39,10 @@ oc('B')=10000;
 MinimaleDauer=0;
 FA(i)=0;
 FE(i)=d(i);
+
+
+file outputfile1 / 'RCPSP1_solution_md.txt'/;
+put outputfile1;
 
 loop(i,
      loop(h$VN(h,i),
@@ -130,9 +56,10 @@ loop(i,
      );
 );
 
+putclose outputfile1;
 
 
-SE(i)=max(MinimaleDauer, Deadline);
+SE(i)=MinimaleDauer;
 SA(i)=SE(i)-d(i);
 
 
@@ -149,12 +76,11 @@ for(ihilf=card(i) downto 1,
 
 
 
-display d, FA, FE, SA, SE, Deadline, MinimaleDauer;
+display d, FA, FE, SA, SE, MinimaleDauer;
 
 
 Equations
     ZielfunktionZeit,
-    ZielfunktionKosten,
     JederVorgangEinmal(i)
     Projektstruktur(h,i)
     Kapazitaetsrestriktionalt(r,t)
@@ -167,8 +93,6 @@ ZielfunktionZeit..
         sum(t$(FE(i)<=ord(t)-1 and ord(t)-1 <= SE(i)),
              (ord(t)-1)*x(i,t)));
 
-ZielfunktionKosten..
-    z=e=sum((r,t),oc(r)*O(r,t));
 
 JederVorgangEinmal(i)..
     sum(t$(FE(i)<=ord(t)-1 and ord(t)-1 <= SE(i)), x(i,t)) =e= 1;
@@ -185,11 +109,6 @@ Kapazitaetsrestriktion(r,t)..
               (ord(tau)-1 <= min(ord(t)-1+d(i)-1, SE(i)))),
           k(i,r)*x(i,tau)))=l=KP(r);
 
-KapazitaetsrestriktionFlex(r,t)..
-    sum(i,
-    sum(tau$((ord(tau)-1 >= max(ord(t)-1, FE(i)))  and
-              (ord(tau)-1 <= min(ord(t)-1+d(i)-1, SE(i)))),
-          k(i,r)*x(i,tau)))=l=KP(r)+O(r,t);
 
 model RCPSP1 /
     ZielfunktionZeit
@@ -197,11 +116,6 @@ model RCPSP1 /
     Projektstruktur
     Kapazitaetsrestriktion/;
 
-model RCPSP2 /
-    ZielfunktionKosten
-    JederVorgangEinmal
-    Projektstruktur
-    KapazitaetsrestriktionFlex/;
 
 RCPSP1.optcr=0.0;
 RCPSP1.limrow=500;
@@ -224,9 +138,3 @@ $offtext
 solve RCPSP1 minimizing z using mip;
 
 display x.l;
-
-
-RCPSP2.optcr=0.0;
-RCPSP2.limrow=500;
-
-solve RCPSP2 minimizing z using mip;

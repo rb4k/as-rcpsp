@@ -7,7 +7,7 @@ namespace :db do
                          email: "example@railstutorial.org",
                          password: "foobar",
                          password_confirmation: "foobar",
-                         capacity: 35,
+                         capacity: rand(10..15),
                          resource_id: 1)
     admin.toggle!(:admin)
 
@@ -16,17 +16,17 @@ namespace :db do
                  email: "susi@sorglos.de",
                  password: "foobar",
                  password_confirmation: "foobar",
-                 capacity: 40,
+                 capacity: rand(10..15),
                  resource_id: 2)
 
 
-    9.times do |n|
+    (3..10).each do |n|
 #      name = Faker::Name.name
       name = "Nutzer-#{n+1}"
       email = "example-#{n+1}@railstutorial.org"
       password = "password"
-      capacity = rand(25..40)
-      resource_id = rand(1..10)
+      capacity = n
+      resource_id = rand(1..5)
       User.create!(name: name,
                    email: email,
                    password: password,
@@ -37,19 +37,19 @@ namespace :db do
 
 
 
-    (1..30).each do |n|
-      name = "Beispielvorgang-#{n}"
-      kapabe = n+5
-      prot = n+1
+    (1..10).each do |n|
+      name = "Beispielvorgang#{n}"
+      kapabe = rand(1..2)
+      prot = rand(1..5)
       Procedure.create!(name: name,
                    kapabe: kapabe,
                    prot: prot)
     end
 
-    (1..10).each do |n|
-      name = "Ressource-#{n}"
-      ocr = n+3
-      cost = n+2
+    (1..5).each do |n|
+      name = "Ressource#{n}"
+      ocr = rand(3..5)
+      cost = rand(1..3)
       Resource.create!(name: name,
                    ocr: ocr,
                    cost: cost)
@@ -68,9 +68,9 @@ namespace :db do
     ProPro10 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
     ProPro11 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
 
-    (1..30).each do |n|
+    (1..10).each do |n|
       procedure_id = n
-      resource_id = rand(1..10)
+      resource_id = rand(1..5)
       ProcedureResource.create!(resource_id: resource_id, procedure_id: procedure_id)
     end
 

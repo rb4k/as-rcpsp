@@ -17,7 +17,7 @@
 
 <p>
   <b>Aktuelle Gesamkapazität:</b>
-  <%= @resource.totalcapa %>
+  <%= User.sum(:capacity, :conditions => {:resource_id => @resource}) %>
 </p>
 
 
