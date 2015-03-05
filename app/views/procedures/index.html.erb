@@ -4,7 +4,6 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Projektzugehörigkeit</th>
     <th>Kapazitätsbedarf</th>
     <th>Vorgangsdauer</th>
     <th></th>
@@ -17,8 +16,6 @@
 <% @procedures.each do |procedure| %>
   <tr>
     <td><%= procedure.name %></td>
-    <td><%= project = Project.find(procedure.project_id)
-            project.name %></td>
     <td><%= procedure.kapabe %></td>
     <td><%= procedure.prot %></td>
     <td><%= link_to 'Anzeigen', procedure %></td>
