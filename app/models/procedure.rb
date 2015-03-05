@@ -1,5 +1,5 @@
 class Procedure < ActiveRecord::Base
-  attr_accessible :created_at, :kapabe, :name, :prot, :updated_at, :project_id
+  attr_accessible :created_at, :kapabe, :name, :prot, :updated_at
 
   belongs_to :project
   has_many :procedure_resources, :dependent => :destroy

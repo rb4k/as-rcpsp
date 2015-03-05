@@ -68,30 +68,6 @@ namespace :db do
     ProPro10 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
     ProPro11 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
 
-    ProPro21 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 2)
-    ProPro22 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 3)
-    ProPro23 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 4)
-    ProPro24 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 5)
-    ProPro25 = ProcedureProcedure.create!(prepro_id: 3, sucpro_id: 6)
-    ProPro26 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 7)
-    ProPro27 = ProcedureProcedure.create!(prepro_id: 5, sucpro_id: 8)
-    ProPro28 = ProcedureProcedure.create!(prepro_id: 6, sucpro_id: 8)
-    ProPro29 = ProcedureProcedure.create!(prepro_id: 7, sucpro_id: 9)
-    ProPro30 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
-    ProPro31 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
-
-    ProPro41 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 2)
-    ProPro42 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 3)
-    ProPro43 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 4)
-    ProPro44 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 5)
-    ProPro45 = ProcedureProcedure.create!(prepro_id: 3, sucpro_id: 6)
-    ProPro46 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 7)
-    ProPro47 = ProcedureProcedure.create!(prepro_id: 5, sucpro_id: 8)
-    ProPro48 = ProcedureProcedure.create!(prepro_id: 6, sucpro_id: 8)
-    ProPro49 = ProcedureProcedure.create!(prepro_id: 7, sucpro_id: 9)
-    ProPro50 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
-    ProPro51 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
-
     (1..30).each do |n|
       procedure_id = n
       resource_id = rand(1..10)
