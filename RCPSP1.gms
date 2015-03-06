@@ -83,10 +83,7 @@ Equations
     ZielfunktionZeit,
     JederVorgangEinmal(i)
     Projektstruktur(h,i)
-    Kapazitaetsrestriktionalt(r,t)
-    KapazitaetsrestriktionFlexalt(r,t),
-    Kapazitaetsrestriktion(r,t)
-    KapazitaetsrestriktionFlex(r,t);
+    Kapazitaetsrestriktion(r,t);
 
 ZielfunktionZeit..
     z=e=sum(i$(ord(i)=card(I)),

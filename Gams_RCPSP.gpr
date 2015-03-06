@@ -1,1 +1,17 @@
 [PROJECT]
+
+[RP:RCPSP1]
+1=
+
+[MRUFILES]
+1=C:\Sites\as-rcpsp\RCPSP1_Input.inc
+
+[OPENWINDOW_1]
+FILE0=C:\Sites\as-rcpsp\RCPSP1.gms
+FILE1=C:\Sites\as-rcpsp\RCPSP1.lst
+FILE2=C:\Sites\as-rcpsp\RCPSP1.lst
+MAXIM=0
+TOP=50
+LEFT=50
+HEIGHT=482
+WIDTH=487

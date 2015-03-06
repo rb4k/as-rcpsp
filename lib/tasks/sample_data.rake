@@ -68,11 +68,23 @@ namespace :db do
     ProPro10 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
     ProPro11 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
 
-    (1..10).each do |n|
-      procedure_id = n
-      resource_id = rand(1..5)
-      ProcedureResource.create!(resource_id: resource_id, procedure_id: procedure_id)
-    end
+    ProRes1 = ProcedureResource.create!(procedure_id: 1, resource_id: 1)
+    ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 2)
+    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 3)
+    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 4)
+    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 5)
+    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 1)
+    ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 2)
+    ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 3)
+    ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 4)
+    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 5)
+
+
+    #(1..10).each do |n|
+      #procedure_id = n
+      #resource_id = rand(1..5)
+      #ProcedureResource.create!(resource_id: resource_id, procedure_id: procedure_id)
+    #end
 
   end
 end
