@@ -136,7 +136,7 @@ file outputfile1 / 'RCPSP1_solution_zeit.txt'/;
 put outputfile1;
 
 loop(i,
-     put i.tl:0, ' ; ' FA(i), ' ; ' FE(i), ' ; ' SA(i), ' ; ' SE(i) /
+     put i.tl:0, '; ' FA(i), ' ; ' SA(i), ' ; ' FE(i), ' ; ' SE(i) /
 );
 putclose outputfile1;
 

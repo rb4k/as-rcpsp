@@ -6,16 +6,36 @@ class RcpspsController < ApplicationController
   before_filter :current_user#, only: [:admin_user]
 
   def optimize
-
-    if File.exist?("RCSPSP1_Input.inc")
-      File.delete("RCPSP1_Input.inc")
+    if File.exist?("RCPSP1_solution_x.txt")
+      File.delete("RCPSP1_solution_x.txt")
     end
-    f=File.new("RCPSP1_Input.inc", "w")
+    if File.exist?("RCPSP1_solution_zeit.txt")
+      File.delete("RCPSP1_solution_zeit.txt")
+    end
+    if File.exist?("RCPSP1_solution_zw.txt")
+      File.delete("RCPSP1_solution_zw.txt")
+    end
 
     @resources = Resource.all
     @procedures = Procedure.all
     @procedure_procedures = ProcedureProcedure.all
     @procedure_resources = ProcedureResource.all
+
+    @procedures.each { |proc|
+      proc.fa=nil
+      proc.sa=nil
+      proc.fe=nil
+      proc.se=nil
+      proc.save
+    }
+
+    @objective_function_value=nil
+
+
+    if File.exist?("RCSPSP1_Input.inc")
+      File.delete("RCPSP1_Input.inc")
+    end
+    f=File.new("RCPSP1_Input.inc", "w")
 
     printf(f, "set r / \n")
     @resources.each { |res| printf(f, res.name + "\n") }
@@ -26,7 +46,7 @@ class RcpspsController < ApplicationController
     printf(f, "/;" + "\n\n")
 
     printf(f, "set t / t0*t")
-    Procedure.sum(:prot).to_s
+    printf(f, Procedure.sum(:prot).to_s)
     printf(f, " /;"+ "\n\n")
 
     printf(f, "VN(h,i)=no;\n\n")
@@ -75,67 +95,33 @@ class RcpspsController < ApplicationController
 
   end
 
-  def delete_old_plan
-    if File.exist?("RCPSP1_solution_vr.txt")
-      File.delete("RCPSP1_solution_vr.txt")
-    end
-    if File.exist?("RCPSP1_solution_rr.txt")
-      File.delete("RCPSP1_solution_rr.txt")
-    end
-    if File.exist?("RCPSP1_zw.txt")
-      File.delete("RCPSP1_zw.txt")
-    end
-    #@product_periods = ProductPeriod.all
-    #@product_periods.each { |pro_per|
-     # pro_per.production=nil
-     # pro_per.inventory=nil
-     # pro_per.setup=nil
-     # pro_per.save
-    #}
-    #@machine_periods = MachinePeriod.all
-    #@machine_periods.each { |mac_per|
-    #  mac_per.overtime=nil
-    #  mac_per.save
-    #}
-    #@objective_function_value=nil
-    #render :template => "product_periods/index"
-  end
 
   def read_optimization_results
-    if (File.exist?("RCPSP1_solution_vr.txt") and File.exists?("RCPSP1_solution_vr.txt"))
-      fi=File.open("RCPSP1_solution_vr.txt", "r")
+    @procedures = Procedure.all
+
+    if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
+
+      fi=File.open("RCPSP1_solution_zeit.txt", "r")
       fi.each { |line|
         sa=line.split(";")
-        sa0=sa[0].delete "kta "
+        sa0=sa[0]
+        sa1=sa[1]
+        sa2=sa[2]
         sa3=sa[3]
-        sa4=sa[4]
-        sa5=sa[5].delete " \n"
-        product_period=ProductPeriod.find_by_id(sa0)
-        product_period.production = sa3
-        product_period.inventory = sa4
-        product_period.setup = sa5
-        product_period.save
-      }
-      fi.close
-      fi=File.open("RCPSP1_solution_rr.txt", "r")
-      fi.each { |line|
-        sa=line.split(";")
-        sa0=sa[0].delete "jta "
-        sa3=sa[3].delete " \n"
-        machine_period=MachinePeriod.find_by_id(sa0)
-        machine_period.overtime = sa3
-        machine_period.save
+        sa4=sa[4].delete " \n"
+        procedure=Procedure.find_by_name(sa0)
+        procedure.fa = sa1
+        procedure.sa = sa2
+        procedure.fe = sa3
+        procedure.se = sa4
+        procedure.save
       }
       fi.close
     else
       flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
-    @product_periods = ProductPeriod.all
-    render :template => "product_periods/index"
-  end
-  def read_and_show_zw
-    if File.exist?("MLCLSP_zw.txt")
-      fi=File.open("MLCLSP_ofv.zw", "r")
+    if File.exist?("RCPSP1_solution_zw.txt")
+      fi=File.open("RCPSP1_solution_zw.txt", "r")
       line=fi.readline
       fi.close
       sa=line.split(" ")
@@ -144,8 +130,10 @@ class RcpspsController < ApplicationController
       @objective_function_value=nil
       flash.now[:not_available] = "Zielfunktionswert wurde noch nicht berechnet!"
     end
-    @product_periods = ProductPeriod.all
-    render :template => "product_periods/index"
+
+    flash.now[:started] = "Ergebnisse eingelesen!"
+
+    render :template => "static_pages/rcpsp"
   end
 
   end

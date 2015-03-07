@@ -27,10 +27,14 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
 
       Start der Projektplanung
 
-      <%= button_to "Optimiere", :controller => 'rcpsps', :action => 'delete_old_plan', :action => 'optimize' %>
+      <%= button_to "Optimiere", :controller => 'rcpsps', :action => 'optimize' %>
       <%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results' %>
-      <%= button_to "Lies den Zielfunktionswert ein", :controller => 'rcpsps', :action => 'read_and_show_ofv' %>
 
     </p>
+
+    <% if @objective_function_value!=nil %>
+        Die minimale Vorgangsdauer beträgt <%=  @objective_function_value %> Zeiteinheiten  <br> <br>
+        <%= button_to 'Ergebnis anzeigen', procedures_path, :class => "button", :method => :get %>
+    <% end %>
 
 <% end %>
