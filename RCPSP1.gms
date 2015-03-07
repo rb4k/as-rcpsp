@@ -41,9 +41,6 @@ FA(i)=0;
 FE(i)=d(i);
 
 
-file outputfile1 / 'RCPSP1_solution_md.txt'/;
-put outputfile1;
-
 loop(i,
      loop(h$VN(h,i),
          if(FE(h)>FA(i),
@@ -54,10 +51,8 @@ loop(i,
              );
          );
      );
+
 );
-
-putclose outputfile1;
-
 
 SE(i)=MinimaleDauer;
 SA(i)=SE(i)-d(i);
@@ -73,7 +68,6 @@ for(ihilf=card(i) downto 1,
          );
      );
 );
-
 
 
 display d, FA, FE, SA, SE, MinimaleDauer;
@@ -134,4 +128,33 @@ $offtext
 
 solve RCPSP1 minimizing z using mip;
 
-display x.l;
+display x.l, FE;
+
+
+
+file outputfile1 / 'RCPSP1_solution_zeit.txt'/;
+put outputfile1;
+
+loop(i,
+     put i.tl:0, ' ; ' FA(i), ' ; ' FE(i), ' ; ' SA(i), ' ; ' SE(i) /
+);
+putclose outputfile1;
+
+file outputfile2 / 'RCPSP1_solution_x.txt'/;
+put outputfile2;
+
+loop(i,
+loop(t,
+     put i.tl:0, ' ; ' t.tl:0, ' ; ' x.l(i,t) /
+);
+);
+putclose outputfile2;
+
+file outputfile3 /'RCPSP1_solution_zw.txt'/;
+put outputfile3;
+
+put 'Zielfunktionswert: ',z.l /
+put '**********************'
+
+putclose outputfile3;
+

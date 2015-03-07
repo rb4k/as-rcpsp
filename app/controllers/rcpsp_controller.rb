@@ -59,9 +59,9 @@ class RcpspController < ApplicationController
     f.close
 
 
-   # if File.exist?("RCPSP1_solution.txt")
-   #   File.delete("RCPSP1_solution.txt")
-   # end
+   if File.exist?("RCPSP1_solution.txt")
+     File.delete("RCPSP1_solution.txt")
+    end
 
     system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
 
@@ -74,14 +74,14 @@ class RcpspController < ApplicationController
   end
 
   def delete_old_plan
-    if File.exist?("RCPSP1_solution_kt.txt")
-      File.delete("RCPSP1_solution_kt.txt")
+    if File.exist?("RCPSP1_solution_vr.txt")
+      File.delete("RCPSP1_solution_vr.txt")
     end
-    if File.exist?("RCPSP1_solution_jt.txt")
-      File.delete("RCPSP1_solution_jt.txt")
+    if File.exist?("RCPSP1_solution_rr.txt")
+      File.delete("RCPSP1_solution_rr.txt")
     end
-    if File.exist?("RCPSP1_ofv.txt")
-      File.delete("RCPSP1_ofv.txt")
+    if File.exist?("RCPSP1_zw.txt")
+      File.delete("RCPSP1_zw.txt")
     end
     #@product_periods = ProductPeriod.all
     #@product_periods.each { |pro_per|
@@ -100,8 +100,8 @@ class RcpspController < ApplicationController
   end
 
   def read_optimization_results
-    if (File.exist?("RCPSP1_solution_kt.txt") and File.exists?("RCPSP1_solution_jt.txt"))
-      fi=File.open("RCPSP1_solution_kt.txt", "r")
+    if (File.exist?("RCPSP1_solution_vr.txt") and File.exists?("RCPSP1_solution_vr.txt"))
+      fi=File.open("RCPSP1_solution_vr.txt", "r")
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0].delete "kta "
@@ -115,7 +115,7 @@ class RcpspController < ApplicationController
         product_period.save
       }
       fi.close
-      fi=File.open("RCPSP1_solution_jt.txt", "r")
+      fi=File.open("RCPSP1_solution_rr.txt", "r")
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0].delete "jta "
@@ -131,9 +131,9 @@ class RcpspController < ApplicationController
     @product_periods = ProductPeriod.all
     render :template => "product_periods/index"
   end
-  def read_and_show_ofv
-    if File.exist?("MLCLSP_ofv.txt")
-      fi=File.open("MLCLSP_ofv.txt", "r")
+  def read_and_show_zw
+    if File.exist?("MLCLSP_zw.txt")
+      fi=File.open("MLCLSP_ofv.zw", "r")
       line=fi.readline
       fi.close
       sa=line.split(" ")

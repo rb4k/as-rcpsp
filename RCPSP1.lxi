@@ -1,0 +1,28 @@
+B 2 C o m p i l a t i o n
+B 232 Include File Summary
+B 244 E x e c u t i o n
+I 245 d
+I 254 FA
+I 263 FE
+I 272 SA
+I 281 SE
+I 291 MinimaleDauer
+B 294 Equation Listing    SOLVE RCPSP1 Using MIP From line 196
+D 295 ZielfunktionZeit
+D 301 JederVorgangEinmal
+D 360 Projektstruktur
+D 445 Kapazitaetsrestriktion
+B 594 Column Listing      SOLVE RCPSP1 Using MIP From line 196
+E 595 x
+E 624 z
+B 633 Model Statistics    SOLVE RCPSP1 Using MIP From line 196
+B 649 Solution Report     SOLVE RCPSP1 Using MIP From line 196
+F 687 ZielfunktionZeit
+F 693 JederVorgangEinmal
+F 708 Projektstruktur
+F 724 Kapazitaetsrestriktion
+G 760 x
+G 794 z
+B 807 E x e c u t i o n
+I 808 x
+I 828 FE

@@ -1,0 +1,10 @@
+Beispielvorgang1 ;         0.00 ;         2.00 ;         0.00 ;         2.00
+Beispielvorgang2 ;         2.00 ;         4.00 ;         2.00 ;         4.00
+Beispielvorgang3 ;         2.00 ;         3.00 ;         4.00 ;         5.00
+Beispielvorgang4 ;         2.00 ;         3.00 ;         7.00 ;         8.00
+Beispielvorgang5 ;         4.00 ;         6.00 ;         4.00 ;         6.00
+Beispielvorgang6 ;         3.00 ;         4.00 ;         5.00 ;         6.00
+Beispielvorgang7 ;         3.00 ;         5.00 ;         8.00 ;        10.00
+Beispielvorgang8 ;         6.00 ;        11.00 ;         6.00 ;        11.00
+Beispielvorgang9 ;         5.00 ;         6.00 ;        10.00 ;        11.00
+Beispielvorgang10 ;        11.00 ;        15.00 ;        11.00 ;        15.00
