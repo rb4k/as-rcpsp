@@ -11,7 +11,6 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
   <%= link_to "Verwaltung der Vorgangsrelationen", procedure_procedures_path %><br>
   <%= link_to "Verwaltung der Ressourcen", resources_path %><br>
   <%= link_to "Einteilung der Vorgänge zu Ressoucen", procedure_resources_path %><br>
-  <%= link_to "Verwaltung der Perioden", periods_path %><br>
   <br>
   <%= link_to "Einstellen des GAMS-Pfads muss noch gemacht werden!" %>
 
@@ -26,14 +25,19 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
     <p>
 
       Start der Projektplanung
-
-      <%= button_to "Optimiere", :controller => 'rcpsps', :action => 'optimize' %>
-      <%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results' %>
+    <table>
+      <thead>
+      <tr>
+      <th><%= button_to "Optimiere", :controller => 'rcpsps', :action => 'optimize' %></th>
+      <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results' %></th>
+      </tr>
+      </thead>
+      </table>
 
     </p>
 
     <% if @objective_function_value!=nil %>
-        Die minimale Vorgangsdauer beträgt <%=  @objective_function_value %> Zeiteinheiten  <br> <br>
+        Die minimale Vorgangsdauer beträgt <strong><%=  @objective_function_value %></strong> Zeiteinheiten  <br> <br>
         <%= button_to 'Ergebnis anzeigen', procedures_path, :class => "button", :method => :get %>
     <% end %>
 
