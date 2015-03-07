@@ -17,7 +17,7 @@
                   <li><%= link_to "Profil", current_user %></li>
                   <li><%= link_to "Einstellungen", edit_user_path(current_user) %></li>
                   <% if current_user.admin? %>
-                  <li><%= link_to "Projektplanung", rcpsp_start_path %></li>
+                  <li><%= link_to "Projektplanung", rcpsp_path %></li>
                   <% end %>
                   <li class="divider"></li>
                   <li>

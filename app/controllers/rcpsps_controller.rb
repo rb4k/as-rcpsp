@@ -1,6 +1,6 @@
 #encoding: UTF-8
 
-class RcpspController < ApplicationController
+class RcpspsController < ApplicationController
   respond_to :html, :json
   before_filter :signed_in_user
   before_filter :current_user#, only: [:admin_user]
@@ -25,7 +25,9 @@ class RcpspController < ApplicationController
     @procedures.each { |proc| printf(f, proc.name + "\n") }
     printf(f, "/;" + "\n\n")
 
-    printf(f, "set t / t0*t200 /;"+ "\n\n")
+    printf(f, "set t / t0*t")
+    Procedure.sum(:prot).to_s
+    printf(f, " /;"+ "\n\n")
 
     printf(f, "VN(h,i)=no;\n\n")
 
@@ -68,7 +70,7 @@ class RcpspController < ApplicationController
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 
-    render 'static_pages/rcpsp_start'
+    render 'static_pages/rcpsp'
 
 
   end

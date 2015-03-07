@@ -143,9 +143,9 @@ putclose outputfile1;
 file outputfile2 / 'RCPSP1_solution_x.txt'/;
 put outputfile2;
 
-loop(i,
 loop(t,
-     put i.tl:0, ' ; ' t.tl:0, ' ; ' x.l(i,t) /
+loop(i,
+     put x.l(i,t), ' ; 'i.tl:0, ' ; ' t.tl:0  /
 );
 );
 putclose outputfile2;

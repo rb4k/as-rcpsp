@@ -10,7 +10,6 @@ SampleApp::Application.routes.draw do
   resources :periods
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :rcpsp
 
   root to: 'static_pages#home'
 
@@ -21,14 +20,14 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/rcpsp_start', to: 'static_pages#rcpsp_start'
+  match '/rcpsp', to: 'static_pages#rcpsp'
 
 
-  match 'rcpsp/read_and_show_ofv', :to => 'rcpsp#read_and_show_ofv'
-  match 'rcpsp/read_optimization_results', :to => 'rcpsp#read_optimization_results'
-  match 'rcpsp/optimize', :to => 'rcpsp#optimize'
-  match 'rcpsp/delete_old_plan', :to => 'rcpsp#delete_old_plan'
-  match 'rcpsp/show_index_page', :to => 'rcpsp#show_index_page'
+  match 'rcpsp/read_and_show_ofv', :to => 'rcpsps#read_and_show_ofv'
+  match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results'
+  match 'rcpsp/optimize', :to => 'rcpsps#optimize'
+  match 'rcpsp/delete_old_plan', :to => 'rcpsps#delete_old_plan'
+  match 'rcpsp/show_index_page', :to => 'rcpsps#show_index_page'
 
 
 

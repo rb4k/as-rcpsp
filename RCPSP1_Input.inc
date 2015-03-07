@@ -19,7 +19,7 @@ Beispielvorgang9
 Beispielvorgang10
 /;
 
-set t / t0*t200 /;
+set t / t0*t /;
 
 VN(h,i)=no;
 
