@@ -43,8 +43,9 @@
 
 
   <%= test = @user.resource_id%>
-  <%= test2 = ProcedureResource.sum(:procedure_id, :conditions => {:resource_id => test})%>
-  <% @procedures.each do |procedure| %>
+  <%= test1 = @procedure_resource.resource_id %>
+
+  <% @procedures.find(ProcedureResource.find(@user.resource_id)).each do |procedure| %>
       <tr>
         <td><%= procedure.name %></td>
         <td><%= procedure.kapabe %></td>

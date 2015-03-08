@@ -22,8 +22,8 @@ namespace :db do
 
     (3..10).each do |n|
 #      name = Faker::Name.name
-      name = "Nutzer-#{n+1}"
-      email = "example-#{n+1}@railstutorial.org"
+      name = "Nutzer-#{n}"
+      email = "example-#{n}@railstutorial.org"
       password = "password"
       capacity = n
       resource_id = rand(1..5)
