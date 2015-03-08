@@ -1,4 +1,7 @@
 class ProceduresController < ApplicationController
+  respond_to :html, :json
+  before_filter :signed_in_user
+  before_filter :admin_user
 # GET /procedures
 # GET /procedures.json
   def index
@@ -68,4 +71,18 @@ class ProceduresController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_path, notice: "Bitte anmelden."
+    end
+  end
+
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
+
 end

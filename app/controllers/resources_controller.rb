@@ -1,4 +1,7 @@
 class ResourcesController < ApplicationController
+  respond_to :html, :json
+  before_filter :signed_in_user, only: [:edit, :update, :new, :create, :destroy]
+  before_filter :admin_user, only: [:edit, :update, :new, :create, :destroy]
 # GET /resources
 # GET /resources.json
   def index
@@ -68,4 +71,23 @@ class ResourcesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to(root_path)
+    end
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
+  end
+
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
+
 end

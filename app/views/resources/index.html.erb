@@ -21,8 +21,10 @@
     <td><%= resource.ocr %></td>
     <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
     <td><%= link_to 'Anzeigen', resource %></td>
+    <% if current_user.admin? %>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>
     <td><%= link_to 'Löschen', resource, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </tbody>
@@ -30,6 +32,8 @@
 
 <br />
 
+<% if current_user.admin? %>
 <%= button_to 'Neue Ressource anlegen', new_resource_path, :class => "button", :method => :get %>
+    <% end %>
 <%= button_to 'Zurück zur Projektplanung', rcpsp_path, :class => "button", :method => :get %>
 

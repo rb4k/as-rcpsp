@@ -50,11 +50,19 @@
         <td><%= procedure.sa %></td>
         <td><%= procedure.fe %></td>
         <td><%= procedure.se %></td>
-        <td><%= link_to 'Anzeigen', procedure %></td>
-        <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
-        <td><%= link_to 'Löschen', procedure, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
+        <% if current_user.admin? %>
+            <td><%= link_to 'Anzeigen', procedure %></td>
+            <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
+            <td><%= link_to 'Löschen', procedure, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
+        <% end %>
       </tr>
   <% end %>
   </tbody>
 </table>
   <%= button_to 'Zurück', users_path, :class => "button", :method => :get %>
+
+<br>
+
+<thead>
+*FA=frühester Anfangszeitpunkt, SA=spätester Anfangszeitpunkt, FE=frühester Endzeitpunkt, SE=spätester Endzeitpunkt
+</thead>

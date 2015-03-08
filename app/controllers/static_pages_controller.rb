@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    #@capacity = current_user.capacity.build if signed_in?
   end
 
   def help
@@ -12,6 +11,6 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def start
+  def rcpsp
   end
 end

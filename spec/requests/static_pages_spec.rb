@@ -13,7 +13,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading) { 'Transportplanung 1.1' }
+    let(:heading) { 'Projektplanung' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
@@ -58,9 +58,9 @@ describe "Static pages" do
     click_link "Melde Dich JETZT an!"
     page.should have_selector 'title', text: full_title('Anmeldung')
     click_link "Home"
-    page.should have_selector 'h1', text: 'Transportplanung 1.1 (Demoanwendung mit Tests)'
-    click_link "Transportplanung 1.1"
-    page.should have_selector 'h1', text: 'Transportplanung 1.1 (Demoanwendung mit Tests)'
+    page.should have_selector 'h1', text: 'Projektplanung'
+    click_link "Projektplanung"
+    page.should have_selector 'h1', text: 'Projektplanung'
   end
 
 

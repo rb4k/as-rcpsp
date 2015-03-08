@@ -18,7 +18,7 @@
         0.00 ; Beispielvorgang8 ; t1
         0.00 ; Beispielvorgang9 ; t1
         0.00 ; Beispielvorgang10 ; t1
-        1.00 ; Beispielvorgang1 ; t2
+        0.00 ; Beispielvorgang1 ; t2
         0.00 ; Beispielvorgang2 ; t2
         0.00 ; Beispielvorgang3 ; t2
         0.00 ; Beispielvorgang4 ; t2
@@ -30,7 +30,7 @@
         0.00 ; Beispielvorgang10 ; t2
         0.00 ; Beispielvorgang1 ; t3
         0.00 ; Beispielvorgang2 ; t3
-        1.00 ; Beispielvorgang3 ; t3
+        0.00 ; Beispielvorgang3 ; t3
         0.00 ; Beispielvorgang4 ; t3
         0.00 ; Beispielvorgang5 ; t3
         0.00 ; Beispielvorgang6 ; t3
@@ -49,7 +49,7 @@
         0.00 ; Beispielvorgang9 ; t4
         0.00 ; Beispielvorgang10 ; t4
         0.00 ; Beispielvorgang1 ; t5
-        1.00 ; Beispielvorgang2 ; t5
+        0.00 ; Beispielvorgang2 ; t5
         0.00 ; Beispielvorgang3 ; t5
         0.00 ; Beispielvorgang4 ; t5
         0.00 ; Beispielvorgang5 ; t5
@@ -71,8 +71,8 @@
         0.00 ; Beispielvorgang1 ; t7
         0.00 ; Beispielvorgang2 ; t7
         0.00 ; Beispielvorgang3 ; t7
-        1.00 ; Beispielvorgang4 ; t7
-        1.00 ; Beispielvorgang5 ; t7
+        0.00 ; Beispielvorgang4 ; t7
+        0.00 ; Beispielvorgang5 ; t7
         0.00 ; Beispielvorgang6 ; t7
         0.00 ; Beispielvorgang7 ; t7
         0.00 ; Beispielvorgang8 ; t7
@@ -83,7 +83,7 @@
         0.00 ; Beispielvorgang3 ; t8
         0.00 ; Beispielvorgang4 ; t8
         0.00 ; Beispielvorgang5 ; t8
-        1.00 ; Beispielvorgang6 ; t8
+        0.00 ; Beispielvorgang6 ; t8
         0.00 ; Beispielvorgang7 ; t8
         0.00 ; Beispielvorgang8 ; t8
         0.00 ; Beispielvorgang9 ; t8
@@ -105,7 +105,7 @@
         0.00 ; Beispielvorgang5 ; t10
         0.00 ; Beispielvorgang6 ; t10
         0.00 ; Beispielvorgang7 ; t10
-        1.00 ; Beispielvorgang8 ; t10
+        0.00 ; Beispielvorgang8 ; t10
         0.00 ; Beispielvorgang9 ; t10
         0.00 ; Beispielvorgang10 ; t10
         0.00 ; Beispielvorgang1 ; t11
@@ -114,7 +114,7 @@
         0.00 ; Beispielvorgang4 ; t11
         0.00 ; Beispielvorgang5 ; t11
         0.00 ; Beispielvorgang6 ; t11
-        1.00 ; Beispielvorgang7 ; t11
+        0.00 ; Beispielvorgang7 ; t11
         0.00 ; Beispielvorgang8 ; t11
         0.00 ; Beispielvorgang9 ; t11
         0.00 ; Beispielvorgang10 ; t11
@@ -126,7 +126,7 @@
         0.00 ; Beispielvorgang6 ; t12
         0.00 ; Beispielvorgang7 ; t12
         0.00 ; Beispielvorgang8 ; t12
-        1.00 ; Beispielvorgang9 ; t12
+        0.00 ; Beispielvorgang9 ; t12
         0.00 ; Beispielvorgang10 ; t12
         0.00 ; Beispielvorgang1 ; t13
         0.00 ; Beispielvorgang2 ; t13
@@ -167,7 +167,7 @@
         0.00 ; Beispielvorgang7 ; t16
         0.00 ; Beispielvorgang8 ; t16
         0.00 ; Beispielvorgang9 ; t16
-        1.00 ; Beispielvorgang10 ; t16
+        0.00 ; Beispielvorgang10 ; t16
         0.00 ; Beispielvorgang1 ; t17
         0.00 ; Beispielvorgang2 ; t17
         0.00 ; Beispielvorgang3 ; t17
@@ -298,3 +298,53 @@
         0.00 ; Beispielvorgang8 ; t29
         0.00 ; Beispielvorgang9 ; t29
         0.00 ; Beispielvorgang10 ; t29
+        0.00 ; Beispielvorgang1 ; t30
+        0.00 ; Beispielvorgang2 ; t30
+        0.00 ; Beispielvorgang3 ; t30
+        0.00 ; Beispielvorgang4 ; t30
+        0.00 ; Beispielvorgang5 ; t30
+        0.00 ; Beispielvorgang6 ; t30
+        0.00 ; Beispielvorgang7 ; t30
+        0.00 ; Beispielvorgang8 ; t30
+        0.00 ; Beispielvorgang9 ; t30
+        0.00 ; Beispielvorgang10 ; t30
+        0.00 ; Beispielvorgang1 ; t31
+        0.00 ; Beispielvorgang2 ; t31
+        0.00 ; Beispielvorgang3 ; t31
+        0.00 ; Beispielvorgang4 ; t31
+        0.00 ; Beispielvorgang5 ; t31
+        0.00 ; Beispielvorgang6 ; t31
+        0.00 ; Beispielvorgang7 ; t31
+        0.00 ; Beispielvorgang8 ; t31
+        0.00 ; Beispielvorgang9 ; t31
+        0.00 ; Beispielvorgang10 ; t31
+        0.00 ; Beispielvorgang1 ; t32
+        0.00 ; Beispielvorgang2 ; t32
+        0.00 ; Beispielvorgang3 ; t32
+        0.00 ; Beispielvorgang4 ; t32
+        0.00 ; Beispielvorgang5 ; t32
+        0.00 ; Beispielvorgang6 ; t32
+        0.00 ; Beispielvorgang7 ; t32
+        0.00 ; Beispielvorgang8 ; t32
+        0.00 ; Beispielvorgang9 ; t32
+        0.00 ; Beispielvorgang10 ; t32
+        0.00 ; Beispielvorgang1 ; t33
+        0.00 ; Beispielvorgang2 ; t33
+        0.00 ; Beispielvorgang3 ; t33
+        0.00 ; Beispielvorgang4 ; t33
+        0.00 ; Beispielvorgang5 ; t33
+        0.00 ; Beispielvorgang6 ; t33
+        0.00 ; Beispielvorgang7 ; t33
+        0.00 ; Beispielvorgang8 ; t33
+        0.00 ; Beispielvorgang9 ; t33
+        0.00 ; Beispielvorgang10 ; t33
+        0.00 ; Beispielvorgang1 ; t34
+        0.00 ; Beispielvorgang2 ; t34
+        0.00 ; Beispielvorgang3 ; t34
+        0.00 ; Beispielvorgang4 ; t34
+        0.00 ; Beispielvorgang5 ; t34
+        0.00 ; Beispielvorgang6 ; t34
+        0.00 ; Beispielvorgang7 ; t34
+        0.00 ; Beispielvorgang8 ; t34
+        0.00 ; Beispielvorgang9 ; t34
+        0.00 ; Beispielvorgang10 ; t34
