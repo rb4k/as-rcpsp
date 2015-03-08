@@ -1,76 +1,47 @@
 
---- Job RCPSP1.gms Start 03/07/15 17:11:06 24.3.3 r48116 WIN-VS8 x86 32bit/MS Windows
-GAMS 24.3.3   Copyright (C) 1987-2014 GAMS Development. All rights reserved
-Licensee: Kurslizenz                                     S140303/0001AW-GEN
-          Leibniz University Hannover, Lehrstuhl fuer ProduktionswirtDC6657
-          License for teaching and research at degree granting institutions
+--- Job RCPSP1.gms Start 03/08/15 10:15:46 24.4.1 r50296 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.1   Copyright (C) 1987-2014 GAMS Development. All rights reserved
+Licensee: GAMS Development Corporation, Washington, DC   G871201/0000CA-ANY
+          Free Demo,  202-342-0180,  sales@gams.com,  www.gams.com   DC0000
 --- Starting compilation
 --- RCPSP1.gms(34) 2 Mb
---- .RCPSP1_Input.inc(20) 3 Mb 1 Error
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(21) 3 Mb 2 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(22) 3 Mb 3 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(23) 3 Mb 4 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(24) 3 Mb 5 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(25) 3 Mb 6 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(26) 3 Mb 7 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(27) 3 Mb 8 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(28) 3 Mb 9 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(29) 3 Mb 10 Errors
-*** Error 172 in C:\Sites\as-rcpsp\RCPSP1_Input.inc
-    Element is redefined
---- .RCPSP1_Input.inc(89) 3 Mb
---- RCPSP1.gms(62) 3 Mb 11 Errors
-*** Error 198 in C:\Sites\as-rcpsp\RCPSP1.gms
-    Set used in 'ord' or lag is not ordered.
-       Hint: Some of the elements of the set were used before this
-       was initialized and the order was different from the order used
-       in this set. Try to initialize the set earlier.
-       $offOrder allows lag operations on dynamic sets, reset with
-       $onOrder
---- RCPSP1.gms(83) 3 Mb 12 Errors
-*** Error 198 in C:\Sites\as-rcpsp\RCPSP1.gms
-    Set used in 'ord' or lag is not ordered.
-       Hint: Some of the elements of the set were used before this
-       was initialized and the order was different from the order used
-       in this set. Try to initialize the set earlier.
-       $offOrder allows lag operations on dynamic sets, reset with
-       $onOrder
---- RCPSP1.gms(129) 3 Mb 13 Errors
-*** Error 257 in C:\Sites\as-rcpsp\RCPSP1.gms
-    Solve statement not checked because of previous errors
---- RCPSP1.gms(131) 3 Mb 14 Errors
-*** Error 141 in C:\Sites\as-rcpsp\RCPSP1.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- RCPSP1.gms(156) 3 Mb 15 Errors
-*** Error 141 in C:\Sites\as-rcpsp\RCPSP1.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- RCPSP1.gms(160) 3 Mb 15 Errors
-*** Status: Compilation error(s)
---- Job RCPSP1.gms Stop 03/07/15 17:11:06 elapsed 0:00:00.081
-Exit code = 2
+--- .RCPSP1_Input.inc(67) 3 Mb
+--- RCPSP1.gms(160) 3 Mb
+--- Starting execution: elapsed 0:00:00.050
+--- RCPSP1.gms(179) 4 Mb
+--- Generating MIP model RCPSP1
+--- RCPSP1.gms(196) 4 Mb
+---   66 rows  34 columns  179 non-zeroes
+---   33 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.495
+
+IBM ILOG CPLEX   24.4.1 r50296 Released Dec 20, 2014 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+Infeasibility row 'JederVorgangEinmal(Beispielvorgang3)':  0  = 1.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+MIP status(103): integer infeasible
+Cplex Time: 0.00sec (det. 0.02 ticks)
+CPLEX Error  1217: No solution exists.
+Problem is integer infeasible.
+--- Restarting execution
+--- RCPSP1.gms(196) 2 Mb
+--- Reading solution for model RCPSP1
+--- Executing after solve: elapsed 0:00:01.061
+--- RCPSP1.gms(226) 3 Mb
+--- Putfile outputfile1 C:\Sites\as-rcpsp\RCPSP1_solution_zeit.txt
+--- Putfile outputfile2 C:\Sites\as-rcpsp\RCPSP1_solution_x.txt
+--- Putfile outputfile3 C:\Sites\as-rcpsp\RCPSP1_solution_zw.txt
+*** Status: Normal completion
+--- Job RCPSP1.gms Stop 03/08/15 10:15:47 elapsed 0:00:01.065

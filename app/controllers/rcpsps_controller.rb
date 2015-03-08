@@ -85,8 +85,8 @@ class RcpspsController < ApplicationController
      File.delete("RCPSP1_solution.txt")
     end
 
-    system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
-
+    #system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
+    system "C:\\GAMS\\win64\\24.3\\gams RCPSP1"
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 

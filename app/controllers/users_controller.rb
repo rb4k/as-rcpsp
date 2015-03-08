@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @procedure_resource = ProcedureResource.find_by_resource_id(@user.resource_id)
+    @resources = Resource.all
+    @procedures = Procedure.all
   end
 
   def new
