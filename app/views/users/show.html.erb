@@ -41,11 +41,7 @@
   </thead>
   <tbody>
 
-
-  <%= test = @user.resource_id%>
-  <%= test1 = @procedure_resource.resource_id %>
-
-  <% @procedures.find(ProcedureResource.find(@user.resource_id)).each do |procedure| %>
+  <% resource.procedures.each do |procedure| %>
       <tr>
         <td><%= procedure.name %></td>
         <td><%= procedure.kapabe %></td>

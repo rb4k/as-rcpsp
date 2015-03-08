@@ -25,7 +25,7 @@ namespace :db do
       name = "Nutzer-#{n}"
       email = "example-#{n}@railstutorial.org"
       password = "password"
-      capacity = n
+      capacity = rand(1..5)
       resource_id = rand(1..5)
       User.create!(name: name,
                    email: email,
