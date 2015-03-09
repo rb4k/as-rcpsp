@@ -18,7 +18,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
-                     capacity: "1", resource_id: "2",
+                     capacity: 1, resource_id: 2,
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -59,12 +59,12 @@ describe User do
   end
 
   describe "when capacity is not present" do
-    before { @user.capacity = " " }
+    before { @user.capacity = 0 }
     it { should_not be_valid }
   end
 
   describe "when resource is not present" do
-    before { @user.resource_id = " " }
+    before { @user.resource_id = 0 }
     it { should_not be_valid }
   end
 

@@ -65,7 +65,7 @@ describe "User pages" do
     before { visit signup_path }
 
     it { should have_selector('h1', text: 'Melde Dich an') }
-    it { should have_selector('title', text: full_title('Anmeldung')) }
+    it { should have_selector('title', text: full_title('Melde Dich an')) }
   end
 
   describe "signup" do
@@ -84,8 +84,8 @@ describe "User pages" do
       before do
         fill_in "Name", with: "Example User"
         fill_in "Email", with: "user@example.com"
-        fill_in "Kapazität", with: "1"
-        fill_in "Welche Ressource?", with: "2"
+        fill_in "Kapazität", with: 1
+        fill_in "Welche Ressource?", with: 2
         fill_in "Password", with: "foobar"
         fill_in "Bestätigung", with: "foobar"
       end
