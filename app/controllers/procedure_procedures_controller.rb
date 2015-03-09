@@ -1,7 +1,7 @@
 class ProcedureProceduresController < ApplicationController
     respond_to :html, :json
     before_filter :signed_in_user
-    before_filter :admin_user
+  before_filter :admin_user
 # GET /procedure_procedures
 # GET /procedure_procedures.json
   def index

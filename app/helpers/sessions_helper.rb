@@ -9,7 +9,7 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  # Definiert die Zuweiseung
+  # Definiert die Zuweisung
   def current_user=(user)
     @current_user = User
   end

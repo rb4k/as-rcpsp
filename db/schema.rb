@@ -58,9 +58,8 @@ ActiveRecord::Schema.define(:version => 20150307174055) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "project_id"
     t.integer  "resource_id"
-    t.string   "capacity"
+    t.integer  "capacity"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.string   "password_digest"

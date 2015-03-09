@@ -18,7 +18,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
-                     capacity: "1", resource: "Ressource2",
+                     capacity: "1", resource_id: "2",
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -34,7 +34,7 @@ describe User do
   it { should respond_to(:authenticate) }
 
   it { should respond_to(:capacity) }
-  it { should respond_to(:resource) }
+  it { should respond_to(:resource_id) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -64,7 +64,7 @@ describe User do
   end
 
   describe "when resource is not present" do
-    before { @user.resource = " " }
+    before { @user.resource_id = " " }
     it { should_not be_valid }
   end
 

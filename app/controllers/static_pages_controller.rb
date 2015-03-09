@@ -11,6 +11,6 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def rcpsp
+  def start
   end
 end

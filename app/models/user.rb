@@ -13,10 +13,9 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :capacity, :project_id, :resource_id
+  attr_accessible :email, :name, :password, :password_confirmation, :capacity, :resource_id
   has_secure_password
 
-  belongs_to :project
   belongs_to :resource
 
   before_save { |user| user.email = email.downcase }
