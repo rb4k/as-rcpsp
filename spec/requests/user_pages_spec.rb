@@ -84,6 +84,8 @@ describe "User pages" do
       before do
         fill_in "Name", with: "Example User"
         fill_in "Email", with: "user@example.com"
+        fill_in "Kapazität", with: "1"
+        fill_in "Welche Ressource?", with: "Ressource2"
         fill_in "Password", with: "foobar"
         fill_in "Bestätigung", with: "foobar"
       end
@@ -129,6 +131,8 @@ describe "User pages" do
       before do
         fill_in "Name", with: new_name
         fill_in "Email", with: new_email
+        fill_in "Kapazität", with: new_capacity
+        fill_in "Welche Ressource?", with: new_resource
         fill_in "Password", with: user.password
         fill_in "Bestätigung", with: user.password
         click_button "Speichere Änderungen"

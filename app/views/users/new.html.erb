@@ -18,7 +18,7 @@
       <%= f.label :resource_id, "Welche Ressource?" %>
       <%= f.collection_select :resource_id, Resource.all, :id, :name %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Passwort" %>
       <%= f.password_field :password %>
 
       <%= f.label :password_confirmation, "Bestätigung" %>

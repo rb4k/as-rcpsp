@@ -18,6 +18,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
+                     capacity: "1", resource: "Ressource2",
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -32,6 +33,8 @@ describe User do
   it { should respond_to(:admin)}
   it { should respond_to(:authenticate) }
 
+  it { should respond_to(:capacity) }
+  it { should respond_to(:resource) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -52,6 +55,16 @@ describe User do
 
   describe "when email is not present" do
     before { @user.email = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when capacity is not present" do
+    before { @user.capacity = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when resource is not present" do
+    before { @user.resource = " " }
     it { should_not be_valid }
   end
 

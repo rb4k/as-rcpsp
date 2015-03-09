@@ -55,12 +55,11 @@ describe "Static pages" do
     click_link "Kontakt"
     page.should have_selector 'title', text: full_title('Kontakt')
     click_link "Startseite"
-    click_link "Anmelden"
-    page.should have_selector 'title', text: full_title('Anmeldung')
-    click_link "Startseite"
     page.should have_selector 'h1', text: 'Projektplanung'
     click_link "Projektplanung"
     page.should have_selector 'h1', text: 'Projektplanung'
+    click_link "Anmelden"
+    page.should have_selector 'title', text: full_title('Melde Dich an')
   end
 
 
