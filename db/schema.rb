@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20150307174055) do
   end
 
   create_table "procedure_procedures", :force => true do |t|
-    t.integer  "project_id"
     t.integer  "prepro_id"
     t.integer  "sucpro_id"
     t.datetime "created_at", :null => false

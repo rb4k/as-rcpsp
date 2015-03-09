@@ -6,8 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @resources = Resource.all
-    @procedures = Procedure.all
   end
 
   def new
