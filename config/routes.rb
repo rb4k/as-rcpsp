@@ -27,8 +27,8 @@ SampleApp::Application.routes.draw do
   match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results'
   match 'rcpsp/optimize', :to => 'rcpsps#optimize'
 
-  match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results1'
-  match 'rcpsp/optimize', :to => 'rcpsps#optimize1'
+  match 'rcpsp/read_optimization_results2', :to => 'rcpsps#read_optimization_results2'
+  match 'rcpsp/optimize2', :to => 'rcpsps#optimize2'
 
 
 

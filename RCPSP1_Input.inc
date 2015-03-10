@@ -35,33 +35,33 @@ VN('Beispielvorgang7','Beispielvorgang9')=yes;
 VN('Beispielvorgang8','Beispielvorgang10')=yes;
 VN('Beispielvorgang9','Beispielvorgang10')=yes;
 
-d('Beispielvorgang1')= 2;
-d('Beispielvorgang2')= 3;
-d('Beispielvorgang3')= 4;
+d('Beispielvorgang1')= 5;
+d('Beispielvorgang2')= 4;
+d('Beispielvorgang3')= 2;
 d('Beispielvorgang4')= 1;
-d('Beispielvorgang5')= 2;
+d('Beispielvorgang5')= 1;
 d('Beispielvorgang6')= 2;
-d('Beispielvorgang7')= 5;
-d('Beispielvorgang8')= 3;
-d('Beispielvorgang9')= 3;
+d('Beispielvorgang7')= 2;
+d('Beispielvorgang8')= 4;
+d('Beispielvorgang9')= 4;
 d('Beispielvorgang10')= 1;
 
 k(i,r)=0;
 
-k('Beispielvorgang1','Ressource1')= 1;
-k('Beispielvorgang2','Ressource2')= 2;
+k('Beispielvorgang1','Ressource1')= 2;
+k('Beispielvorgang2','Ressource2')= 1;
 k('Beispielvorgang3','Ressource3')= 2;
-k('Beispielvorgang4','Ressource4')= 1;
-k('Beispielvorgang5','Ressource5')= 1;
+k('Beispielvorgang4','Ressource4')= 2;
+k('Beispielvorgang5','Ressource5')= 2;
 k('Beispielvorgang6','Ressource1')= 2;
 k('Beispielvorgang7','Ressource2')= 1;
 k('Beispielvorgang8','Ressource3')= 2;
-k('Beispielvorgang9','Ressource4')= 1;
-k('Beispielvorgang10','Ressource5')= 1;
+k('Beispielvorgang9','Ressource4')= 2;
+k('Beispielvorgang10','Ressource5')= 2;
 
-KP('Ressource1')= 16;
-KP('Ressource2')= 12;
-KP('Ressource3')= 13;
-KP('Ressource4')= 2;
-KP('Ressource5')= 5;
+KP('Ressource1')= 14;
+KP('Ressource2')= 13;
+KP('Ressource3')= 9;
+KP('Ressource4')= 12;
+KP('Ressource5')= 0;
 

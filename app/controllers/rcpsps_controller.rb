@@ -139,15 +139,15 @@ class RcpspsController < ApplicationController
     render :template => "static_pages/rcpsp"
   end
 
-  def optimize1
-    if File.exist?("RCPSP1_solution_x.txt")
-      File.delete("RCPSP1_solution_x.txt")
+  def optimize2
+    if File.exist?("RCPSP2_solution_x.txt")
+      File.delete("RCPSP2_solution_x.txt")
     end
-    if File.exist?("RCPSP1_solution_zeit.txt")
-      File.delete("RCPSP1_solution_zeit.txt")
+    if File.exist?("RCPSP2_solution_zeit.txt")
+      File.delete("RCPSP2_solution_zeit.txt")
     end
-    if File.exist?("RCPSP1_solution_zw.txt")
-      File.delete("RCPSP1_solution_zw.txt")
+    if File.exist?("RCPSP2_solution_zw.txt")
+      File.delete("RCPSP2_solution_zw.txt")
     end
 
     @resources = Resource.all
@@ -165,13 +165,13 @@ class RcpspsController < ApplicationController
       proc.save
     }
 
-    @objective_function_value=nil
+    @objective_function_value2=nil
 
 
-    if File.exist?("RCSPSP1_Input.inc")
-      File.delete("RCPSP1_Input.inc")
+    if File.exist?("RCSPSP2_Input.inc")
+      File.delete("RCPSP2_Input.inc")
     end
-    f=File.new("RCPSP1_Input.inc", "w")
+    f=File.new("RCPSP2_Input.inc", "w")
 
     printf(f, "set r / \n")
     @resources.each { |res| printf(f, res.name + "\n") }
@@ -213,12 +213,22 @@ class RcpspsController < ApplicationController
 
     printf(f, "\n")
 
+    @resources.each { |zusatz|
+      printf(f, "oc('" + zusatz.name + "')= "+ zusatz.ocr.to_s + ";\n")
+    }
+
+    printf(f, "\n")
+
+    deadline = (@project.deadline - DateTime.now).to_i / 86400
+
+    printf(f, "Deadline=" + deadline.to_s + ";\n")
+
 
     f.close
 
 
-    if File.exist?("RCPSP1_solution.txt")
-      File.delete("RCPSP1_solution.txt")
+    if File.exist?("RCPSP2_solution.txt")
+      File.delete("RCPSP2_solution.txt")
     end
 
 
@@ -231,7 +241,7 @@ class RcpspsController < ApplicationController
 
   end
 
-  def read_optimization_results1
+  def read_optimization_results2
     @procedures = Procedure.all
     @project = Project.find(1)
 
