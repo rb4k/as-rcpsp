@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "path"
-    t.datetime "deadline"
+    t.date "deadline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

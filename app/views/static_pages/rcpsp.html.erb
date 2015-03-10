@@ -38,11 +38,35 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
     <table>
       <thead>
       <tr>
-      <th><%= button_to "Optimiere", :controller => 'rcpsps', :action => 'optimize' %></th>
+      <th><%= button_to "Optimiere Zeitplanung", :controller => 'rcpsps', :action => 'optimize' %></th>
       <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results' %></th>
       </tr>
       </thead>
       </table>
+    </p>
+
+    <%= form_for(@project) do |f| %>
+        <div class="field">
+          <%= f.label :deadline, "Deadline-Termin" %>
+          <%= f.date_select :deadline %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Deadline aktualisieren'  %>
+        </div>
+    <% end %>
+
+
+    <p>
+      Start der Kostenplanung
+    <table>
+      <thead>
+      <tr>
+        <th><%= button_to "Optimiere Kostenplanung", :controller => 'rcpsps', :action => 'optimize1' %></th>
+        <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results1' %></th>
+      </tr>
+      </thead>
+    </table>
+
     </p>
 
 

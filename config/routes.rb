@@ -23,12 +23,12 @@ SampleApp::Application.routes.draw do
   match '/rcpsp', to: 'static_pages#rcpsp'
 
 
-  match 'rcpsp/read_and_show_ofv', :to => 'rcpsps#read_and_show_ofv'
+
   match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results'
   match 'rcpsp/optimize', :to => 'rcpsps#optimize'
-  match 'rcpsp/delete_old_plan', :to => 'rcpsps#delete_old_plan'
-  match 'rcpsp/show_index_page', :to => 'rcpsps#show_index_page'
 
+  match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results1'
+  match 'rcpsp/optimize', :to => 'rcpsps#optimize1'
 
 
 
