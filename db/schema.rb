@@ -48,18 +48,19 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "path"
-    t.date "deadline"
+    t.date     "deadline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "resources", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.integer  "totalcapa"
+    t.datetime "created_at",                :null => false
+    t.integer  "oce",        :default => 0
     t.integer  "cost"
     t.integer  "ocr"
-    t.datetime "updated_at", :null => false
+    t.integer  "ocd",        :default => 0
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "users", :force => true do |t|

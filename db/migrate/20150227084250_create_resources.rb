@@ -3,9 +3,10 @@ class CreateResources < ActiveRecord::Migration
     create_table :resources do |t|
       t.string :name
       t.datetime :created_at
-      t.integer :totalcapa
+      t.integer :oce, :default => 0
       t.integer :cost
       t.integer :ocr
+      t.integer :ocd, :default => 0
 
       t.timestamps
     end

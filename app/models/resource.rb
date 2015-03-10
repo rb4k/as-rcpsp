@@ -1,5 +1,5 @@
 class Resource < ActiveRecord::Base
-  attr_accessible :created_at, :name, :totalcapa, :ocr, :cost
+  attr_accessible :created_at, :name, :ocd, :ocr, :cost, :oce
 
   has_many :procedure_resources, :dependent => :destroy
   has_many :procedures, through: :procedure_resources

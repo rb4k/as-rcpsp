@@ -19,7 +19,7 @@ Beispielvorgang9
 Beispielvorgang10
 /;
 
-set t / t0*t26 /;
+set t / t0*t27 /;
 
 VN(h,i)=no;
 
@@ -35,33 +35,33 @@ VN('Beispielvorgang7','Beispielvorgang9')=yes;
 VN('Beispielvorgang8','Beispielvorgang10')=yes;
 VN('Beispielvorgang9','Beispielvorgang10')=yes;
 
-d('Beispielvorgang1')= 5;
-d('Beispielvorgang2')= 4;
+d('Beispielvorgang1')= 4;
+d('Beispielvorgang2')= 2;
 d('Beispielvorgang3')= 2;
-d('Beispielvorgang4')= 1;
-d('Beispielvorgang5')= 1;
-d('Beispielvorgang6')= 2;
-d('Beispielvorgang7')= 2;
-d('Beispielvorgang8')= 4;
-d('Beispielvorgang9')= 4;
-d('Beispielvorgang10')= 1;
+d('Beispielvorgang4')= 4;
+d('Beispielvorgang5')= 5;
+d('Beispielvorgang6')= 4;
+d('Beispielvorgang7')= 1;
+d('Beispielvorgang8')= 1;
+d('Beispielvorgang9')= 2;
+d('Beispielvorgang10')= 2;
 
 k(i,r)=0;
 
-k('Beispielvorgang1','Ressource1')= 2;
+k('Beispielvorgang1','Ressource1')= 1;
 k('Beispielvorgang2','Ressource2')= 1;
 k('Beispielvorgang3','Ressource3')= 2;
-k('Beispielvorgang4','Ressource4')= 2;
+k('Beispielvorgang4','Ressource4')= 1;
 k('Beispielvorgang5','Ressource5')= 2;
 k('Beispielvorgang6','Ressource1')= 2;
 k('Beispielvorgang7','Ressource2')= 1;
-k('Beispielvorgang8','Ressource3')= 2;
-k('Beispielvorgang9','Ressource4')= 2;
+k('Beispielvorgang8','Ressource3')= 1;
+k('Beispielvorgang9','Ressource4')= 1;
 k('Beispielvorgang10','Ressource5')= 2;
 
-KP('Ressource1')= 14;
-KP('Ressource2')= 13;
-KP('Ressource3')= 9;
-KP('Ressource4')= 12;
-KP('Ressource5')= 0;
+KP('Ressource1')= 23;
+KP('Ressource2')= 14;
+KP('Ressource3')= 1;
+KP('Ressource4')= 2;
+KP('Ressource5')= 7;
 

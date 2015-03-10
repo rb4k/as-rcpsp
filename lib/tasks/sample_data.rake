@@ -7,7 +7,7 @@ namespace :db do
                          email: "example@railstutorial.org",
                          password: "foobar",
                          password_confirmation: "foobar",
-                         capacity: rand(10..15),
+                         capacity: 2,
                          resource_id: 1)
     admin.toggle!(:admin)
 
@@ -16,7 +16,7 @@ namespace :db do
                  email: "susi@sorglos.de",
                  password: "foobar",
                  password_confirmation: "foobar",
-                 capacity: rand(10..15),
+                 capacity: 2,
                  resource_id: 2)
 
 
@@ -25,8 +25,8 @@ namespace :db do
       name = "Nutzer-#{n}"
       email = "example-#{n}@railstutorial.org"
       password = "password"
-      capacity = rand(1..5)
-      resource_id = rand(1..5)
+      capacity = 2
+      resource_id = rand(1..2)
       User.create!(name: name,
                    email: email,
                    password: password,
@@ -39,14 +39,14 @@ namespace :db do
 
     (1..10).each do |n|
       name = "Beispielvorgang#{n}"
-      kapabe = rand(1..2)
+      kapabe = rand(8..10)
       prot = rand(1..5)
       Procedure.create!(name: name,
                    kapabe: kapabe,
                    prot: prot)
     end
 
-    (1..5).each do |n|
+    (1..2).each do |n|
       name = "Ressource#{n}"
       ocr = rand(3..5)
       cost = rand(1..3)
@@ -70,17 +70,17 @@ namespace :db do
 
     ProRes1 = ProcedureResource.create!(procedure_id: 1, resource_id: 1)
     ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 2)
-    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 3)
-    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 4)
-    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 5)
-    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 1)
-    ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 2)
-    ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 3)
-    ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 4)
-    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 5)
+    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 1)
+    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 2)
+    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 1)
+    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 2)
+    ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 1)
+    ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 2)
+    ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 1)
+    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 2)
 
 
-    Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.parse('2015-07-11'))
+    Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.parse('2015-04-03'))
 
     #(1..10).each do |n|
       #procedure_id = n

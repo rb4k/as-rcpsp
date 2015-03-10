@@ -90,13 +90,12 @@ class RcpspsController < ApplicationController
 
     system @project.path.to_s +  " RCPSP1"
 
-    flash.now[:started] = "Die Rechnung wurde gestartet!"
+    flash.now[:started] = "Die Zeitplanung wurde gestartet!"
 
     render 'static_pages/rcpsp'
 
 
   end
-
 
   def read_optimization_results
     @procedures = Procedure.all
@@ -123,6 +122,7 @@ class RcpspsController < ApplicationController
     else
       flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
+
     if File.exist?("RCPSP1_solution_zw.txt")
       fi=File.open("RCPSP1_solution_zw.txt", "r")
       line=fi.readline
@@ -219,7 +219,7 @@ class RcpspsController < ApplicationController
 
     printf(f, "\n")
 
-    deadline = (@project.deadline - DateTime.now).to_i / 86400
+    deadline = (@project.deadline - DateTime.now).to_i
 
     printf(f, "Deadline=" + deadline.to_s + ";\n")
 
@@ -232,9 +232,9 @@ class RcpspsController < ApplicationController
     end
 
 
-    system @project.path.to_s +  " RCPSP1"
+    system @project.path.to_s +  " RCPSP2"
 
-    flash.now[:started] = "Die Rechnung wurde gestartet!"
+    flash.now[:started] = "Die Kostenplanung wurde gestartet!"
 
     render 'static_pages/rcpsp'
 
@@ -245,9 +245,27 @@ class RcpspsController < ApplicationController
     @procedures = Procedure.all
     @project = Project.find(1)
 
-    if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
+    if (File.exist?("RCPSP2_solution_kosten.txt") and File.exists?("RCPSP2_solution_zw.txt"))
 
-      fi=File.open("RCPSP1_solution_zeit.txt", "r")
+      fi=File.open("RCPSP2_solution_kosten.txt", "r")
+      fi.each { |line|
+        sa=line.split(";")
+        sa0=sa[0]
+        sa1=sa[1]
+        sa2=sa[2].delete " \n"
+        resource=Resource.find_by_name(sa0)
+        resource.oce.sum = sa1
+        #resource.ocd = sa2
+        resource.save
+      }
+      fi.close
+    else
+      flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
+    end
+
+    if (File.exist?("RCPSP2_solution_zeit.txt"))
+
+      fi=File.open("RCPSP2_solution_zeit.txt", "r")
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0]
@@ -266,6 +284,7 @@ class RcpspsController < ApplicationController
     else
       flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
+
     if File.exist?("RCPSP1_solution_zw.txt")
       fi=File.open("RCPSP1_solution_zw.txt", "r")
       line=fi.readline
