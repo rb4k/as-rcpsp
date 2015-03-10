@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   respond_to :html, :json
-  before_filter :admin_user
+  #before_filter :admin_user
 # GET /projects
 # GET /projects.json
   def index
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, notice: 'Projekt wurde aktualisiert' }
+        format.html { redirect_to rcpsp_path, notice: 'Daten wurden aktualisiert' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -20,6 +20,7 @@ class RcpspsController < ApplicationController
     @procedures = Procedure.all
     @procedure_procedures = ProcedureProcedure.all
     @procedure_resources = ProcedureResource.all
+    @projects = Project.all
 
     @procedures.each { |proc|
       proc.fa=nil
@@ -85,8 +86,8 @@ class RcpspsController < ApplicationController
      File.delete("RCPSP1_solution.txt")
     end
 
-    system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
-    #system "C:\\GAMS\\win64\\24.3\\gams RCPSP1"
+    #system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
+    system Project.find(1).to_s " RCPSP1"
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 

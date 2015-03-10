@@ -11,6 +11,7 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def start
-  end
+  def rcpsp
+    @project = Project.find(1)
+    end
 end

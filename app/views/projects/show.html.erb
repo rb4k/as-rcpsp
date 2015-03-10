@@ -1,0 +1,19 @@
+<h1>Projekt</h1>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Projektabschlussdatum:</b>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <b>Projektabschlussdatum:</b>
+  <%= @project.url %>
+</p>
+
+<%= button_to 'Ändern', edit_project_path(@project), :class => "button", :method => :get %>
+<%= button_to 'Zurück', projects_path, :class => "button", :method => :get %>

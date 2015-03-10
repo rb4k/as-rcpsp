@@ -15,14 +15,26 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
 
 </p>
 
+
+
 <br>
 
 
 <% if signed_in? %>
 
-    <p>
 
-      Start der Projektplanung
+    <%= form_for(@project) do |f| %>
+        <div class="field">
+          <%= f.label :url, "Verzeichnis" %>
+          <%= f.text_field :url %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Verzeichnis aktualisieren'  %>
+        </div>
+    <% end %>
+
+    <p>
+      Start der Zeitplanung
     <table>
       <thead>
       <tr>
@@ -31,12 +43,17 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
       </tr>
       </thead>
       </table>
-
     </p>
+
+
 
     <% if @objective_function_value!=nil %>
         Die minimale Vorgangsdauer beträgt <strong><%=  @objective_function_value %></strong> Zeiteinheiten  <br> <br>
         <%= button_to 'Ergebnis anzeigen', procedures_path, :class => "button", :method => :get %>
     <% end %>
+
+
+
+
 
 <% end %>
