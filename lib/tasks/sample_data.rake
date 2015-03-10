@@ -80,7 +80,7 @@ namespace :db do
     ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 5)
 
 
-    Proj1 = Project.create!(name: "test", url: "C:\\GAMS\\win64\\24.3\\gams RCPSP1", deadline: Time.zone.parse('2015-07-11 21:00'))
+    Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.parse('2015-07-11 21:00'))
 
     #(1..10).each do |n|
       #procedure_id = n

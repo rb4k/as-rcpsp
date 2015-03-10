@@ -21,6 +21,7 @@ class RcpspsController < ApplicationController
     @procedure_procedures = ProcedureProcedure.all
     @procedure_resources = ProcedureResource.all
     @projects = Project.all
+    @project = Project.find(1)
 
     @procedures.each { |proc|
       proc.fa=nil
@@ -84,10 +85,10 @@ class RcpspsController < ApplicationController
 
    if File.exist?("RCPSP1_solution.txt")
      File.delete("RCPSP1_solution.txt")
-    end
+   end
 
-    #system "C:\\GAMS\\win32\\24.3\\gams RCPSP1"
-    system Project.find(1).to_s " RCPSP1"
+
+    system @project.path.to_s +  " RCPSP1"
 
     flash.now[:started] = "Die Rechnung wurde gestartet!"
 
@@ -99,6 +100,7 @@ class RcpspsController < ApplicationController
 
   def read_optimization_results
     @procedures = Procedure.all
+    @project = Project.find(1)
 
     if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
 
