@@ -6,7 +6,6 @@ class CreateResources < ActiveRecord::Migration
       t.integer :oce, :default => 0
       t.integer :cost
       t.integer :ocr
-      t.integer :ocd, :default => 0
 
       t.timestamps
     end

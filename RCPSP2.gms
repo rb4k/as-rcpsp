@@ -136,16 +136,24 @@ RCPSP2.limrow=500;
 
 solve RCPSP2 minimizing z using mip;
 
-display x.l;
+parameter
+    zkr(r)  Berechnung Zusatzkosten;
+
+zkr(r) = sum(t,O.l(r,t));
+
+
+
+display x.l, O.l, zkr;
+
+
 
 file outputfile1 / 'RCPSP2_solution_kosten.txt'/;
 put outputfile1;
 
 loop(r,
-    loop(t,
-     put r.tl:0, '; ' O.l(r,t), '; ' t.tl:0 /
+    put r.tl:0, '; ' zkr(r) /
 );
-);
+
 putclose outputfile1;
 
 file outputfile2 / 'RCPSP2_solution_zeit.txt'/;
@@ -163,4 +171,3 @@ put 'Zielfunktionswert: ',z.l /
 put '**********************'
 
 putclose outputfile3;
-

@@ -129,9 +129,6 @@ class RcpspsController < ApplicationController
       fi.close
       sa=line.split(" ")
       @objective_function_value=sa[1]
-    else
-      @objective_function_value=nil
-      flash.now[:not_available] = "Zielfunktionswert wurde noch nicht berechnet!"
     end
 
     flash.now[:started] = "Ergebnisse eingelesen!"
@@ -243,6 +240,7 @@ class RcpspsController < ApplicationController
 
   def read_optimization_results2
     @procedures = Procedure.all
+    @resources = Resource.all
     @project = Project.find(1)
 
     if (File.exist?("RCPSP2_solution_kosten.txt") and File.exists?("RCPSP2_solution_zw.txt"))
@@ -251,11 +249,9 @@ class RcpspsController < ApplicationController
       fi.each { |line|
         sa=line.split(";")
         sa0=sa[0]
-        sa1=sa[1]
-        sa2=sa[2].delete " \n"
+        sa1=sa[1].delete " \n"
         resource=Resource.find_by_name(sa0)
-        resource.oce.sum = sa1
-        #resource.ocd = sa2
+        resource.oce = sa1
         resource.save
       }
       fi.close
@@ -285,15 +281,12 @@ class RcpspsController < ApplicationController
       flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
 
-    if File.exist?("RCPSP1_solution_zw.txt")
-      fi=File.open("RCPSP1_solution_zw.txt", "r")
+    if File.exist?("RCPSP2_solution_zw.txt")
+      fi=File.open("RCPSP2_solution_zw.txt", "r")
       line=fi.readline
       fi.close
       sa=line.split(" ")
-      @objective_function_value=sa[1]
-    else
-      @objective_function_value=nil
-      flash.now[:not_available] = "Zielfunktionswert wurde noch nicht berechnet!"
+      @objective_function_value2=sa[1]
     end
 
     flash.now[:started] = "Ergebnisse eingelesen!"
