@@ -1,24 +1,23 @@
 <% provide(:title, 'RCPSP') %>
 <h1>Projektplanung mit dem RCPSP</h1>
-<p>
-Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung angepasst und die Optimierung durchgeführt: <br> <br>
 
-  <%= link_to "Verwaltung der Mitarbeiter", users_path %><br>
-
-  <br>
-
-  <%= link_to "Verwaltung der Vorgänge", procedures_path %><br>
-  <%= link_to "Verwaltung der Vorgangsrelationen", procedure_procedures_path %><br>
-  <%= link_to "Verwaltung der Ressourcen", resources_path %><br>
-  <%= link_to "Einteilung der Vorgänge zu Ressoucen", procedure_resources_path %><br>
-  <br>
-
-</p>
-
-
+<h2>Verwaltung</h2>
+<table>
+  <thead>
+  <tr>
+    <th><%= button_to 'Mitarbeiter', users_path, :class => "button", :method => :get %></th>
+    <th><%= button_to "Vorgänge", procedures_path, :class => "button", :method => :get %></th>
+    <th><%= button_to "Vorgangsrelationen", procedure_procedures_path, :class => "button", :method => :get %></th>
+    <th><%= button_to "Ressourcen", resources_path, :class => "button", :method => :get %></th>
+    <th><%= button_to "Vorgang-Ressoucen-Kombination", procedure_resources_path, :class => "button", :method => :get %></th>
+  </tr>
+  </thead>
+</table>
 
 <br>
-
+<p>
+  Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung angepasst und die Optimierung durchgeführt: <br> <br>
+</p>
 
 <% if signed_in? %>
 
@@ -34,7 +33,7 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
     <% end %>
 
     <p>
-      Start der Zeitplanung
+      <h2>Start der Zeitplanung</h2>
     <table>
       <thead>
       <tr>
@@ -45,10 +44,15 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
       </table>
     </p>
 
+
+
+
+    <p>
+      <h2>Start der Kostenplanung</h2>
     <%= form_for(@project) do |f| %>
         <div class="field">
           <%= f.label :deadline, "Deadline-Termin" %>
-          <%= f.date_select :deadline %>
+          <%= f.date_select :deadline, {:prompt => { :day => 'Wähle einen Tag', :month => 'Wähle einen Monat', :year => 'Wähle ein Jahr' }}, {:class => 'date-select'}    %>
         </div>
         <div class="actions">
           <%= f.submit 'Deadline aktualisieren'  %>
@@ -56,8 +60,6 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
     <% end %>
 
 
-    <p>
-      Start der Kostenplanung
     <table>
       <thead>
       <tr>
@@ -77,7 +79,10 @@ Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung ange
     <% end %>
 
 
-
+    <% if @objective_function_value2!=nil %>
+        Die Zusatzkosten betragen <strong><%=  @objective_function_value2 %></strong> Geldeinheiten  <br> <br>
+        <%= button_to 'Ergebnis anzeigen', resources_path, :class => "button", :method => :get %>
+    <% end %>
 
 
 <% end %>

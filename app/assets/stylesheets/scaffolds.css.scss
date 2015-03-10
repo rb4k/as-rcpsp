@@ -67,3 +67,15 @@ div {
     list-style: square;
   }
 }
+
+select {
+  width: 220px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+
+select.date-select {
+  width:auto;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+}

@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
     t.integer  "oce",        :default => 0
     t.integer  "cost"
     t.integer  "ocr"
-    t.integer  "ocd",        :default => 0
     t.datetime "updated_at",                :null => false
   end
 
