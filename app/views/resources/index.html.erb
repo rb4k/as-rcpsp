@@ -1,3 +1,4 @@
+<% provide(:title, 'Übersicht der Ressourcen') %>
 <h1>Übersicht der Ressourcen</h1>
 
 <table id="resources" class="table table-hover">
@@ -38,6 +39,7 @@
 
 <% if signed_in? && current_user.admin? %>
 <%= button_to 'Neue Ressource anlegen', new_resource_path, :class => "button", :method => :get %>
-    <% end %>
 <%= button_to 'Zurück zur Projektplanung', rcpsp_path, :class => "button", :method => :get %>
-
+<% else %>
+    <%= button_to 'Hier geht es zur Anmeldung', signup_path, :class => "button", :method => :get %>
+<% end %>

@@ -2,17 +2,13 @@
 <h1>Projektplanung mit dem RCPSP</h1>
 
 <h2>Verwaltung</h2>
-<table>
-  <thead>
-  <tr>
-    <th><%= button_to 'Mitarbeiter', users_path, :class => "button", :method => :get %></th>
-    <th><%= button_to "Vorgänge", procedures_path, :class => "button", :method => :get %></th>
-    <th><%= button_to "Vorgangsrelationen", procedure_procedures_path, :class => "button", :method => :get %></th>
-    <th><%= button_to "Ressourcen", resources_path, :class => "button", :method => :get %></th>
-    <th><%= button_to "Vorgang-Ressoucen-Kombination", procedure_resources_path, :class => "button", :method => :get %></th>
-  </tr>
-  </thead>
-</table>
+<div class="btn-group btn-lg">
+  <%= link_to "Mitarbeiter", users_path, :class => "btn" %>
+  <%= link_to "Vorgänge", procedures_path, :class => "btn" %>
+  <%= link_to "Vorgangsrelationen", procedure_procedures_path, :class => "btn" %>
+  <%= link_to "Ressourcen", resources_path, :class => "btn" %>
+  <%= link_to "Vorgang-Ressoucen-Kombination", procedure_resources_path, :class => "btn" %>
+</div>
 
 <br>
 <p>
