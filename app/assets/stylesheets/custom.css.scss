@@ -75,7 +75,7 @@ p {
 
 .navbar{
   .navbar-inner {
-    background-color: navy;
+    background-color: #025fcc;
     background-image: none;
   }
   .nav{
@@ -106,7 +106,7 @@ p {
 #main_links {
   color: white;
   &:hover{
-    color: yellow;
+    color: #3197b4;
   }
 }
 
@@ -183,13 +183,13 @@ input, textarea, select, .uneditable-input {
   color: #f00;
   ul {
     list-style: none;
-    margin: 0 0 18px 0;
+    color: #660f0a;
   }
 }
 
 .field_with_errors {
   @extend .control-group;
-  @extend .error;
+  color: white;
  }
 
 
