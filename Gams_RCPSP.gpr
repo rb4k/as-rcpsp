@@ -7,14 +7,14 @@
 1=
 
 [MRUFILES]
-1=C:\Sites\as-rcpsp\RCPSP1.gms
-2=C:\Sites\as-rcpsp\RCPSP1.lst
-3=C:\Sites\as-rcpsp\RCPSP1_Input.inc
+1=C:\Sites\as-rcpsp\RCPSP1.lst
+2=C:\Sites\as-rcpsp\RCPSP1_Input.inc
 
 [OPENWINDOW_1]
-FILE0=C:\Sites\as-rcpsp\RCPSP2.gms
-FILE1=C:\Sites\as-rcpsp\RCPSP2.lst
-FILE2=C:\Sites\as-rcpsp\RCPSP2.gms
+FILE0=C:\Sites\as-rcpsp\RCPSP1.gms
+FILE1=C:\Sites\as-rcpsp\RCPSP2.gms
+FILE2=C:\Sites\as-rcpsp\RCPSP2.lst
+FILE3=C:\Sites\as-rcpsp\RCPSP2.lst
 MAXIM=0
 TOP=50
 LEFT=50

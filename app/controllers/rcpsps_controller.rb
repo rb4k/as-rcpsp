@@ -83,9 +83,9 @@ class RcpspsController < ApplicationController
     f.close
 
 
-   if File.exist?("RCPSP1_solution.txt")
-     File.delete("RCPSP1_solution.txt")
-   end
+    if File.exist?("RCPSP1_solution.txt")
+      File.delete("RCPSP1_solution.txt")
+    end
 
 
     system @project.path.to_s +  " RCPSP1"
@@ -308,4 +308,4 @@ class RcpspsController < ApplicationController
     redirect_to(root_path) unless current_user.admin?
   end
 
-  end
+end

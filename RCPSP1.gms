@@ -128,7 +128,7 @@ $offtext
 
 solve RCPSP1 minimizing z using mip;
 
-display x.l, FE;
+display z.l;
 
 
 
@@ -157,4 +157,3 @@ put 'Zielfunktionswert: ',z.l /
 put '**********************'
 
 putclose outputfile3;
-

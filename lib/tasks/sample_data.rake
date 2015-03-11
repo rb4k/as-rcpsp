@@ -37,10 +37,10 @@ namespace :db do
 
 
 
-    (1..10).each do |n|
+    (1..12).each do |n|
       name = "Beispielvorgang#{n}"
       kapabe = rand(8..10)
-      prot = rand(1..5)
+      prot = rand(2..5)
       Procedure.create!(name: name,
                    kapabe: kapabe,
                    prot: prot)
@@ -48,7 +48,7 @@ namespace :db do
 
     (1..2).each do |n|
       name = "Ressource#{n}"
-      ocr = rand(3..5)
+      ocr = rand(5..10)
       cost = rand(1..3)
       Resource.create!(name: name,
                    ocr: ocr,
@@ -57,30 +57,37 @@ namespace :db do
 
 
     ProPro1 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 2)
-    ProPro2 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 3)
-    ProPro3 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 4)
-    ProPro4 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 5)
-    ProPro5 = ProcedureProcedure.create!(prepro_id: 3, sucpro_id: 6)
-    ProPro6 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 7)
-    ProPro7 = ProcedureProcedure.create!(prepro_id: 5, sucpro_id: 8)
-    ProPro8 = ProcedureProcedure.create!(prepro_id: 6, sucpro_id: 8)
-    ProPro9 = ProcedureProcedure.create!(prepro_id: 7, sucpro_id: 9)
-    ProPro10 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 10)
-    ProPro11 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 10)
+    ProPro2 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 5)
+    ProPro3 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 8)
+    ProPro4 = ProcedureProcedure.create!(prepro_id:  1, sucpro_id: 10)
+    ProPro5 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 3)
+    ProPro6 = ProcedureProcedure.create!(prepro_id: 2, sucpro_id: 6)
+    ProPro7 = ProcedureProcedure.create!(prepro_id: 3, sucpro_id: 4)
+    ProPro8 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 7)
+    ProPro9 = ProcedureProcedure.create!(prepro_id: 4, sucpro_id: 12)
+    ProPro10 = ProcedureProcedure.create!(prepro_id: 5, sucpro_id: 6)
+    ProPro11 = ProcedureProcedure.create!(prepro_id: 6, sucpro_id: 7)
+    ProPro12 = ProcedureProcedure.create!(prepro_id: 7, sucpro_id: 12)
+    ProPro13 = ProcedureProcedure.create!(prepro_id: 8, sucpro_id: 9)
+    ProPro14 = ProcedureProcedure.create!(prepro_id: 9, sucpro_id: 12)
+    ProPro15 = ProcedureProcedure.create!(prepro_id: 10, sucpro_id: 11)
+    ProPro16 = ProcedureProcedure.create!(prepro_id: 11, sucpro_id: 12)
 
     ProRes1 = ProcedureResource.create!(procedure_id: 1, resource_id: 1)
-    ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 2)
-    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 1)
-    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 2)
-    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 1)
-    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 2)
+    ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 1)
+    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 2)
+    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 1)
+    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 2)
+    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 1)
     ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 1)
     ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 2)
     ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 1)
-    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 2)
+    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 1)
+    ProRes11 = ProcedureResource.create!(procedure_id: 11, resource_id: 1)
+    ProRes12 = ProcedureResource.create!(procedure_id: 12, resource_id: 1)
 
 
-    Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.parse('2015-04-03'))
+    Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.now + 19.days)
 
     #(1..10).each do |n|
       #procedure_id = n

@@ -70,3 +70,7 @@ k('Beispielvorgang11','Ressource1')= 10;
 KP('Ressource1')= 12;
 KP('Ressource2')= 8;
 
+oc('Ressource1')= 9;
+oc('Ressource2')= 7;
+
+Deadline=17;
