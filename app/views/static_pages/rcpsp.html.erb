@@ -24,24 +24,22 @@
           <%= f.text_field :path %>
         </div>
         <div class="actions">
-          <%= f.submit 'Verzeichnis aktualisieren'  %>
+          <%= f.submit 'Verzeichnis aktualisieren', :class => "btn"  %>
         </div>
     <% end %>
 
     <p>
-      <h2>Start der Zeitplanung</h2>
+      <h2>Start der Kapazitätsplanung</h2>
     <table>
       <thead>
       <tr>
-      <th><%= button_to "Optimiere Zeitplanung", :controller => 'rcpsps', :action => 'optimize' %></th>
-      <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results' %></th>
+      <th><%= link_to "Optimiere Zeitplanung", load_path, :action => 'optimize', :class => "btn" %></th>
       </tr>
       </thead>
       </table>
     </p>
 
-
-
+    <br/>
 
     <p>
       <h2>Start der Kostenplanung</h2>
@@ -51,7 +49,7 @@
           <%= f.date_select :deadline, {:prompt => { :day => 'Wähle einen Tag', :month => 'Wähle einen Monat', :year => 'Wähle ein Jahr' }}, {:class => 'date-select'}    %>
         </div>
         <div class="actions">
-          <%= f.submit 'Deadline aktualisieren'  %>
+          <%= f.submit 'Deadline aktualisieren', :class => "btn"  %>
         </div>
     <% end %>
 
@@ -59,7 +57,7 @@
     <table>
       <thead>
       <tr>
-        <th><%= button_to "Optimiere Kostenplanung", :controller => 'rcpsps', :action => 'optimize2' %></th>
+        <th><%= link_to "Optimiere Kostenplanung", load_path, :action => 'optimize2', :class => "btn" %></th>
         <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results2' %></th>
       </tr>
       </thead>
@@ -67,12 +65,6 @@
 
     </p>
 
-
-
-    <% if @objective_function_value!=nil %>
-        Die minimale Vorgangsdauer beträgt <strong><%=  @objective_function_value %></strong> Zeiteinheiten  <br> <br>
-        <%= button_to 'Ergebnis anzeigen', procedures_path, :class => "button", :method => :get %>
-    <% end %>
 
 
     <% if @objective_function_value2!=nil %>

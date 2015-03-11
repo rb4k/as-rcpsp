@@ -92,7 +92,42 @@ class RcpspsController < ApplicationController
 
     flash.now[:started] = "Die Zeitplanung wurde gestartet!"
 
-    render 'static_pages/rcpsp'
+    redirect_to url_for(:controller => :static_pages, :action => :load)
+
+
+    if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
+
+      fi=File.open("RCPSP1_solution_zeit.txt", "r")
+      fi.each { |line|
+        sa=line.split(";")
+        sa0=sa[0]
+        sa1=sa[1]
+        sa2=sa[2]
+        sa3=sa[3]
+        sa4=sa[4].delete " \n"
+        procedure=Procedure.find_by_name(sa0)
+        procedure.fa = sa1
+        procedure.sa = sa2
+        procedure.fe = sa3
+        procedure.se = sa4
+        procedure.save
+      }
+      fi.close
+
+      fi=File.open("RCPSP1_solution_zw.txt", "r")
+      line=fi.readline
+      fi.close
+      sa=line.split(" ")
+      sa0=sa[0]
+      sa1=sa[1].delete " \n"
+      project=Project.find_by_id(1)
+      project.zw = sa1
+      project.save
+    #else
+     # flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
+    end
+
+
 
 
   end

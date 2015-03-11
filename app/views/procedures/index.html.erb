@@ -1,6 +1,10 @@
 <% provide(:title, 'Übersicht der Vorgänge') %>
 <h1>Übersicht der Vorgänge</h1>
 
+<% if @project.zw!=nil %>
+    Die minimale Projektdauer beträgt <strong><%=  @project.zw %></strong> Zeiteinheiten  <br> <br>
+<% end %>
+
 <table id="procedures" class="table table-hover">
   <thead>
   <tr>
@@ -47,3 +51,6 @@
 <thead>
 *FA=frühester Anfangszeitpunkt, SA=spätester Anfangszeitpunkt, FE=frühester Endzeitpunkt, SE=spätester Endzeitpunkt
 </thead>
+
+<br/>
+
