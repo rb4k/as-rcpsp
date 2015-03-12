@@ -6,7 +6,8 @@ class CreateProjects < ActiveRecord::Migration
       t.date :deadline
       t.datetime :created_at
       t.datetime :updated_at
-      t.integer :zw
+      t.integer :zwt
+      t.integer :zwc
       t.integer :totalc
       t.integer :extrac
 

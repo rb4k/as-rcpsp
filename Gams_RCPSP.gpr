@@ -1,22 +1,21 @@
 [PROJECT]
 
-[RP:RCPSP1]
-1=
-
 [RP:RCPSP2]
 1=
 
-[MRUFILES]
-1=C:\Sites\as-rcpsp\RCPSP1.lst
-2=C:\Sites\as-rcpsp\RCPSP1_Input.inc
-
 [OPENWINDOW_1]
-FILE0=C:\Sites\as-rcpsp\RCPSP1.gms
-FILE1=C:\Sites\as-rcpsp\RCPSP2.gms
-FILE2=C:\Sites\as-rcpsp\RCPSP2.lst
-FILE3=C:\Sites\as-rcpsp\RCPSP2.lst
 MAXIM=0
 TOP=50
 LEFT=50
 HEIGHT=482
 WIDTH=1089
+
+[RP:RCPSP1]
+1=
+
+[MRUFILES]
+1=C:\Sites\as-rcpsp\RCPSP2.lst
+2=C:\Sites\as-rcpsp\RCPSP2.gms
+3=C:\Sites\as-rcpsp\RCPSP1.lst
+4=C:\Sites\as-rcpsp\RCPSP1.gms
+5=C:\Sites\as-rcpsp\RCPSP1_Input.inc

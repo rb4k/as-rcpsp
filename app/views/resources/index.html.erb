@@ -1,6 +1,10 @@
 <% provide(:title, 'Übersicht der Ressourcen') %>
 <h1>Übersicht der Ressourcen</h1>
 
+<% if @project.zwc!=nil %>
+    Die Projektzusatzkosten betragen <strong><%=  @project.zwc %></strong> Geldeinheiten. <br> <br>
+<% end %>
+
 <table id="resources" class="table table-hover">
   <thead>
   <tr>
@@ -10,6 +14,7 @@
     <th>Aktuelle Gesamtkapazität</th>
     <th>Zusätzliche Einheiten</th>
     <th>Summe Zusatzkosten</th>
+    <th>Gesamtkosten</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,6 +30,7 @@
     <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
     <td><%= resource.oce %></td>
     <td><%= resource.ocr * resource.oce %></td>
+    <td><%= resource.ocr * resource.oce + (resource.cost * resource.procedure_resources.count) %></td>
     <td><%= link_to 'Anzeigen', resource %></td>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>

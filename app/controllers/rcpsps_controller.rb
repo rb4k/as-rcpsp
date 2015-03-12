@@ -90,9 +90,7 @@ class RcpspsController < ApplicationController
 
     system @project.path.to_s +  " RCPSP1"
 
-    flash.now[:started] = "Die Zeitplanung wurde gestartet!"
-
-    redirect_to url_for(:controller => :static_pages, :action => :load)
+    redirect_to url_for(:controller => :rcpsps, :action => :solution)
 
 
     if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
@@ -121,55 +119,26 @@ class RcpspsController < ApplicationController
       sa0=sa[0]
       sa1=sa[1].delete " \n"
       project=Project.find_by_id(1)
-      project.zw = sa1
+      project.zwt = sa1
       project.save
     #else
      # flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
 
 
-
-
   end
 
-  def read_optimization_results
+  def solution
     @procedures = Procedure.all
     @project = Project.find(1)
-
-    if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
-
-      fi=File.open("RCPSP1_solution_zeit.txt", "r")
-      fi.each { |line|
-        sa=line.split(";")
-        sa0=sa[0]
-        sa1=sa[1]
-        sa2=sa[2]
-        sa3=sa[3]
-        sa4=sa[4].delete " \n"
-        procedure=Procedure.find_by_name(sa0)
-        procedure.fa = sa1
-        procedure.sa = sa2
-        procedure.fe = sa3
-        procedure.se = sa4
-        procedure.save
-      }
-      fi.close
-    else
-      flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
+    until File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt")
+      sleep( 5 )
     end
 
-    if File.exist?("RCPSP1_solution_zw.txt")
-      fi=File.open("RCPSP1_solution_zw.txt", "r")
-      line=fi.readline
-      fi.close
-      sa=line.split(" ")
-      @objective_function_value=sa[1]
-    end
-
-    flash.now[:started] = "Ergebnisse eingelesen!"
-
-    render :template => "static_pages/rcpsp"
+    render 'procedures/index'
   end
+
+
 
   def optimize2
     if File.exist?("RCPSP2_solution_x.txt")
@@ -196,8 +165,6 @@ class RcpspsController < ApplicationController
       proc.se=nil
       proc.save
     }
-
-    @objective_function_value2=nil
 
 
     if File.exist?("RCSPSP2_Input.inc")
@@ -266,17 +233,8 @@ class RcpspsController < ApplicationController
 
     system @project.path.to_s +  " RCPSP2"
 
-    flash.now[:started] = "Die Kostenplanung wurde gestartet!"
 
-    render 'static_pages/rcpsp'
-
-
-  end
-
-  def read_optimization_results2
-    @procedures = Procedure.all
-    @resources = Resource.all
-    @project = Project.find(1)
+    redirect_to url_for(:controller => :rcpsps, :action => :solution2)
 
     if (File.exist?("RCPSP2_solution_kosten.txt") and File.exists?("RCPSP2_solution_zw.txt"))
 
@@ -290,8 +248,6 @@ class RcpspsController < ApplicationController
         resource.save
       }
       fi.close
-    else
-      flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
 
     if (File.exist?("RCPSP2_solution_zeit.txt"))
@@ -312,8 +268,6 @@ class RcpspsController < ApplicationController
         procedure.save
       }
       fi.close
-    else
-      flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
 
     if File.exist?("RCPSP2_solution_zw.txt")
@@ -321,14 +275,24 @@ class RcpspsController < ApplicationController
       line=fi.readline
       fi.close
       sa=line.split(" ")
-      @objective_function_value2=sa[1]
+      sa0=sa[0]
+      sa1=sa[1].delete " \n"
+      project=Project.find_by_id(1)
+      project.zwc = sa1
+      project.save
     end
 
-    flash.now[:started] = "Ergebnisse eingelesen!"
-
-    render :template => "static_pages/rcpsp"
   end
 
+  def solution2
+    @resources = Resource.all
+    @project = Project.find(1)
+    until File.exist?("RCPSP2_solution_zeit.txt") and File.exists?("RCPSP2_solution_zw.txt")
+      sleep( 5 )
+    end
+
+    render 'resources/index'
+  end
 
   private
 

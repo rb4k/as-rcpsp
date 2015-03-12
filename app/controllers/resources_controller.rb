@@ -6,6 +6,7 @@ class ResourcesController < ApplicationController
 # GET /resources.json
   def index
     @resources = Resource.all
+    @project = Project.find(1)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }

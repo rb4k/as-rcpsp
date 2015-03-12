@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
     t.date     "deadline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "zw"
+    t.integer  "zwt"
+    t.integer  "zwc"
     t.integer  "totalc"
     t.integer  "extrac"
   end

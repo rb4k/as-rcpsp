@@ -33,7 +33,7 @@
     <table>
       <thead>
       <tr>
-      <th><%= link_to "Optimiere Zeitplanung", load_path, :action => 'optimize', :class => "btn" %></th>
+      <th><%= link_to "Optimiere Kapazitätsplanung", rcpsp_optimize_path, :class => "btn" %></th>
       </tr>
       </thead>
       </table>
@@ -57,20 +57,12 @@
     <table>
       <thead>
       <tr>
-        <th><%= link_to "Optimiere Kostenplanung", load_path, :action => 'optimize2', :class => "btn" %></th>
-        <th><%= button_to "Lies die Ergebnisse ein", :controller => 'rcpsps', :action => 'read_optimization_results2' %></th>
+        <th><%= link_to "Optimiere Kostenplanung", rcpsp_optimize2_path, :class => "btn" %></th>
       </tr>
       </thead>
     </table>
 
     </p>
-
-
-
-    <% if @objective_function_value2!=nil %>
-        Die Zusatzkosten betragen <strong><%=  @objective_function_value2 %></strong> Geldeinheiten  <br> <br>
-        <%= button_to 'Ergebnis anzeigen', resources_path, :class => "button", :method => :get %>
-    <% end %>
 
 
 <% end %>

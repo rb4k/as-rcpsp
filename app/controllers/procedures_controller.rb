@@ -6,7 +6,7 @@ class ProceduresController < ApplicationController
 # GET /procedures.json
   def index
     @procedures = Procedure.all
-    @project = Project.find(params[1])
+    @project = Project.find(1)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @procedures }
