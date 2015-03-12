@@ -68,7 +68,7 @@ class RcpspsController < ApplicationController
     printf(f, "k(i,r)=0;\n\n")
 
     @procedure_resources.each { |k|
-      printf(f, "k('" + k.procedure.name + "','" + k.resource.name + "')= "+ k.procedure.kapabe.to_s + ";\n")
+      printf(f, "k('" + k.procedure.name + "','" + k.resource.name + "')= "+ k.capa_demand.to_s + ";\n")
     }
 
     printf(f, "\n")
@@ -201,7 +201,7 @@ class RcpspsController < ApplicationController
     printf(f, "k(i,r)=0;\n\n")
 
     @procedure_resources.each { |k|
-      printf(f, "k('" + k.procedure.name + "','" + k.resource.name + "')= "+ k.procedure.kapabe.to_s + ";\n")
+      printf(f, "k('" + k.procedure.name + "','" + k.resource.name + "')= "+ k.capa_demand.to_s + ";\n")
     }
 
     printf(f, "\n")

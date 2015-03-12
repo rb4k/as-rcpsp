@@ -6,11 +6,13 @@ class ResourcesController < ApplicationController
 # GET /resources.json
   def index
     @resources = Resource.all
+    @procedures = Procedure.all
     @project = Project.find(1)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }
     end
+
   end
 # GET /resources/1
 # GET /resources/1.json

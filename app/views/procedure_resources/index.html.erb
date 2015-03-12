@@ -5,6 +5,7 @@
   <tr>
     <th>Vorgang</th>
     <th>Ressource</th>
+    <th>Kapazitätsbedarf</th>
     <th></th>
   </tr>
   </thead>
@@ -17,6 +18,7 @@
                 procedure.name %></td>
         <td><%= resource = Resource.find(procedure_resource.resource_id)
                 resource.name %></td>
+        <td><%=	procedure_resource.capa_demand  %></td>
         <td><%= link_to 'Anzeigen', procedure_resource %></td>
         <td><%= link_to 'Ändern', edit_procedure_resource_path(procedure_resource) %></td>
         <td><%= link_to 'Löschen', procedure_resource, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>

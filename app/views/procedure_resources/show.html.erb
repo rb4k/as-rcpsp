@@ -15,6 +15,10 @@
         resource.name %></td>
 </p>
 
+<p>
+  <b>Kapazitätsbedarf:</b>
+<td><%= @procedure_resource.capa_demand %></td>
+</p>
 
 
 <%= button_to 'Ändern', edit_procedure_resource_path(@procedure_resource), :class => "button", :method => :get %>

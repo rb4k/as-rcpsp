@@ -111,20 +111,6 @@ model RCPSP1 /
 RCPSP1.optcr=0.0;
 RCPSP1.limrow=500;
 
-$ontext
-x.fx('i1','t3')=1;
-x.fx('i2','t5')=1;
-x.fx('i3','t9')=1;
-x.fx('i4','t11')=1;
-x.fx('i5','t6')=1;
-x.fx('i6','t10')=1;
-x.fx('i7','t13')=1;
-x.fx('i8','t6')=1;
-x.fx('i9','t11')=1;
-x.fx('i10','t6')=1;
-x.fx('i11','t8')=1;
-x.fx('i12','t15')=1;
-$offtext
 
 solve RCPSP1 minimizing z using mip;
 

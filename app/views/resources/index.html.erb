@@ -1,6 +1,8 @@
 <% provide(:title, 'Übersicht der Ressourcen') %>
 <h1>Übersicht der Ressourcen</h1>
 
+
+
 <% if @project.zwc!=nil %>
     Die Projektzusatzkosten betragen <strong><%=  @project.zwc %></strong> Geldeinheiten. <br> <br>
 <% end %>
@@ -9,11 +11,12 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Kosten/Tag</th>
-    <th>Zusatzkostensatz/Tag</th>
-    <th>Aktuelle Gesamtkapazität</th>
-    <th>Zusätzliche Einheiten</th>
-    <th>Summe Zusatzkosten</th>
+    <th>Gesamt- kapazität</th>
+    <th>Kosten/ ME</th>
+    <th>Grund- kosten</th>
+    <th>Zusatz- kosten/ ME</th>
+    <th>Zusatz- einheiten</th>
+    <th>Zusatzkosten Gesamt</th>
     <th>Gesamtkosten</th>
     <th></th>
     <th></th>
@@ -25,12 +28,13 @@
 <% @resources.each do |resource| %>
   <tr>
     <td><%= resource.name %></td>
-    <td><%= resource.cost %></td>
-    <td><%= resource.ocr %></td>
     <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
+    <td><%= resource.cost %></td>
+    <th><%= resource.cost * resource.procedure_resources.count * resource.procedures.sum(&:prot) %></th>
+    <td><%= resource.ocr %></td>
     <td><%= resource.oce %></td>
-    <td><%= resource.ocr * resource.oce %></td>
-    <td><%= resource.ocr * resource.oce + (resource.cost * resource.procedure_resources.count * resource.procedure.prot) %></td>
+    <th><%= resource.ocr * resource.oce %></th>
+    <th><%= resource.ocr * resource.oce + (resource.cost * resource.procedure_resources.count * resource.procedures.sum(&:prot) ) %></th>
     <td><%= link_to 'Anzeigen', resource %></td>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>

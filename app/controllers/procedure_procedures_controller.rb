@@ -6,6 +6,7 @@ class ProcedureProceduresController < ApplicationController
 # GET /procedure_procedures.json
   def index
     @procedure_procedures = ProcedureProcedure.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @procedure_procedures }
@@ -40,16 +41,20 @@ class ProcedureProceduresController < ApplicationController
 # POST /procedure_procedures
 # POST /procedure_procedures.json
   def create
-    @procedure_procedure = ProcedureProcedure.new(params[:procedure_procedure])
-    respond_to do |format|
-      if @procedure_procedure.save
-        format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich angelegt!' }
-        format.json { render json: @procedure_procedure, status: :created, location: @procedure_procedure }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+    #if ProcedureProcedure.where(ProcedureProcedure.arel_table[:sucpro].not_eq(:prepro))
+    #  redirect_to :back, notice: 'Zyklenbeziehung sind in der Projektplanung nicht erlaubt!'
+    #else
+      @procedure_procedure = ProcedureProcedure.new(params[:procedure_procedure])
+      respond_to do |format|
+        if @procedure_procedure.save
+          format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich angelegt!' }
+          format.json { render json: @procedure_procedure, status: :created, location: @procedure_procedure }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+        end
       end
-    end
+    #end
   end
 # PUT /procedure_procedures/1
 # PUT /procedure_procedures/1.json

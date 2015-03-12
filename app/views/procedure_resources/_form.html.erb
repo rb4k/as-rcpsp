@@ -24,6 +24,10 @@
       <%= f.collection_select :resource_id, Resource.all, :id, :name %>
     </div>
 
+    <div class="field">
+      <%= f.label 'Kapazitätsbedarf' %><br />
+      <%= f.text_field :capa_demand %>
+    </div>
 
     <div class="actions">
       <%= f.submit 'Vorgang zur Ressource zuordnen oder aktualisieren' %>

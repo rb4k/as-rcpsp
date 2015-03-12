@@ -39,10 +39,8 @@ namespace :db do
 
     (1..12).each do |n|
       name = "Beispielvorgang#{n}"
-      kapabe = rand(8..10)
       prot = rand(2..5)
       Procedure.create!(name: name,
-                   kapabe: kapabe,
                    prot: prot)
     end
 
@@ -73,18 +71,18 @@ namespace :db do
     ProPro15 = ProcedureProcedure.create!(prepro_id: 10, sucpro_id: 11)
     ProPro16 = ProcedureProcedure.create!(prepro_id: 11, sucpro_id: 12)
 
-    ProRes1 = ProcedureResource.create!(procedure_id: 1, resource_id: 1)
-    ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 1)
-    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 2)
-    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 1)
-    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 2)
-    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 1)
-    ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 1)
-    ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 2)
-    ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 1)
-    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 1)
-    ProRes11 = ProcedureResource.create!(procedure_id: 11, resource_id: 1)
-    ProRes12 = ProcedureResource.create!(procedure_id: 12, resource_id: 1)
+    ProRes1 = ProcedureResource.create!(procedure_id: 1, resource_id: 1, capa_demand: 8)
+    ProRes2  = ProcedureResource.create!(procedure_id: 2, resource_id: 1, capa_demand: 8)
+    ProRes3 = ProcedureResource.create!(procedure_id: 3, resource_id: 2, capa_demand: 10)
+    ProRes4 = ProcedureResource.create!(procedure_id: 4, resource_id: 1, capa_demand: 8)
+    ProRes5 = ProcedureResource.create!(procedure_id: 5, resource_id: 2, capa_demand: 8)
+    ProRes6 = ProcedureResource.create!(procedure_id: 6, resource_id: 1, capa_demand: 9)
+    ProRes7 = ProcedureResource.create!(procedure_id: 7, resource_id: 1, capa_demand: 8)
+    ProRes8 = ProcedureResource.create!(procedure_id: 8, resource_id: 2, capa_demand: 10)
+    ProRes9 = ProcedureResource.create!(procedure_id: 9, resource_id: 1, capa_demand: 8)
+    ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 1, capa_demand: 9)
+    ProRes11 = ProcedureResource.create!(procedure_id: 11, resource_id: 1, capa_demand: 8)
+    ProRes12 = ProcedureResource.create!(procedure_id: 12, resource_id: 1, capa_demand: 8)
 
 
     Proj1 = Project.create!(name: "test", path: "C:\\GAMS\\win64\\24.3\\gams", deadline: Time.zone.now + 19.days)

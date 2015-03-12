@@ -17,8 +17,7 @@
 
 <p>
   <b>Rolle im Projekt:</b>
-  <%= resource = Resource.find(@user.resource_id)
-      resource.name%>
+  <%= @resource.name%>
 </p>
 
 <% if current_user?(@user) %>
@@ -41,7 +40,7 @@
   </thead>
   <tbody>
 
-  <% resource.procedures.each do |procedure| %>
+  <% @resource.procedures.each do |procedure| %>
       <tr>
         <td><%= procedure.name %></td>
         <td><%= procedure.kapabe %></td>

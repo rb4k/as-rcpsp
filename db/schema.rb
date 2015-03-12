@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
   create_table "procedure_resources", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "procedure_id"
+    t.integer  "capa_demand"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -37,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "kapabe"
     t.integer  "prot"
     t.integer  "fa"
     t.integer  "sa"

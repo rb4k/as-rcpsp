@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @resource = Resource.find(@user.resource_id)
   end
 
   def new

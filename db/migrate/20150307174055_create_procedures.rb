@@ -4,7 +4,6 @@ class CreateProcedures < ActiveRecord::Migration
       t.string :name
       t.datetime :created_at
       t.datetime :updated_at
-      t.integer :kapabe
       t.integer :prot
       t.integer :fa
       t.integer :sa
