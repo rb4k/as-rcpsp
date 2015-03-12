@@ -9,8 +9,8 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Kosten</th>
-    <th>Zusatzkostensatz</th>
+    <th>Kosten/Tag</th>
+    <th>Zusatzkostensatz/Tag</th>
     <th>Aktuelle Gesamtkapazität</th>
     <th>Zusätzliche Einheiten</th>
     <th>Summe Zusatzkosten</th>
@@ -30,7 +30,7 @@
     <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
     <td><%= resource.oce %></td>
     <td><%= resource.ocr * resource.oce %></td>
-    <td><%= resource.ocr * resource.oce + (resource.cost * resource.procedure_resources.count) %></td>
+    <td><%= resource.ocr * resource.oce + (resource.cost * resource.procedure_resources.count * resource.procedure.prot) %></td>
     <td><%= link_to 'Anzeigen', resource %></td>
     <% if signed_in? && current_user.admin? %>
     <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>
