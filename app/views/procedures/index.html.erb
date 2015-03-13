@@ -5,6 +5,9 @@
     Die minimale Projektdauer beträgt <strong><%=  @project.zwt %></strong> Zeiteinheiten. <br> <br>
 <% end %>
 
+
+
+
 <table id="procedures" class="table table-hover">
   <thead>
   <tr>
@@ -40,9 +43,10 @@
 <br />
 
 
-
-<%= button_to 'Neuer Vorgang anlegen', new_procedure_path, :class => "button", :method => :get %>
-<%= button_to 'Zurück zur Projektplanung', rcpsp_path, :class => "button", :method => :get %>
+<div class="btn-group btn-lg">
+<%= link_to 'Neuer Vorgang anlegen', new_procedure_path, :class => "btn" %>
+<%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn" %>
+</div>
 
 <br />
 
@@ -51,4 +55,3 @@
 </thead>
 
 <br/>
-

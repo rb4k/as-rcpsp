@@ -11,6 +11,7 @@
   <%= @procedure.prot %>
 </p>
 
-
-<%= button_to 'Ändern', edit_procedure_path(@procedure), :class => "button", :method => :get %>
-<%= button_to 'Zurück', procedures_path, :class => "button", :method => :get %>
+<div class="btn-group btn-lg">
+<%= link_to 'Ändern', edit_procedure_path(@procedure), :class => "btn" %>
+<%= link_to 'Zurück', procedures_path, :class => "btn" %>
+</div>

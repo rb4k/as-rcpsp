@@ -22,6 +22,8 @@
 </p>
 
 <% if current_user.admin? %>
-<%= button_to 'Ändern', edit_resource_path(@resource), :class => "button", :method => :get %>
+    <div class="btn-group btn-lg">
+<%= link_to 'Ändern', edit_resource_path(@resource), :class => "btn" %>
     <% end %>
-<%= button_to 'Zurück', resources_path, :class => "button", :method => :get %>
+<%= link_to 'Zurück', resources_path, :class => "btn" %>
+</div>

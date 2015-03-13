@@ -44,6 +44,16 @@ end
 # These instructions should self-destruct in 10 seconds.  If they don't, feel
 # free to delete them.
 
+RSpec.configure do |config|
+  config.include AncestryHelper
+  # Remove this line if you don't want RSpec's should and should_not
+  # methods or matchers
+  require 'rspec/expectations'
+  config.include RSpec::Matchers
+
+  # == Mock Framework
+  config.mock_with :rspec
+end
 
 
 

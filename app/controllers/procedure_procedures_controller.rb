@@ -41,32 +41,36 @@ class ProcedureProceduresController < ApplicationController
 # POST /procedure_procedures
 # POST /procedure_procedures.json
   def create
-    #if ProcedureProcedure.where(ProcedureProcedure.arel_table[:sucpro].not_eq(:prepro))
-    #  redirect_to :back, notice: 'Zyklenbeziehung sind in der Projektplanung nicht erlaubt!'
-    #else
-      @procedure_procedure = ProcedureProcedure.new(params[:procedure_procedure])
-      respond_to do |format|
-        if @procedure_procedure.save
-          format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich angelegt!' }
-          format.json { render json: @procedure_procedure, status: :created, location: @procedure_procedure }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+    @procedure_procedure = ProcedureProcedure.new(params[:procedure_procedure])
+    if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
+      redirect_to :back, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
+    else
+        respond_to do |format|
+          if @procedure_procedure.save
+            format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich angelegt!' }
+            format.json { render json: @procedure_procedure, status: :created, location: @procedure_procedure }
+          else
+            format.html { render action: "new" }
+            format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+          end
         end
-      end
-    #end
+    end
   end
 # PUT /procedure_procedures/1
 # PUT /procedure_procedures/1.json
   def update
     @procedure_procedure = ProcedureProcedure.find(params[:id])
-    respond_to do |format|
-      if @procedure_procedure.update_attributes(params[:procedure_procedure])
-        format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich aktualisiert.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+    if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
+      redirect_to @procedure_procedure, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
+    else
+      respond_to do |format|
+        if @procedure_procedure.update_attributes(params[:procedure_procedure])
+          format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich aktualisiert.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

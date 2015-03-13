@@ -1,5 +1,7 @@
 <% provide(:title, 'Übersicht der Relationen zwischen den Vorgängen') %>
 <h1>Übersicht der Relationen zwischen den Vorgängen</h1>
+
+
 <table id="procedure_periods" class="table table-hover">
   <thead>
   <tr>
@@ -22,5 +24,8 @@
   </tbody>
 </table>
 <br/>
-<%= button_to 'Neue Relation anlegen', new_procedure_procedure_path, :class => "button", :method => :get %>
-<%= button_to 'Zurück zur Projektplanung', rcpsp_path, :class => "button", :method => :get %>
+
+<div class="btn-group btn-lg">
+<%= link_to 'Neue Relation anlegen', new_procedure_procedure_path, :class => "btn"%>
+<%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn"%>
+</div>

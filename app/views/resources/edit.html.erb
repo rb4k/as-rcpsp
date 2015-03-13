@@ -3,5 +3,7 @@
 
 <%= render 'form' %>
 
-<%= button_to 'Anzeigen', @resource, :class => "button", :method => :get %>
-<%= button_to 'Zurück', resources_path, :class => "button", :method => :get %>
+<div class="btn-group btn-lg">
+<%= link_to 'Anzeigen', @resource, :class => "btn" %>
+<%= link_to 'Zurück', resources_path, :class => "btn" %>
+</div>

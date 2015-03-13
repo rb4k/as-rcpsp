@@ -29,6 +29,7 @@
 
 <br/>
 
-<%= button_to 'Vorgang einer Ressource neu zuordnen', new_procedure_resource_path, :class => "button", :method => :get %>
-<%= button_to 'Zurück zur Projektplanung', rcpsp_path, :class => "button", :method => :get %>
-
+<div class="btn-group btn-lg">
+<%= link_to 'Vorgang einer Ressource neu zuordnen', new_procedure_resource_path, :class => "btn" %>
+<%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn" %>
+</div>
