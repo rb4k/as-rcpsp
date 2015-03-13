@@ -12,6 +12,53 @@
 </p>
 
 <div class="btn-group btn-lg">
-<%= link_to 'Ändern', edit_procedure_path(@procedure), :class => "btn" %>
 <%= link_to 'Zurück', procedures_path, :class => "btn" %>
+<%= link_to 'Ändern', edit_procedure_path(@procedure), :class => "btn" %>
+<%= link_to 'Vorgang einer Ressource zuordnen', new_procedure_resource_path, :class => "btn" %>
+<%= link_to 'Neue Vorrangsbeziehung anlegen', new_procedure_procedure_path, :class => "btn"%>
+</div>
+
+<br/><br/>
+<div class="row">
+  <div class="span6">
+<table id="procedure_resources" class="table table-hover">
+  <thead>
+  <tr>
+    <th>Ressource</th>
+    <th>Kapazitätsbedarf</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+
+  <% @procedure.procedure_resources.each do |procedure_resource| %>
+      <tr>
+        <td><%= Resource.find(procedure_resource.resource_id).name %></td>
+        <td><%=	procedure_resource.capa_demand  %></td>
+        <td><%= link_to 'Löschen', procedure_resource, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+  <div class="span6">
+<table id="procedure_periods" class="table table-hover">
+  <thead>
+  <tr>
+    <th>Vorrangsbeziehung</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @procedure.reverse_procedure_procedures.each do |procedure_procedure| %>
+      <tr>
+        <td><%= procedure_procedure.prepro.name %></td>
+        <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+  </div>
 </div>
