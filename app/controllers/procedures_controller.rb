@@ -10,6 +10,7 @@ class ProceduresController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @procedures }
+      format.json {render json: timeline }
     end
   end
 # GET /procedures/1
