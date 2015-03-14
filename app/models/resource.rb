@@ -5,4 +5,7 @@ class Resource < ActiveRecord::Base
   has_many :procedures, through: :procedure_resources
   has_many :users, :dependent => :destroy
 
+  validates :ocr, :numericality => {:only_integer => true}
+  validates :cost, :numericality => {:only_integer => true}
+
 end

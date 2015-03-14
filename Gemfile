@@ -9,6 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 gem 'best_in_place'
 gem "chartkick"
+gem 'bootstrap-datepicker-rails', '~> 1.3.1.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

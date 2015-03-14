@@ -6,4 +6,6 @@ class Procedure < ActiveRecord::Base
   has_many :procedure_procedures, foreign_key: "prepro_id", :dependent => :destroy
   has_many :reverse_procedure_procedures, foreign_key: "sucpro_id", class_name: "ProcedureProcedure", :dependent => :destroy
 
+  validates :prot, :numericality => {:only_integer => true}
+
 end

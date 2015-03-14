@@ -1,48 +1,48 @@
 
---- Job RCPSP1.gms Start 03/12/15 03:40:55 24.3.3 r48116 WEX-WEI x86 64bit/MS Windows
-GAMS 24.3.3   Copyright (C) 1987-2014 GAMS Development. All rights reserved
+--- Job RCPSP1.gms Start 03/14/15 12:21:40 24.4.1 r50296 WEX-VS8 x86 32bit/MS Windows
+GAMS 24.4.1   Copyright (C) 1987-2014 GAMS Development. All rights reserved
 Licensee: Kurslizenz                                     S140303/0001AW-GEN
           Leibniz University Hannover, Lehrstuhl fuer ProduktionswirtDC6657
           License for teaching and research at degree granting institutions
 --- Starting compilation
 --- RCPSP1.gms(34) 2 Mb
---- .RCPSP1_Input.inc(72) 3 Mb
---- RCPSP1.gms(159) 3 Mb
---- Starting execution: elapsed 0:00:00.008
---- RCPSP1.gms(184) 4 Mb
+--- .RCPSP1_Input.inc(70) 3 Mb
+--- RCPSP1.gms(145) 3 Mb
+--- Starting execution: elapsed 0:00:00.012
+--- RCPSP1.gms(182) 4 Mb
 --- Generating MIP model RCPSP1
---- RCPSP1.gms(201) 4 Mb
----   59 rows  33 columns  239 non-zeroes
----   32 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.051
+--- RCPSP1.gms(185) 4 Mb
+---   52 rows  27 columns  181 non-zeroes
+---   26 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.107
 
-IBM ILOG CPLEX   24.3.3 r48116 Released Sep 19, 2014 WEI x86 64bit/MS Windows 
-Cplex 12.6.0.1
+IBM ILOG CPLEX   24.4.1 r50296 Released Dec 20, 2014 VS8 x86 32bit/MS Windows 
+Cplex 12.6.1.0
 
 Reading data...
 Starting Cplex...
 Space for names approximately 0.00 Mb
 Use option 'names no' to turn use of names off
-Infeasibility row 'JederVorgangEinmal(Beispielvorgang5)':  0  = 1.
-Presolve time = 0.00 sec. (0.02 ticks)
+Row 'Kapazitaetsrestriktion(Ressource2.t6)' implies binary variable 'x(Beispielvorgang8.t8)' is negative.
+Presolve time = 0.00 sec. (0.01 ticks)
 
 Root node processing (before b&c):
-  Real time             =    0.00 sec. (0.03 ticks)
+  Real time             =    0.00 sec. (0.02 ticks)
 Sequential b&c:
   Real time             =    0.00 sec. (0.00 ticks)
                           ------------
-Total (root+branch&cut) =    0.00 sec. (0.03 ticks)
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
 MIP status(103): integer infeasible
-Cplex Time: 0.00sec (det. 0.03 ticks)
+Cplex Time: 0.00sec (det. 0.02 ticks)
 CPLEX Error  1217: No solution exists.
 Problem is integer infeasible.
 --- Restarting execution
---- RCPSP1.gms(201) 2 Mb
+--- RCPSP1.gms(185) 2 Mb
 --- Reading solution for model RCPSP1
---- Executing after solve: elapsed 0:00:00.178
---- RCPSP1.gms(231) 3 Mb
+--- Executing after solve: elapsed 0:00:00.355
+--- RCPSP1.gms(215) 3 Mb
 --- Putfile outputfile1 C:\Sites\as-rcpsp\RCPSP1_solution_zeit.txt
 --- Putfile outputfile2 C:\Sites\as-rcpsp\RCPSP1_solution_x.txt
 --- Putfile outputfile3 C:\Sites\as-rcpsp\RCPSP1_solution_zw.txt
 *** Status: Normal completion
---- Job RCPSP1.gms Stop 03/12/15 03:40:55 elapsed 0:00:00.241
+--- Job RCPSP1.gms Stop 03/14/15 12:21:41 elapsed 0:00:00.379

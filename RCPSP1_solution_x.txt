@@ -550,3 +550,39 @@
         0.00 ; Beispielvorgang10 ; t45
         0.00 ; Beispielvorgang11 ; t45
         0.00 ; Beispielvorgang12 ; t45
+        0.00 ; Beispielvorgang1 ; t46
+        0.00 ; Beispielvorgang2 ; t46
+        0.00 ; Beispielvorgang3 ; t46
+        0.00 ; Beispielvorgang4 ; t46
+        0.00 ; Beispielvorgang5 ; t46
+        0.00 ; Beispielvorgang6 ; t46
+        0.00 ; Beispielvorgang7 ; t46
+        0.00 ; Beispielvorgang8 ; t46
+        0.00 ; Beispielvorgang9 ; t46
+        0.00 ; Beispielvorgang10 ; t46
+        0.00 ; Beispielvorgang11 ; t46
+        0.00 ; Beispielvorgang12 ; t46
+        0.00 ; Beispielvorgang1 ; t47
+        0.00 ; Beispielvorgang2 ; t47
+        0.00 ; Beispielvorgang3 ; t47
+        0.00 ; Beispielvorgang4 ; t47
+        0.00 ; Beispielvorgang5 ; t47
+        0.00 ; Beispielvorgang6 ; t47
+        0.00 ; Beispielvorgang7 ; t47
+        0.00 ; Beispielvorgang8 ; t47
+        0.00 ; Beispielvorgang9 ; t47
+        0.00 ; Beispielvorgang10 ; t47
+        0.00 ; Beispielvorgang11 ; t47
+        0.00 ; Beispielvorgang12 ; t47
+        0.00 ; Beispielvorgang1 ; t48
+        0.00 ; Beispielvorgang2 ; t48
+        0.00 ; Beispielvorgang3 ; t48
+        0.00 ; Beispielvorgang4 ; t48
+        0.00 ; Beispielvorgang5 ; t48
+        0.00 ; Beispielvorgang6 ; t48
+        0.00 ; Beispielvorgang7 ; t48
+        0.00 ; Beispielvorgang8 ; t48
+        0.00 ; Beispielvorgang9 ; t48
+        0.00 ; Beispielvorgang10 ; t48
+        0.00 ; Beispielvorgang11 ; t48
+        0.00 ; Beispielvorgang12 ; t48

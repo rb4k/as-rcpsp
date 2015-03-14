@@ -4,4 +4,6 @@ class ProcedureResource < ActiveRecord::Base
   belongs_to :procedure, class_name: "Procedure"
   belongs_to :resource, class_name: "Resource"
 
+  validates :capa_demand, :numericality => {:only_integer => true}
+
 end

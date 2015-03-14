@@ -138,11 +138,9 @@ class RcpspsController < ApplicationController
     render 'procedures/index'
   end
 
-
-
   def optimize2
-    if File.exist?("RCPSP2_solution_x.txt")
-      File.delete("RCPSP2_solution_x.txt")
+    if File.exist?("RCPSP2_solution_kosten.txt")
+      File.delete("RCPSP2_solution_kosten.txt")
     end
     if File.exist?("RCPSP2_solution_zeit.txt")
       File.delete("RCPSP2_solution_zeit.txt")
@@ -166,6 +164,10 @@ class RcpspsController < ApplicationController
       proc.save
     }
 
+    @resources.each { |res|
+      res.oce=nil
+      res.save
+    }
 
     if File.exist?("RCSPSP2_Input.inc")
       File.delete("RCPSP2_Input.inc")
@@ -287,7 +289,7 @@ class RcpspsController < ApplicationController
   def solution2
     @resources = Resource.all
     @project = Project.find(1)
-    until File.exist?("RCPSP2_solution_zeit.txt") and File.exists?("RCPSP2_solution_zw.txt")
+    until File.exist?("RCPSP2_solution_zeit.txt") and File.exists?("RCPSP2_solution_zw.txt") and File.exist?("RCPSP2_solution_kosten.txt")
       sleep( 5 )
     end
 

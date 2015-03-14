@@ -49,7 +49,7 @@
     <%= form_for(@project) do |f| %>
         <div class="field">
           <%= f.label :deadline, "Deadline-Termin" %>
-          <%= f.date_select :deadline, {:prompt => { :day => 'Wähle einen Tag', :month => 'Wähle einen Monat', :year => 'Wähle ein Jahr' }}, {:class => 'date-select'}    %>
+          <%= f.text_field :deadline, :class => "datepicker", :value => @project.deadline.strftime("%d.%m.%Y")    %>
         </div>
         <div class="actions">
           <%= f.submit 'Deadline aktualisieren', :class => "btn"  %>
@@ -60,7 +60,9 @@
     <table>
       <thead>
       <tr>
-        <th><%= link_to "Optimiere Kostenplanung", rcpsp_optimize2_path, :class => "btn" %></th>
+        <th><%= link_to "Optimiere Kostenplanung", rcpsp_optimize2_path, :class => "btn" %>
+           <%= image_tag('/images/ajax-loader.gif')  %>
+        <% end %></th>
       </tr>
       </thead>
     </table>
@@ -68,4 +70,11 @@
     </p>
 </div>
 </div>
-<% end %>
+
+<script>
+    $('.datepicker').datepicker({
+        src:'js/bootstrap-datepicker.de.js',
+        language:'de',
+        format: 'dd.mm.yyyy'
+    });
+</script>

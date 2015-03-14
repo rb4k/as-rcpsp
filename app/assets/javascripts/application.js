@@ -16,5 +16,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require bootstrap
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.de.js
 //= require_tree .
 

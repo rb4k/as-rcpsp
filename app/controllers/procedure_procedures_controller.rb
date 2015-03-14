@@ -42,9 +42,9 @@ class ProcedureProceduresController < ApplicationController
 # POST /procedure_procedures.json
   def create
     @procedure_procedure = ProcedureProcedure.new(params[:procedure_procedure])
-    if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
-      redirect_to :back, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
-    else
+    #if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
+    #  redirect_to :back, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
+    #else
         respond_to do |format|
           if @procedure_procedure.save
             format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich angelegt!' }
@@ -54,15 +54,15 @@ class ProcedureProceduresController < ApplicationController
             format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
           end
         end
-    end
+    #end
   end
 # PUT /procedure_procedures/1
 # PUT /procedure_procedures/1.json
   def update
     @procedure_procedure = ProcedureProcedure.find(params[:id])
-    if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
-      redirect_to @procedure_procedure, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
-    else
+    #if ProcedureProcedure.all.map { |y| y.sucpro.id }.include?(@procedure_procedure.prepro_id)
+    #  redirect_to @procedure_procedure, notice: 'Zyklen sind in der Projektplanung nicht erlaubt!'
+    #else
       respond_to do |format|
         if @procedure_procedure.update_attributes(params[:procedure_procedure])
           format.html { redirect_to @procedure_procedure, notice: 'Relation wurde erfolgreich aktualisiert.' }
@@ -72,7 +72,7 @@ class ProcedureProceduresController < ApplicationController
           format.json { render json: @procedure_procedure.errors, status: :unprocessable_entity }
         end
       end
-    end
+    #end
   end
 # DELETE /procedure_procedures/1
 # DELETE /procedure_procedures/1.json
