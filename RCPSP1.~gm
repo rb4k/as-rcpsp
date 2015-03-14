@@ -55,6 +55,8 @@ loop(i,
 
 );
 
+Deadline=35;
+
 SE(i)=max(MinimaleDauer, Deadline);
 SA(i)=SE(i)-d(i);
 
@@ -115,8 +117,7 @@ RCPSP1.limrow=500;
 
 solve RCPSP1 minimizing z using mip;
 
-
-display z.l, x.l;
+display z.l;
 
 
 

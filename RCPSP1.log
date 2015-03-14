@@ -1,48 +1,123 @@
 
---- Job RCPSP1.gms Start 03/14/15 12:21:40 24.4.1 r50296 WEX-VS8 x86 32bit/MS Windows
-GAMS 24.4.1   Copyright (C) 1987-2014 GAMS Development. All rights reserved
+--- Job RCPSP1.gms Start 03/14/15 19:35:25 24.3.3 r48116 WIN-VS8 x86 32bit/MS Windows
+GAMS 24.3.3   Copyright (C) 1987-2014 GAMS Development. All rights reserved
 Licensee: Kurslizenz                                     S140303/0001AW-GEN
           Leibniz University Hannover, Lehrstuhl fuer ProduktionswirtDC6657
           License for teaching and research at degree granting institutions
 --- Starting compilation
---- RCPSP1.gms(34) 2 Mb
---- .RCPSP1_Input.inc(70) 3 Mb
---- RCPSP1.gms(145) 3 Mb
---- Starting execution: elapsed 0:00:00.012
---- RCPSP1.gms(182) 4 Mb
+--- RCPSP1.gms(35) 2 Mb
+--- .RCPSP1_Input.inc(73) 3 Mb
+--- RCPSP1.gms(147) 3 Mb
+--- Starting execution: elapsed 0:00:00.004
+--- RCPSP1.gms(186) 4 Mb
 --- Generating MIP model RCPSP1
---- RCPSP1.gms(185) 4 Mb
----   52 rows  27 columns  181 non-zeroes
----   26 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.107
+--- RCPSP1.gms(189) 4 Mb
+---   99 rows  279 columns  1,928 non-zeroes
+---   278 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.038
 
-IBM ILOG CPLEX   24.4.1 r50296 Released Dec 20, 2014 VS8 x86 32bit/MS Windows 
-Cplex 12.6.1.0
+IBM ILOG CPLEX   24.3.3 r48116 Released Sep 19, 2014 VS8 x86 32bit/MS Windows 
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.6.0.1
 
 Reading data...
 Starting Cplex...
-Space for names approximately 0.00 Mb
+Space for names approximately 0.01 Mb
 Use option 'names no' to turn use of names off
-Row 'Kapazitaetsrestriktion(Ressource2.t6)' implies binary variable 'x(Beispielvorgang8.t8)' is negative.
-Presolve time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 16 rows and 20 columns.
+MIP Presolve modified 1474 coefficients.
+Reduced MIP has 83 rows, 259 columns, and 1601 nonzeros.
+Reduced MIP has 259 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (2.04 ticks)
+Found incumbent of value 37.000000 after 0.02 sec. (3.66 ticks)
+Probing fixed 2 vars, tightened 0 bounds.
+Probing time = 0.00 sec. (1.39 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 11 columns.
+MIP Presolve modified 43 coefficients.
+Reduced MIP has 82 rows, 248 columns, and 1536 nonzeros.
+Reduced MIP has 248 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (1.50 ticks)
+Probing time = 0.00 sec. (1.30 ticks)
+Clique table members: 621.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.12 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =            24.000000
+Perturbation started.
+Iteration:   102   Dual objective     =            24.000000
+Iteration:   164   Dual objective     =            24.000014
+Removing perturbation.
+Root relaxation solution time = 0.00 sec. (2.25 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           37.0000        0.0000      205  100.00%
+Found incumbent of value 37.000000 after 0.06 sec. (10.82 ticks)
+      0     0       24.8558    42       37.0000       24.8558      205   32.82%
+      0     0       25.4759    43       37.0000      Cuts: 45      299   31.15%
+      0     0       25.6314    49       37.0000      Cuts: 30      347   30.73%
+*     0+    0                           31.0000       25.6314      347   17.32%
+Found incumbent of value 31.000000 after 0.11 sec. (22.78 ticks)
+      0     0       26.2358    49       31.0000      Cuts: 24      455   15.37%
+      0     0       26.4859    44       31.0000      Cuts: 29      504   14.56%
+      0     0       26.9882    47       31.0000      Cuts: 31      565   12.94%
+      0     0       27.3302    40       31.0000      Cuts: 28      620   11.84%
+      0     0       27.4686    36       31.0000      Cuts: 35      656   11.39%
+*     0+    0                           30.0000       27.4686      656    8.44%
+Found incumbent of value 30.000000 after 0.17 sec. (39.27 ticks)
+      0     0       27.5987    43       30.0000       Cuts: 6      697    8.00%
+      0     0       28.0660    42       30.0000      Cuts: 29      736    6.45%
+      0     0        cutoff             30.0000                    813    0.00%
+Elapsed time = 0.20 sec. (46.34 ticks, tree = 0.00 MB, solutions = 3)
+
+GUB cover cuts applied:  13
+Clique cuts applied:  7
+Cover cuts applied:  2
+Mixed integer rounding cuts applied:  5
+Zero-half cuts applied:  9
 
 Root node processing (before b&c):
-  Real time             =    0.00 sec. (0.02 ticks)
+  Real time             =    0.20 sec. (46.35 ticks)
 Sequential b&c:
   Real time             =    0.00 sec. (0.00 ticks)
                           ------------
-Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
-MIP status(103): integer infeasible
-Cplex Time: 0.00sec (det. 0.02 ticks)
-CPLEX Error  1217: No solution exists.
-Problem is integer infeasible.
+Total (root+branch&cut) =    0.20 sec. (46.35 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.20sec (det. 46.35 ticks)
+Fixing integer variables, and solving final LP...
+Tried aggregator 1 time.
+LP Presolve eliminated 99 rows and 279 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.12 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.20 ticks)
+
+Proven optimal solution.
+
+MIP Solution:           30.000000    (813 iterations, 0 nodes)
+Final Solve:            30.000000    (0 iterations)
+
+Best possible:          30.000000
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
 --- Restarting execution
---- RCPSP1.gms(185) 2 Mb
+--- RCPSP1.gms(189) 2 Mb
 --- Reading solution for model RCPSP1
---- Executing after solve: elapsed 0:00:00.355
---- RCPSP1.gms(215) 3 Mb
+--- Executing after solve: elapsed 0:00:00.460
+--- RCPSP1.gms(220) 3 Mb
 --- Putfile outputfile1 C:\Sites\as-rcpsp\RCPSP1_solution_zeit.txt
 --- Putfile outputfile2 C:\Sites\as-rcpsp\RCPSP1_solution_x.txt
 --- Putfile outputfile3 C:\Sites\as-rcpsp\RCPSP1_solution_zw.txt
 *** Status: Normal completion
---- Job RCPSP1.gms Stop 03/14/15 12:21:41 elapsed 0:00:00.379
+--- Job RCPSP1.gms Stop 03/14/15 19:35:26 elapsed 0:00:00.463

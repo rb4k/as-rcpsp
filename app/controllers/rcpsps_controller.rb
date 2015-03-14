@@ -79,6 +79,7 @@ class RcpspsController < ApplicationController
 
     printf(f, "\n")
 
+    printf(f, "Deadline= "+ Procedure.sum(:prot).to_s + ";\n")
 
     f.close
 
@@ -94,6 +95,18 @@ class RcpspsController < ApplicationController
 
 
     if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
+
+      fi=File.open("RCPSP1_solution_x.txt", "r")
+      fi.each { |line|
+      sa=line.split(";")
+      sa0=sa[0]
+      sa1=sa[1]
+      sa2=sa[2].delete " \n"
+      proce=Procedure.find_by_name(sa1, :conditions =>{ sa0 => "         0.00 " })
+          proce.name = sa2
+          proce.save
+      }
+      fi.close
 
       fi=File.open("RCPSP1_solution_zeit.txt", "r")
       fi.each { |line|
