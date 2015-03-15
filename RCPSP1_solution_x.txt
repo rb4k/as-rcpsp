@@ -62,7 +62,7 @@
         0.00;Beispielvorgang2;t5
         0.00;Beispielvorgang3;t5
         0.00;Beispielvorgang4;t5
-        1.00;Beispielvorgang5;t5
+        0.00;Beispielvorgang5;t5
         0.00;Beispielvorgang6;t5
         0.00;Beispielvorgang7;t5
         0.00;Beispielvorgang8;t5
@@ -71,7 +71,7 @@
         0.00;Beispielvorgang11;t5
         0.00;Beispielvorgang12;t5
         0.00;Beispielvorgang1;t6
-        1.00;Beispielvorgang2;t6
+        0.00;Beispielvorgang2;t6
         0.00;Beispielvorgang3;t6
         0.00;Beispielvorgang4;t6
         0.00;Beispielvorgang5;t6
@@ -86,12 +86,12 @@
         0.00;Beispielvorgang2;t7
         0.00;Beispielvorgang3;t7
         0.00;Beispielvorgang4;t7
-        0.00;Beispielvorgang5;t7
+        1.00;Beispielvorgang5;t7
         0.00;Beispielvorgang6;t7
         0.00;Beispielvorgang7;t7
         0.00;Beispielvorgang8;t7
         0.00;Beispielvorgang9;t7
-        0.00;Beispielvorgang10;t7
+        1.00;Beispielvorgang10;t7
         0.00;Beispielvorgang11;t7
         0.00;Beispielvorgang12;t7
         0.00;Beispielvorgang1;t8
@@ -107,13 +107,13 @@
         0.00;Beispielvorgang11;t8
         0.00;Beispielvorgang12;t8
         0.00;Beispielvorgang1;t9
-        0.00;Beispielvorgang2;t9
+        1.00;Beispielvorgang2;t9
         0.00;Beispielvorgang3;t9
         0.00;Beispielvorgang4;t9
         0.00;Beispielvorgang5;t9
         0.00;Beispielvorgang6;t9
         0.00;Beispielvorgang7;t9
-        0.00;Beispielvorgang8;t9
+        1.00;Beispielvorgang8;t9
         0.00;Beispielvorgang9;t9
         0.00;Beispielvorgang10;t9
         0.00;Beispielvorgang11;t9
@@ -132,10 +132,10 @@
         0.00;Beispielvorgang12;t10
         0.00;Beispielvorgang1;t11
         0.00;Beispielvorgang2;t11
-        1.00;Beispielvorgang3;t11
+        0.00;Beispielvorgang3;t11
         0.00;Beispielvorgang4;t11
         0.00;Beispielvorgang5;t11
-        1.00;Beispielvorgang6;t11
+        0.00;Beispielvorgang6;t11
         0.00;Beispielvorgang7;t11
         0.00;Beispielvorgang8;t11
         0.00;Beispielvorgang9;t11
@@ -144,13 +144,13 @@
         0.00;Beispielvorgang12;t11
         0.00;Beispielvorgang1;t12
         0.00;Beispielvorgang2;t12
-        0.00;Beispielvorgang3;t12
+        1.00;Beispielvorgang3;t12
         0.00;Beispielvorgang4;t12
         0.00;Beispielvorgang5;t12
         0.00;Beispielvorgang6;t12
         0.00;Beispielvorgang7;t12
         0.00;Beispielvorgang8;t12
-        0.00;Beispielvorgang9;t12
+        1.00;Beispielvorgang9;t12
         0.00;Beispielvorgang10;t12
         0.00;Beispielvorgang11;t12
         0.00;Beispielvorgang12;t12
@@ -169,7 +169,7 @@
         0.00;Beispielvorgang1;t14
         0.00;Beispielvorgang2;t14
         0.00;Beispielvorgang3;t14
-        0.00;Beispielvorgang4;t14
+        1.00;Beispielvorgang4;t14
         0.00;Beispielvorgang5;t14
         0.00;Beispielvorgang6;t14
         0.00;Beispielvorgang7;t14
@@ -193,7 +193,7 @@
         0.00;Beispielvorgang1;t16
         0.00;Beispielvorgang2;t16
         0.00;Beispielvorgang3;t16
-        1.00;Beispielvorgang4;t16
+        0.00;Beispielvorgang4;t16
         0.00;Beispielvorgang5;t16
         0.00;Beispielvorgang6;t16
         0.00;Beispielvorgang7;t16
@@ -219,7 +219,7 @@
         0.00;Beispielvorgang3;t18
         0.00;Beispielvorgang4;t18
         0.00;Beispielvorgang5;t18
-        0.00;Beispielvorgang6;t18
+        1.00;Beispielvorgang6;t18
         0.00;Beispielvorgang7;t18
         0.00;Beispielvorgang8;t18
         0.00;Beispielvorgang9;t18
@@ -256,11 +256,11 @@
         0.00;Beispielvorgang4;t21
         0.00;Beispielvorgang5;t21
         0.00;Beispielvorgang6;t21
-        1.00;Beispielvorgang7;t21
+        0.00;Beispielvorgang7;t21
         0.00;Beispielvorgang8;t21
         0.00;Beispielvorgang9;t21
         0.00;Beispielvorgang10;t21
-        0.00;Beispielvorgang11;t21
+        1.00;Beispielvorgang11;t21
         0.00;Beispielvorgang12;t21
         0.00;Beispielvorgang1;t22
         0.00;Beispielvorgang2;t22
@@ -269,7 +269,7 @@
         0.00;Beispielvorgang5;t22
         0.00;Beispielvorgang6;t22
         0.00;Beispielvorgang7;t22
-        1.00;Beispielvorgang8;t22
+        0.00;Beispielvorgang8;t22
         0.00;Beispielvorgang9;t22
         0.00;Beispielvorgang10;t22
         0.00;Beispielvorgang11;t22
@@ -280,10 +280,10 @@
         0.00;Beispielvorgang4;t23
         0.00;Beispielvorgang5;t23
         0.00;Beispielvorgang6;t23
-        0.00;Beispielvorgang7;t23
+        1.00;Beispielvorgang7;t23
         0.00;Beispielvorgang8;t23
         0.00;Beispielvorgang9;t23
-        1.00;Beispielvorgang10;t23
+        0.00;Beispielvorgang10;t23
         0.00;Beispielvorgang11;t23
         0.00;Beispielvorgang12;t23
         0.00;Beispielvorgang1;t24
@@ -308,8 +308,8 @@
         0.00;Beispielvorgang8;t25
         0.00;Beispielvorgang9;t25
         0.00;Beispielvorgang10;t25
-        1.00;Beispielvorgang11;t25
-        0.00;Beispielvorgang12;t25
+        0.00;Beispielvorgang11;t25
+        1.00;Beispielvorgang12;t25
         0.00;Beispielvorgang1;t26
         0.00;Beispielvorgang2;t26
         0.00;Beispielvorgang3;t26
@@ -354,7 +354,7 @@
         0.00;Beispielvorgang6;t29
         0.00;Beispielvorgang7;t29
         0.00;Beispielvorgang8;t29
-        1.00;Beispielvorgang9;t29
+        0.00;Beispielvorgang9;t29
         0.00;Beispielvorgang10;t29
         0.00;Beispielvorgang11;t29
         0.00;Beispielvorgang12;t29
@@ -393,7 +393,7 @@
         0.00;Beispielvorgang9;t32
         0.00;Beispielvorgang10;t32
         0.00;Beispielvorgang11;t32
-        1.00;Beispielvorgang12;t32
+        0.00;Beispielvorgang12;t32
         0.00;Beispielvorgang1;t33
         0.00;Beispielvorgang2;t33
         0.00;Beispielvorgang3;t33
@@ -418,87 +418,3 @@
         0.00;Beispielvorgang10;t34
         0.00;Beispielvorgang11;t34
         0.00;Beispielvorgang12;t34
-        0.00;Beispielvorgang1;t35
-        0.00;Beispielvorgang2;t35
-        0.00;Beispielvorgang3;t35
-        0.00;Beispielvorgang4;t35
-        0.00;Beispielvorgang5;t35
-        0.00;Beispielvorgang6;t35
-        0.00;Beispielvorgang7;t35
-        0.00;Beispielvorgang8;t35
-        0.00;Beispielvorgang9;t35
-        0.00;Beispielvorgang10;t35
-        0.00;Beispielvorgang11;t35
-        0.00;Beispielvorgang12;t35
-        0.00;Beispielvorgang1;t36
-        0.00;Beispielvorgang2;t36
-        0.00;Beispielvorgang3;t36
-        0.00;Beispielvorgang4;t36
-        0.00;Beispielvorgang5;t36
-        0.00;Beispielvorgang6;t36
-        0.00;Beispielvorgang7;t36
-        0.00;Beispielvorgang8;t36
-        0.00;Beispielvorgang9;t36
-        0.00;Beispielvorgang10;t36
-        0.00;Beispielvorgang11;t36
-        0.00;Beispielvorgang12;t36
-        0.00;Beispielvorgang1;t37
-        0.00;Beispielvorgang2;t37
-        0.00;Beispielvorgang3;t37
-        0.00;Beispielvorgang4;t37
-        0.00;Beispielvorgang5;t37
-        0.00;Beispielvorgang6;t37
-        0.00;Beispielvorgang7;t37
-        0.00;Beispielvorgang8;t37
-        0.00;Beispielvorgang9;t37
-        0.00;Beispielvorgang10;t37
-        0.00;Beispielvorgang11;t37
-        0.00;Beispielvorgang12;t37
-        0.00;Beispielvorgang1;t38
-        0.00;Beispielvorgang2;t38
-        0.00;Beispielvorgang3;t38
-        0.00;Beispielvorgang4;t38
-        0.00;Beispielvorgang5;t38
-        0.00;Beispielvorgang6;t38
-        0.00;Beispielvorgang7;t38
-        0.00;Beispielvorgang8;t38
-        0.00;Beispielvorgang9;t38
-        0.00;Beispielvorgang10;t38
-        0.00;Beispielvorgang11;t38
-        0.00;Beispielvorgang12;t38
-        0.00;Beispielvorgang1;t39
-        0.00;Beispielvorgang2;t39
-        0.00;Beispielvorgang3;t39
-        0.00;Beispielvorgang4;t39
-        0.00;Beispielvorgang5;t39
-        0.00;Beispielvorgang6;t39
-        0.00;Beispielvorgang7;t39
-        0.00;Beispielvorgang8;t39
-        0.00;Beispielvorgang9;t39
-        0.00;Beispielvorgang10;t39
-        0.00;Beispielvorgang11;t39
-        0.00;Beispielvorgang12;t39
-        0.00;Beispielvorgang1;t40
-        0.00;Beispielvorgang2;t40
-        0.00;Beispielvorgang3;t40
-        0.00;Beispielvorgang4;t40
-        0.00;Beispielvorgang5;t40
-        0.00;Beispielvorgang6;t40
-        0.00;Beispielvorgang7;t40
-        0.00;Beispielvorgang8;t40
-        0.00;Beispielvorgang9;t40
-        0.00;Beispielvorgang10;t40
-        0.00;Beispielvorgang11;t40
-        0.00;Beispielvorgang12;t40
-        0.00;Beispielvorgang1;t41
-        0.00;Beispielvorgang2;t41
-        0.00;Beispielvorgang3;t41
-        0.00;Beispielvorgang4;t41
-        0.00;Beispielvorgang5;t41
-        0.00;Beispielvorgang6;t41
-        0.00;Beispielvorgang7;t41
-        0.00;Beispielvorgang8;t41
-        0.00;Beispielvorgang9;t41
-        0.00;Beispielvorgang10;t41
-        0.00;Beispielvorgang11;t41
-        0.00;Beispielvorgang12;t41

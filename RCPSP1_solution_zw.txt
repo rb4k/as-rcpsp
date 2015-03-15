@@ -1,2 +1,2 @@
-Zielfunktionswert:        32.00
+Zielfunktionswert:        25.00
 **********************

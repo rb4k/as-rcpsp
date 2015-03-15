@@ -246,7 +246,7 @@ class RcpspsController < ApplicationController
 
     printf(f, "\n")
 
-    deadline = (@project.deadline - DateTime.now).to_i
+    deadline = (@project.deadline - @project.startdate).to_i
 
     printf(f, "Deadline=" + deadline.to_s + ";\n")
 

@@ -19,7 +19,7 @@
     <th>SA*</th>
     <th>FE*</th>
     <th>SE*</th>
-    <th>Kritischer Pfad</th>
+    <th><b>Kritischer Pfad</b></th>
     <th></th>
     <th></th>
     <th></th>
@@ -33,11 +33,11 @@
     <td><%= procedure.prot %></td>
     <td><%= procedure.reverse_procedure_procedures.count %></td>
     <td><%= procedure.resources.count %></td>
-    <td><%= Date.today + procedure.fa.day %>, <%= procedure.fa%> Tage</td>
+    <td><%= procedure.fa %></td>
     <td><%= procedure.sa %></td>
     <td><%= procedure.fe %></td>
     <td><%= procedure.se %></td>
-    <td><%= procedure.crip %></td>
+    <td><b><%= procedure.crip %></b></td>
     <td><%= link_to 'Anzeigen', procedure %></td>
     <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
     <td><%= link_to 'Löschen', procedure, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
@@ -57,7 +57,7 @@
 <br />
 
 <thead>
-*FA=frühester Anfangszeitpunkt, SA=spätester Anfangszeitpunkt, FE=frühester Endzeitpunkt, SE=spätester Endzeitpunkt
+*FA=frühester Anfangszeitpunkt, SA=spätester Anfangszeitpunkt, FE=frühester Endzeitpunkt und SE=spätester Endzeitpunkt in Tagen nach Start des Projekts.
 </thead>
 
 <br/>
