@@ -5,7 +5,7 @@ class RcpspsController < ApplicationController
   before_filter :signed_in_user
   before_filter :admin_user
 
-  def optimize
+   def optimize
     if File.exist?("RCPSP1_solution_x.txt")
       File.delete("RCPSP1_solution_x.txt")
     end
@@ -99,12 +99,14 @@ class RcpspsController < ApplicationController
       fi=File.open("RCPSP1_solution_x.txt", "r")
       fi.each { |line|
       sa=line.split(";")
+      if sa[0].to_i == 1
       sa0=sa[0]
       sa1=sa[1]
-      sa2=sa[2].delete " \n"
-      proce=Procedure.find_by_name(sa1, :conditions =>{ sa0 => "         0.00 " })
-          proce.name = sa2
-          proce.save
+      sa2=sa[2].delete "t" + " \n"
+      procedure=Procedure.find_by_name(sa1)
+      procedure.crip = sa2
+      procedure.save
+      end
       }
       fi.close
 

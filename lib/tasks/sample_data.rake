@@ -17,16 +17,16 @@ namespace :db do
                  password: "foobar",
                  password_confirmation: "foobar",
                  capacity: 2,
-                 resource_id: 2)
+                 resource_id: 1)
 
 
-    (3..10).each do |n|
+    (3..5).each do |n|
 #      name = Faker::Name.name
       name = "Nutzer-#{n}"
       email = "example-#{n}@railstutorial.org"
       password = "password"
       capacity = 2
-      resource_id = rand(1..2)
+      resource_id = 1
       User.create!(name: name,
                    email: email,
                    password: password,
@@ -35,6 +35,20 @@ namespace :db do
                    resource_id: resource_id)
     end
 
+    (6..10).each do |n|
+#      name = Faker::Name.name
+      name = "Nutzer-#{n}"
+      email = "example-#{n}@railstutorial.org"
+      password = "password"
+      capacity = 2
+      resource_id = 2
+      User.create!(name: name,
+                   email: email,
+                   password: password,
+                   password_confirmation: password,
+                   capacity: capacity,
+                   resource_id: resource_id)
+    end
 
 
     (1..12).each do |n|

@@ -9,6 +9,7 @@ class CreateProcedures < ActiveRecord::Migration
       t.integer :sa
       t.integer :fe
       t.integer :se
+      t.integer :crip
 
       t.timestamps
     end

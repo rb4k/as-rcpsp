@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20150310092848) do
 
-  create_table "periods", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "procedure_procedures", :force => true do |t|
     t.integer  "prepro_id"
     t.integer  "sucpro_id"
@@ -43,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
     t.integer  "sa"
     t.integer  "fe"
     t.integer  "se"
+    t.integer  "crip"
   end
 
   create_table "projects", :force => true do |t|

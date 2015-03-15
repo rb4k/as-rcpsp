@@ -133,7 +133,7 @@ put outputfile2;
 
 loop(t,
 loop(i,
-     put x.l(i,t), ' ; 'i.tl:0, ' ; ' t.tl:0  /
+     put x.l(i,t), ';' i.tl:0, ';' t.tl:0  /
 );
 );
 putclose outputfile2;

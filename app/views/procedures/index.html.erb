@@ -12,11 +12,14 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Vorgangsdauer</th>
+    <th>Vorgangs- dauer</th>
+    <th>Anzahl Vorgänger</th>
+    <th>Anzahl Ressourcen</th>
     <th>FA*</th>
     <th>SA*</th>
     <th>FE*</th>
     <th>SE*</th>
+    <th>Kritischer Pfad</th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,10 +31,13 @@
   <tr>
     <td><%= procedure.name %></td>
     <td><%= procedure.prot %></td>
+    <td><%= procedure.reverse_procedure_procedures.count %></td>
+    <td><%= procedure.resources.count %></td>
     <td><%= procedure.fa %></td>
     <td><%= procedure.sa %></td>
     <td><%= procedure.fe %></td>
     <td><%= procedure.se %></td>
+    <td><%= procedure.crip %></td>
     <td><%= link_to 'Anzeigen', procedure %></td>
     <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
     <td><%= link_to 'Löschen', procedure, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>

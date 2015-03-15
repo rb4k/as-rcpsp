@@ -31,7 +31,7 @@
     <td><%= resource.name %></td>
     <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
     <td><%= resource.cost %></td>
-    <%= elements.push(resource.cost * resource.procedures.sum(&:prot)) %>
+    <!-- elements.push(resource.cost * resource.procedures.sum(&:prot)) %> -->
     <th><%= resource.cost * resource.procedures.sum(&:prot) %></th>
     <td><%= resource.ocr %></td>
     <td><%= resource.oce %></td>
@@ -49,9 +49,6 @@
 </table>
 
 <br />
-
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-    <%= bar_chart Resource.group(:name).sum(:cost) %>
 
 <% if signed_in? && current_user.admin? %>
     <div class="btn-group btn-lg">
