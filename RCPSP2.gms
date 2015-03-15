@@ -143,18 +143,28 @@ loop(r,
 
 putclose outputfile1;
 
-file outputfile2 / 'RCPSP2_solution_zeit.txt'/;
+file outputfile2 / 'RCPSP2_solution_x.txt'/;
 put outputfile2;
+
+loop(t,
+loop(i,
+     put x.l(i,t), ';' i.tl:0, ';' t.tl:0  /
+);
+);
+putclose outputfile2;
+
+file outputfile3 / 'RCPSP2_solution_zeit.txt'/;
+put outputfile3;
 
 loop(i,
      put i.tl:0, '; ' FA(i), ' ; ' SA(i), ' ; ' FE(i), ' ; ' SE(i) /
 );
-putclose outputfile2;
+putclose outputfile3;
 
-file outputfile3 /'RCPSP2_solution_zw.txt'/;
-put outputfile3;
+file outputfile4 /'RCPSP2_solution_zw.txt'/;
+put outputfile4;
 
 put 'Zielfunktionswert: ',z.l /
 put '**********************'
 
-putclose outputfile3;
+putclose outputfile4;

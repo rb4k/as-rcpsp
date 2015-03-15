@@ -31,8 +31,11 @@ class RcpspsController < ApplicationController
       proc.save
     }
 
-    @objective_function_value=nil
 
+    @projects.each { |projekt|
+      projekt.zwc=nil
+      projekt.save
+    }
 
     if File.exist?("RCSPSP1_Input.inc")
       File.delete("RCPSP1_Input.inc")
@@ -154,6 +157,9 @@ class RcpspsController < ApplicationController
   end
 
   def optimize2
+    if File.exist?("RCPSP2_solution_x.txt")
+      File.delete("RCPSP2_solution_x.txt")
+    end
     if File.exist?("RCPSP2_solution_kosten.txt")
       File.delete("RCPSP2_solution_kosten.txt")
     end
@@ -177,6 +183,11 @@ class RcpspsController < ApplicationController
       proc.fe=nil
       proc.se=nil
       proc.save
+    }
+
+    @projects.each { |projekt|
+      projekt.zwt=nil
+      projekt.save
     }
 
     @resources.each { |res|
@@ -254,6 +265,20 @@ class RcpspsController < ApplicationController
     redirect_to url_for(:controller => :rcpsps, :action => :solution2)
 
     if (File.exist?("RCPSP2_solution_kosten.txt") and File.exists?("RCPSP2_solution_zw.txt"))
+
+      fi=File.open("RCPSP2_solution_x.txt", "r")
+      fi.each { |line|
+        sa=line.split(";")
+        if sa[0].to_i == 1
+          sa0=sa[0]
+          sa1=sa[1]
+          sa2=sa[2].delete "t" + " \n"
+          procedure=Procedure.find_by_name(sa1)
+          procedure.crip = sa2
+          procedure.save
+        end
+      }
+      fi.close
 
       fi=File.open("RCPSP2_solution_kosten.txt", "r")
       fi.each { |line|
