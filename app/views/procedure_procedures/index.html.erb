@@ -30,5 +30,28 @@
 <%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn"%>
 </div>
 
+<% require 'rgl/adjacency' %>
+<% require 'rgl/topsort' %>
+<% elements = [] %>
+<% @procedure_procedures.each do |pro_pro|
+  elements.push(pro_pro.prepro_id, pro_pro.sucpro_id)
+end %>
+<%= dg=RGL::DirectedAdjacencyGraph[@procedure_procedures.map { |y|
+  y.prepro_id y.sucpro_id } ] %>
+<br/>
 
-<!-- <%= @procedure_procedures.map { |y| y.sucpro.id } %> -->
+<%= elements %>
+<%= dg.acyclic? %>
+
+
+
+
+
+<!--<= @procedure_procedures.map { |y|-->
+  <!--y.prepro.id-->
+  <!--y.sucpro.id } %>-->
+
+
+<!--< @procedure_procedures.each do |pro_pro|-->
+  <!--elements.push(pro_pro.prepro_id,pro_pro.sucpro_id)-->
+<!--end %>-->
