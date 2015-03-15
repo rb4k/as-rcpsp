@@ -3,6 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.string :path
+      t.date :startdate
       t.date :deadline
       t.datetime :created_at
       t.datetime :updated_at

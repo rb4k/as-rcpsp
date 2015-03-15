@@ -33,7 +33,7 @@
     <td><%= procedure.prot %></td>
     <td><%= procedure.reverse_procedure_procedures.count %></td>
     <td><%= procedure.resources.count %></td>
-    <td><%= procedure.fa %></td>
+    <td><%= Date.today + procedure.fa.day %>, <%= procedure.fa%> Tage</td>
     <td><%= procedure.sa %></td>
     <td><%= procedure.fe %></td>
     <td><%= procedure.se %></td>

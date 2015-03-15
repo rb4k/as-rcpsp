@@ -17,7 +17,8 @@
 
 <% if signed_in? %>
 
-
+    <div class="row">
+      <div class="span5">
     <%= form_for(@project) do |f| %>
         <div class="field">
           <%= f.label :path, "Verzeichnis" %>
@@ -26,7 +27,19 @@
         <div class="actions">
           <%= f.submit 'Verzeichnis aktualisieren', :class => "btn"  %>
         </div>
+     </div>
+
+     <div class="span6">
+        <div class="field">
+          <%= f.label :startdate, "Starttermin" %>
+          <%= f.text_field :startdate, :class => "datepicker", :value => @project.startdate.strftime("%d.%m.%Y")    %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Deadline aktualisieren', :class => "btn"  %>
+        </div>
     <% end %>
+    </div>
+    </div>
 
     <div class="row">
       <div class="span5">

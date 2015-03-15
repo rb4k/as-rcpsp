@@ -5,11 +5,11 @@ class CreateProcedures < ActiveRecord::Migration
       t.datetime :created_at
       t.datetime :updated_at
       t.integer :prot
-      t.integer :fa
-      t.integer :sa
-      t.integer :fe
-      t.integer :se
-      t.integer :crip
+      t.integer :fa, :default => 0
+      t.integer :sa, :default => 0
+      t.integer :fe, :default => 0
+      t.integer :se, :default => 0
+      t.integer :crip, :default => 0
 
       t.timestamps
     end
