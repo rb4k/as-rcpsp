@@ -14,8 +14,8 @@ WIDTH=1089
 1=
 
 [MRUFILES]
-1=C:\Sites\as-rcpsp\RCPSP1.lst
-2=C:\Sites\as-rcpsp\RCPSP1.gms
+1=C:\Sites\as-rcpsp\RCPSP1.gms
+2=C:\Sites\as-rcpsp\RCPSP1.lst
 3=C:\Sites\as-rcpsp\RCPSP2.gms
 4=C:\Sites\as-rcpsp\RCPSP2.lst
 5=C:\Sites\as-rcpsp\RCPSP1_Input.inc
