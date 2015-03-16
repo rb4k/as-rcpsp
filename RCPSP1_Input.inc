@@ -74,6 +74,6 @@ k('Beispielvorgang12','Ressource1')= 8;
 k('Beispielvorgang1','Ressource2')= 2;
 
 KP('Ressource1')= 10;
-KP('Ressource2')= 10;
+KP('Ressource2')= 8;
 
 Deadline= 34;

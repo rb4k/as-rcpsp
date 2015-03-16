@@ -1,2 +1,2 @@
-Ressource1;        70.00
-Ressource2;        16.00
+Ressource1;         0.00
+Ressource2;        10.00
