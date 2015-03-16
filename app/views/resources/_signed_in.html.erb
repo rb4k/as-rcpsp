@@ -1,0 +1,55 @@
+
+
+<% if @project.zwc!=nil %>
+    Die Projektzusatzkosten betragen <strong><%=  @project.zwc %></strong> Geldeinheiten. Die Optimierung erfolgte mit einem Datenstand vom <strong><%=  @project.updated_at.strftime("%d.%m.%Y") %>.</strong><br> <br>
+<% end %>
+
+<table id="resources" class="table table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Gesamt- kapazität</th>
+    <th>Kosten/ ME</th>
+    <th>Grund- kosten</th>
+    <th>Zusatz- kosten/ ME</th>
+    <th>Zusatz- einheiten</th>
+    <th>Zusatzkosten Gesamt</th>
+    <th>Gesamtkosten</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% elements = [] %>
+  <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.name %></td>
+        <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
+        <td><%= resource.cost %></td>
+        <!-- elements.push(resource.cost * resource.procedures.sum(&:prot)) %> -->
+        <th><%= resource.cost * resource.procedures.sum(&:prot) %></th>
+        <td><%= resource.ocr %></td>
+        <td><%= resource.oce %></td>
+        <th><%= resource.ocr * resource.oce %></th>
+        <th><%= resource.ocr * resource.oce + (resource.cost *  resource.procedures.sum(&:prot) ) %></th>
+        <td><%= link_to 'Anzeigen', resource %></td>
+        <% if signed_in? && current_user.admin? %>
+            <td><%= link_to 'Ändern', edit_resource_path(resource) %></td>
+            <td><%= link_to 'Löschen', resource, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
+        <% end %>
+      </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<% if current_user.admin? %>
+    <div class="btn-group btn-lg">
+      <%= link_to 'Neue Ressource anlegen', new_resource_path, :class => "btn" %>
+      <%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn" %>
+    </div>
+<% end %>

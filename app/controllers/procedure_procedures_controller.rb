@@ -5,15 +5,6 @@ class ProcedureProceduresController < ApplicationController
 
   def index
     @procedure_procedures = ProcedureProcedure.all
-    require 'rgl/adjacency'
-    require 'rgl/dot'
-    @result = RGL::DirectedAdjacencyGraph.new
-    ProcedureProcedure.all.each { |x|
-      @result.add_edge x.prepro_id, x.sucpro_id }
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @procedure_procedures }
-    end
   end
 
   def show

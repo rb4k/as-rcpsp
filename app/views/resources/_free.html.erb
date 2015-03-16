@@ -1,0 +1,25 @@
+
+
+<table id="resources" class="table table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <% elements = [] %>
+  <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.name %></td>
+            <td><%= link_to 'Bewerben', signup_path %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+
+    <%= link_to 'Hier geht es zur Anmeldung', signup_path, :class => "btn" %>

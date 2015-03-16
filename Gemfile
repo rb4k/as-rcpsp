@@ -19,6 +19,7 @@ group :development, :test do
   gem 'wdm', '~> 0.0.3'
   gem 'guard-spork', '1.2.0'
   gem 'spork', '0.9.2'
+  gem 'dot'
   gem 'ruby-graphviz', '~> 1.2.1'
   gem 'graphviz', '~> 0.1.0'
   gem 'rgl'

@@ -38,6 +38,11 @@ VN('Beispielvorgang8','Beispielvorgang9')=yes;
 VN('Beispielvorgang9','Beispielvorgang12')=yes;
 VN('Beispielvorgang10','Beispielvorgang11')=yes;
 VN('Beispielvorgang11','Beispielvorgang12')=yes;
+VN('Beispielvorgang1','Beispielvorgang7')=yes;
+VN('Beispielvorgang1','Beispielvorgang7')=yes;
+VN('Beispielvorgang1','Beispielvorgang7')=yes;
+VN('Beispielvorgang1','Beispielvorgang7')=yes;
+VN('Beispielvorgang1','Beispielvorgang7')=yes;
 
 d('Beispielvorgang1')= 3;
 d('Beispielvorgang2')= 2;
@@ -66,6 +71,7 @@ k('Beispielvorgang9','Ressource1')= 8;
 k('Beispielvorgang10','Ressource1')= 9;
 k('Beispielvorgang11','Ressource1')= 8;
 k('Beispielvorgang12','Ressource1')= 8;
+k('Beispielvorgang1','Ressource2')= 2;
 
 KP('Ressource1')= 10;
 KP('Ressource2')= 10;

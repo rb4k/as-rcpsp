@@ -9,29 +9,9 @@ digraph RGL__DirectedAdjacencyGraph {
         label = 2
     ]
 
-    11 [
-        fontsize = 8,
-        label = 5
-    ]
-
-    17 [
-        fontsize = 8,
-        label = 8
-    ]
-
-    21 [
-        fontsize = 8,
-        label = 10
-    ]
-
     7 [
         fontsize = 8,
         label = 3
-    ]
-
-    13 [
-        fontsize = 8,
-        label = 6
     ]
 
     9 [
@@ -39,43 +19,21 @@ digraph RGL__DirectedAdjacencyGraph {
         label = 4
     ]
 
-    15 [
+    11 [
         fontsize = 8,
-        label = 7
+        label = 5
     ]
 
-    25 [
+    13 [
         fontsize = 8,
-        label = 12
-    ]
-
-    19 [
-        fontsize = 8,
-        label = 9
-    ]
-
-    23 [
-        fontsize = 8,
-        label = 11
+        label = 6
     ]
 
     3 -> 5 [
         fontsize = 8
     ]
 
-    3 -> 11 [
-        fontsize = 8
-    ]
-
-    3 -> 17 [
-        fontsize = 8
-    ]
-
-    3 -> 21 [
-        fontsize = 8
-    ]
-
-    3 -> 15 [
+    3 -> 13 [
         fontsize = 8
     ]
 
@@ -83,47 +41,15 @@ digraph RGL__DirectedAdjacencyGraph {
         fontsize = 8
     ]
 
-    5 -> 13 [
+    5 -> 9 [
         fontsize = 8
     ]
 
-    11 -> 13 [
+    9 -> 11 [
         fontsize = 8
     ]
 
-    17 -> 19 [
-        fontsize = 8
-    ]
-
-    21 -> 23 [
-        fontsize = 8
-    ]
-
-    7 -> 9 [
-        fontsize = 8
-    ]
-
-    13 -> 15 [
-        fontsize = 8
-    ]
-
-    9 -> 15 [
-        fontsize = 8
-    ]
-
-    9 -> 25 [
-        fontsize = 8
-    ]
-
-    15 -> 25 [
-        fontsize = 8
-    ]
-
-    19 -> 25 [
-        fontsize = 8
-    ]
-
-    23 -> 25 [
+    13 -> 9 [
         fontsize = 8
     ]
 }
