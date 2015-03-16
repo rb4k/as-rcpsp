@@ -56,7 +56,6 @@
   <% @procedure.reverse_procedure_procedures.each do |procedure_procedure| %>
       <tr>
         <td><%= procedure_procedure.prepro.name %></td>
-        <td><%= link_to 'Ändern', edit_procedure_procedure_path(procedure_procedure) %></td>
         <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
       </tr>
   <% end %>

@@ -6,8 +6,7 @@
   <thead>
   <tr>
     <th>Von Vorgang</th>
-    <th>Zu Vorgang</th>   
-    <th></th>
+    <th>Zu Vorgang</th>
     <th></th>
   </tr>
   </thead>
@@ -16,8 +15,6 @@
       <tr>
         <td><%= procedure_procedure.prepro.name %></td>
         <td><%= procedure_procedure.sucpro.name %></td>
-        <td><%= link_to 'Anzeigen', procedure_procedure %></td>
-        <td><%= link_to 'Ändern', edit_procedure_procedure_path(procedure_procedure) %></td>
         <td><%= link_to 'Löschen', procedure_procedure, method: :delete, data: {confirm: 'Sind Sie sicher?'} %></td>
       </tr>
   <% end %>
@@ -33,24 +30,3 @@
 <% require 'rgl/adjacency' %>
 <% require 'rgl/topsort' %>
 <% elements = [] %>
-
-
-
-<% result = RGL::DirectedAdjacencyGraph.new	  %>
-<%	 @procedure_procedures.each { |x| %>
-<%        result.add_edge x.prepro_id, x.sucpro_id %>
-  <%         }%>
-<%= result.acyclic? %>
-
-
-
-
-
-<!--<= @procedure_procedures.map { |y|-->
-  <!--y.prepro.id-->
-  <!--y.sucpro.id } %>-->
-
-
-<!--< @procedure_procedures.each do |pro_pro|-->
-  <!--elements.push(pro_pro.prepro_id,pro_pro.sucpro_id)-->
-<!--end %>-->
