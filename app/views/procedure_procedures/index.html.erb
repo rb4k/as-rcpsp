@@ -33,15 +33,14 @@
 <% require 'rgl/adjacency' %>
 <% require 'rgl/topsort' %>
 <% elements = [] %>
-<% @procedure_procedures.each do |pro_pro|
-  elements.push(pro_pro.prepro_id, pro_pro.sucpro_id)
-end %>
-<%= dg=RGL::DirectedAdjacencyGraph[@procedure_procedures.map { |y|
-  y.prepro_id y.sucpro_id } ] %>
-<br/>
 
-<%= elements %>
-<%= dg.acyclic? %>
+
+
+<% result = RGL::DirectedAdjacencyGraph.new	  %>
+<%	 @procedure_procedures.each { |x| %>
+<%        result.add_edge x.prepro_id, x.sucpro_id %>
+  <%         }%>
+<%= result.acyclic? %>
 
 
 
