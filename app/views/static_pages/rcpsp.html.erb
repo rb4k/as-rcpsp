@@ -12,77 +12,77 @@
 </div>
 
 <br>
+
 <p>
   Auf dieser Seite werden die Grunddaten zur Durchführung der Projektplanung angepasst und die Optimierung durchgeführt: <br> <br>
 </p>
 
 <% if signed_in? %>
 
-    <div class="row">
-      <div class="span5">
+<div class="row">
+ <div class="span5">
+    <h2>Programme</h2>
     <%= form_for(@project) do |f| %>
         <div class="field">
-          <%= f.label :path, "Verzeichnis" %>
+          <%= f.label :path, "GAMS-Verzeichnis" %>
           <%= f.text_field :path %>
+          <a href="http://http://www.gams.com/download/">(GAMS-Download)</a>
         </div>
+
+        <br/>
+
+        <div class="field">
+          <%= f.label :gvp, "GraphViz-Verzeichnis" %>
+          <%= f.text_field :gvp %>
+          <a href="http://www.graphviz.org/Download..php">(GraphViz-Download)</a>
+        </div>
+
         <div class="actions">
-          <%= f.submit 'Verzeichnis aktualisieren', :class => "btn"  %>
+          <%= f.submit 'Verzeichnisse aktualisieren', :class => "btn"  %>
         </div>
      </div>
 
      <div class="span6">
-        <div class="field">
-          <%= f.label :startdate, "Starttermin" %>
-          <%= f.text_field :startdate, :class => "datepicker", :value => @project.startdate.strftime("%d.%m.%Y")    %>
-        </div>
-        <div class="actions">
-          <%= f.submit 'Starttermin aktualisieren', :class => "btn"  %>
-        </div>
-    <% end %>
-    </div>
-    </div>
-
-    <div class="row">
-      <div class="span5">
-    <p>
       <h2>Start der Kapazitätsplanung</h2>
-    <table>
-      <thead>
-      <tr>
-      <th><%= link_to "Optimiere Kapazitätsplanung", rcpsp_optimize_path, :class => "btn", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Berechnung gestartet..."} %></th>
-      </tr>
-      </thead>
-      </table>
-    </p>
-      </div>
 
+      <div class="field">
+           <%= f.label :startdate, "Starttermin" %>
+           <%= f.text_field :startdate, :class => "datepicker", :value => @project.startdate.strftime("%d.%m.%Y")    %>
+         </div>
+         <div class="actions">
+           <%= f.submit 'Starttermin aktualisieren', :class => "btn"  %>
+         </div>
+        <table>
+         <tr>
+           <th><%= link_to "Optimiere Kapazitätsplanung", rcpsp_optimize_path, :class => "btn", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Berechnung gestartet..."} %></th>
+         </tr>
+        </table>
+      <% end %>
 
-<div class="span6">
-    <p>
-      <h2>Start der Kostenplanung</h2>
+        <br/>
+
+    <h2>Start der Kostenplanung</h2>
     <%= form_for(@project) do |f| %>
-        <div class="field">
+       <div class="field">
           <%= f.label :deadline, "Deadline-Termin" %>
           <%= f.text_field :deadline, :class => "datepicker", :value => @project.deadline.strftime("%d.%m.%Y")    %>
-        </div>
-        <div class="actions">
-          <%= f.submit 'Deadline aktualisieren', :class => "btn"  %>
-        </div>
+       </div>
+       <div class="actions">
+           <%= f.submit 'Deadline aktualisieren', :class => "btn"  %>
+       </div>
+        <table>
+          <tr>
+            <th><%= link_to "Optimiere Kostenplanung", rcpsp_optimize2_path, :class => "btn", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Berechnung gestartet..."} %>
+          </tr>
+        </table>
     <% end %>
+<% end %>
 
-
-    <table>
-      <thead>
-      <tr>
-        <th><%= link_to "Optimiere Kostenplanung", rcpsp_optimize2_path, :class => "btn", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Berechnung gestartet..."} %>
-        <% end %></th>
-      </tr>
-      </thead>
-    </table>
-
-    </p>
+ </div>
 </div>
-</div>
+
+
+
 
 <script>
     $('.datepicker').datepicker({

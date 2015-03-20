@@ -3,16 +3,22 @@ class ProcedureProceduresController < ApplicationController
     before_filter :signed_in_user
   before_filter :admin_user
 
-  def index
+  def graph
     @procedure_procedures = ProcedureProcedure.all
+    @project = Project.find(1)
     require 'rgl/adjacency'
     require 'rgl/dot'
-        result = RGL::DirectedAdjacencyGraph.new
-        @procedure_procedures.each { |x|
-          result.add_edge  x.prepro.name, x.sucpro.name }
-          result.write_to_graphic_file('png')
+    result = RGL::DirectedAdjacencyGraph.new
+    @procedure_procedures.each { |x|
+      result.add_edge  x.prepro.name, x.sucpro.name }
+    result.write_to_graphic_file('png')
     require 'graphviz'
-    GraphViz.parse( "graph.dot", :path => "C:\\Program Files (x86)\\Graphviz2.38\\bin" ).output(:png => "graph.png", :path => "C:\\Program Files (x86)\\Graphviz2.38\\bin")
+    GraphViz.parse( "graph.dot", :path => @project.gvp.to_s ).output(:png => "graph.png", :path => @project.gvp.to_s)
+  end
+
+
+  def index
+    @procedure_procedures = ProcedureProcedure.all
   end
 
   def show
