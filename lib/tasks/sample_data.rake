@@ -52,7 +52,7 @@ namespace :db do
 
 
     (1..12).each do |n|
-      name = "Vorgang#{n}"
+      name = "Beispielvorgang#{n}"
       prot = rand(2..5)
       Procedure.create!(name: name,
                    prot: prot)

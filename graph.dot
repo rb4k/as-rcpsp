@@ -1,125 +1,125 @@
 digraph RGL__DirectedAdjacencyGraph {
-    47601936 [
+    48074796 [
         fontsize = 8,
-        label = Beispielvorgang1
+        label = Vorgang10000
     ]
 
-    47601828 [
+    48074748 [
         fontsize = 8,
-        label = Beispielvorgang2
+        label = Vorgang20000
     ]
 
-    47152008 [
+    48122976 [
         fontsize = 8,
-        label = Beispielvorgang5
+        label = Vorgang50000
     ]
 
-    28413708 [
+    48178416 [
         fontsize = 8,
-        label = Beispielvorgang8
+        label = Vorgang80000
     ]
 
-    34395312 [
+    48210384 [
         fontsize = 8,
-        label = Beispielvorgang10
+        label = Vorgang100000
     ]
 
-    38313012 [
+    48284856 [
         fontsize = 8,
-        label = Beispielvorgang3
+        label = Vorgang30000
     ]
 
-    44130900 [
+    48315900 [
         fontsize = 8,
-        label = Beispielvorgang6
+        label = Vorgang60000
     ]
 
-    44544192 [
+    48351252 [
         fontsize = 8,
-        label = Beispielvorgang4
+        label = Vorgang40000
     ]
 
-    44973744 [
+    48367332 [
         fontsize = 8,
-        label = Beispielvorgang7
+        label = Vorgang70000
     ]
 
-    45190356 [
+    48493824 [
         fontsize = 8,
-        label = Beispielvorgang12
+        label = Vorgang12000
     ]
 
-    46949532 [
+    48779280 [
         fontsize = 8,
-        label = Beispielvorgang9
+        label = Vorgang90000
     ]
 
-    47265660 [
+    48853200 [
         fontsize = 8,
-        label = Beispielvorgang11
+        label = Vorgang11000
     ]
 
-    47601936 -> 47601828 [
+    48074796 -> 48074748 [
         fontsize = 8
     ]
 
-    47601936 -> 47152008 [
+    48074796 -> 48122976 [
         fontsize = 8
     ]
 
-    47601936 -> 28413708 [
+    48074796 -> 48178416 [
         fontsize = 8
     ]
 
-    47601936 -> 34395312 [
+    48074796 -> 48210384 [
         fontsize = 8
     ]
 
-    47601828 -> 38313012 [
+    48074748 -> 48284856 [
         fontsize = 8
     ]
 
-    47601828 -> 44130900 [
+    48074748 -> 48315900 [
         fontsize = 8
     ]
 
-    47152008 -> 44130900 [
+    48122976 -> 48315900 [
         fontsize = 8
     ]
 
-    28413708 -> 46949532 [
+    48178416 -> 48779280 [
         fontsize = 8
     ]
 
-    34395312 -> 47265660 [
+    48210384 -> 48853200 [
         fontsize = 8
     ]
 
-    38313012 -> 44544192 [
+    48284856 -> 48351252 [
         fontsize = 8
     ]
 
-    44130900 -> 44973744 [
+    48315900 -> 48367332 [
         fontsize = 8
     ]
 
-    44544192 -> 44973744 [
+    48351252 -> 48367332 [
         fontsize = 8
     ]
 
-    44544192 -> 45190356 [
+    48351252 -> 48493824 [
         fontsize = 8
     ]
 
-    44973744 -> 45190356 [
+    48367332 -> 48493824 [
         fontsize = 8
     ]
 
-    46949532 -> 45190356 [
+    48779280 -> 48493824 [
         fontsize = 8
     ]
 
-    47265660 -> 45190356 [
+    48853200 -> 48493824 [
         fontsize = 8
     ]
 }

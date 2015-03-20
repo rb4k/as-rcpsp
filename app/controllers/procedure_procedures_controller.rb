@@ -8,9 +8,9 @@ class ProcedureProceduresController < ApplicationController
     require 'rgl/adjacency'
     require 'rgl/dot'
         result = RGL::DirectedAdjacencyGraph.new
-        ProcedureProcedure.all.each { |x|
-          result.add_edge x.prepro.name, x.sucpro.name }
-        result.write_to_graphic_file('png')
+        @procedure_procedures.each { |x|
+          result.add_edge  x.prepro.name, x.sucpro.name }
+          result.write_to_graphic_file('png')
     require 'graphviz'
     GraphViz.parse( "graph.dot", :path => "C:\\Program Files (x86)\\Graphviz2.38\\bin" ).output(:png => "graph.png", :path => "C:\\Program Files (x86)\\Graphviz2.38\\bin")
   end

@@ -4,71 +4,71 @@ Ressource2
 /;
 
 set i / 
-Beispielvorgang1
-Beispielvorgang2
-Beispielvorgang3
-Beispielvorgang4
-Beispielvorgang5
-Beispielvorgang6
-Beispielvorgang7
-Beispielvorgang8
-Beispielvorgang9
-Beispielvorgang10
-Beispielvorgang11
-Beispielvorgang12
+Vorgang1
+Vorgang2
+Vorgang3
+Vorgang4
+Vorgang5
+Vorgang6
+Vorgang7
+Vorgang8
+Vorgang9
+Vorgang10
+Vorgang11
+Vorgang12
 /;
 
-set t / t0*t34 /;
+set t / t0*t44 /;
 
 VN(h,i)=no;
 
-VN('Beispielvorgang1','Beispielvorgang2')=yes;
-VN('Beispielvorgang1','Beispielvorgang5')=yes;
-VN('Beispielvorgang1','Beispielvorgang8')=yes;
-VN('Beispielvorgang1','Beispielvorgang10')=yes;
-VN('Beispielvorgang2','Beispielvorgang3')=yes;
-VN('Beispielvorgang2','Beispielvorgang6')=yes;
-VN('Beispielvorgang3','Beispielvorgang4')=yes;
-VN('Beispielvorgang4','Beispielvorgang7')=yes;
-VN('Beispielvorgang4','Beispielvorgang12')=yes;
-VN('Beispielvorgang5','Beispielvorgang6')=yes;
-VN('Beispielvorgang6','Beispielvorgang7')=yes;
-VN('Beispielvorgang7','Beispielvorgang12')=yes;
-VN('Beispielvorgang8','Beispielvorgang9')=yes;
-VN('Beispielvorgang9','Beispielvorgang12')=yes;
-VN('Beispielvorgang10','Beispielvorgang11')=yes;
-VN('Beispielvorgang11','Beispielvorgang12')=yes;
+VN('Vorgang1','Vorgang2')=yes;
+VN('Vorgang1','Vorgang5')=yes;
+VN('Vorgang1','Vorgang8')=yes;
+VN('Vorgang1','Vorgang10')=yes;
+VN('Vorgang2','Vorgang3')=yes;
+VN('Vorgang2','Vorgang6')=yes;
+VN('Vorgang3','Vorgang4')=yes;
+VN('Vorgang4','Vorgang7')=yes;
+VN('Vorgang4','Vorgang12')=yes;
+VN('Vorgang5','Vorgang6')=yes;
+VN('Vorgang6','Vorgang7')=yes;
+VN('Vorgang7','Vorgang12')=yes;
+VN('Vorgang8','Vorgang9')=yes;
+VN('Vorgang9','Vorgang12')=yes;
+VN('Vorgang10','Vorgang11')=yes;
+VN('Vorgang11','Vorgang12')=yes;
+VN('Vorgang1','Vorgang11')=yes;
 
-d('Beispielvorgang1')= 3;
-d('Beispielvorgang2')= 2;
-d('Beispielvorgang3')= 3;
-d('Beispielvorgang4')= 2;
-d('Beispielvorgang5')= 4;
-d('Beispielvorgang6')= 4;
-d('Beispielvorgang7')= 2;
-d('Beispielvorgang8')= 2;
-d('Beispielvorgang9')= 3;
-d('Beispielvorgang10')= 4;
-d('Beispielvorgang11')= 3;
-d('Beispielvorgang12')= 2;
+d('Vorgang1')= 3;
+d('Vorgang2')= 2;
+d('Vorgang3')= 4;
+d('Vorgang4')= 5;
+d('Vorgang5')= 3;
+d('Vorgang6')= 5;
+d('Vorgang7')= 3;
+d('Vorgang8')= 5;
+d('Vorgang9')= 2;
+d('Vorgang10')= 4;
+d('Vorgang11')= 5;
+d('Vorgang12')= 3;
 
 k(i,r)=0;
 
-k('Beispielvorgang1','Ressource1')= 8;
-k('Beispielvorgang2','Ressource1')= 8;
-k('Beispielvorgang3','Ressource2')= 10;
-k('Beispielvorgang4','Ressource1')= 8;
-k('Beispielvorgang5','Ressource2')= 8;
-k('Beispielvorgang6','Ressource1')= 9;
-k('Beispielvorgang7','Ressource1')= 8;
-k('Beispielvorgang8','Ressource2')= 10;
-k('Beispielvorgang9','Ressource1')= 8;
-k('Beispielvorgang10','Ressource1')= 9;
-k('Beispielvorgang11','Ressource1')= 8;
-k('Beispielvorgang12','Ressource1')= 8;
-k('Beispielvorgang1','Ressource2')= 2;
+k('Vorgang1','Ressource1')= 8;
+k('Vorgang2','Ressource1')= 8;
+k('Vorgang3','Ressource2')= 10;
+k('Vorgang4','Ressource1')= 8;
+k('Vorgang5','Ressource2')= 8;
+k('Vorgang6','Ressource1')= 9;
+k('Vorgang7','Ressource1')= 8;
+k('Vorgang8','Ressource2')= 10;
+k('Vorgang9','Ressource1')= 8;
+k('Vorgang10','Ressource1')= 9;
+k('Vorgang11','Ressource1')= 8;
+k('Vorgang12','Ressource1')= 8;
 
 KP('Ressource1')= 10;
-KP('Ressource2')= 8;
+KP('Ressource2')= 10;
 
-Deadline= 34;
+Deadline= 44;

@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
 
   create_table "procedures", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "prot"
-    t.integer  "fa"
-    t.integer  "sa"
-    t.integer  "fe"
-    t.integer  "se"
-    t.integer  "crip"
+    t.integer  "fa",         :default => 0
+    t.integer  "sa",         :default => 0
+    t.integer  "fe",         :default => 0
+    t.integer  "se",         :default => 0
+    t.integer  "crip",       :default => 0
   end
 
   create_table "projects", :force => true do |t|
