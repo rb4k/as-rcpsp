@@ -1,13 +1,10 @@
 SampleApp::Application.routes.draw do
 
-  post "periods/change", as: :change_periods
-
   resources :projects
   resources :procedure_resources
   resources :procedures
   resources :resources
   resources :procedure_procedures
-  resources :periods
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -21,7 +18,6 @@ SampleApp::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/rcpsp', to: 'static_pages#rcpsp'
-  match '/procedure/java', to: 'procedure#java'
 
   match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results'
   match 'rcpsp/optimize', :to => 'rcpsps#optimize'
