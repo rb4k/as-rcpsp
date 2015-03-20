@@ -17,3 +17,15 @@ doc/
 .idea
 *.lst
 
+/coverage
+/doc
+/pkg
+/rgl
+/TAGS
+/tags
+graph.dot
+.project
+.yardoc
+Gemfile.lock
+/.buildpath
+/dep_graph.dot
