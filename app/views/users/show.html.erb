@@ -32,6 +32,7 @@
     <th>SA*</th>
     <th>FE*</th>
     <th>SE*</th>
+    <th><b>Kritischer Pfad</b></th>
     <th></th>
     <th></th>
     <th></th>
@@ -47,6 +48,7 @@
         <td><%= procedure.sa %></td>
         <td><%= procedure.fe %></td>
         <td><%= procedure.se %></td>
+        <td><b><%= procedure.crip %></b></td>
         <% if current_user.admin? %>
             <td><%= link_to 'Anzeigen', procedure %></td>
             <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
