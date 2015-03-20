@@ -27,3 +27,12 @@
 <%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn"%>
 </div>
 
+<%=
+   require 'graphviz'
+
+   # In this example, hello.dot is :
+   #   digraph G {Hello->World;}
+
+   GraphViz.parse( "graph.dot", :path => "C:\\Program Files (x86)\\Graphviz2.38\\bin" ).output(:png => "sample.png")
+
+%>

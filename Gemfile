@@ -10,7 +10,6 @@ gem 'jquery-rails', '2.0.2'
 gem 'best_in_place'
 gem "chartkick"
 gem 'bootstrap-datepicker-rails', '~> 1.3.1.1'
-gem 'dot'
 gem 'ruby-graphviz', '~> 1.2.1'
 gem 'graphviz', '~> 0.1.0'
 gem 'rgl'
