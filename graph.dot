@@ -1,55 +1,125 @@
 digraph RGL__DirectedAdjacencyGraph {
-    3 [
+    47601936 [
         fontsize = 8,
-        label = 1
+        label = Beispielvorgang1
     ]
 
-    5 [
+    47601828 [
         fontsize = 8,
-        label = 2
+        label = Beispielvorgang2
     ]
 
-    7 [
+    47152008 [
         fontsize = 8,
-        label = 3
+        label = Beispielvorgang5
     ]
 
-    9 [
+    28413708 [
         fontsize = 8,
-        label = 4
+        label = Beispielvorgang8
     ]
 
-    11 [
+    34395312 [
         fontsize = 8,
-        label = 5
+        label = Beispielvorgang10
     ]
 
-    13 [
+    38313012 [
         fontsize = 8,
-        label = 6
+        label = Beispielvorgang3
     ]
 
-    3 -> 5 [
+    44130900 [
+        fontsize = 8,
+        label = Beispielvorgang6
+    ]
+
+    44544192 [
+        fontsize = 8,
+        label = Beispielvorgang4
+    ]
+
+    44973744 [
+        fontsize = 8,
+        label = Beispielvorgang7
+    ]
+
+    45190356 [
+        fontsize = 8,
+        label = Beispielvorgang12
+    ]
+
+    46949532 [
+        fontsize = 8,
+        label = Beispielvorgang9
+    ]
+
+    47265660 [
+        fontsize = 8,
+        label = Beispielvorgang11
+    ]
+
+    47601936 -> 47601828 [
         fontsize = 8
     ]
 
-    3 -> 13 [
+    47601936 -> 47152008 [
         fontsize = 8
     ]
 
-    5 -> 7 [
+    47601936 -> 28413708 [
         fontsize = 8
     ]
 
-    5 -> 9 [
+    47601936 -> 34395312 [
         fontsize = 8
     ]
 
-    9 -> 11 [
+    47601828 -> 38313012 [
         fontsize = 8
     ]
 
-    13 -> 9 [
+    47601828 -> 44130900 [
+        fontsize = 8
+    ]
+
+    47152008 -> 44130900 [
+        fontsize = 8
+    ]
+
+    28413708 -> 46949532 [
+        fontsize = 8
+    ]
+
+    34395312 -> 47265660 [
+        fontsize = 8
+    ]
+
+    38313012 -> 44544192 [
+        fontsize = 8
+    ]
+
+    44130900 -> 44973744 [
+        fontsize = 8
+    ]
+
+    44544192 -> 44973744 [
+        fontsize = 8
+    ]
+
+    44544192 -> 45190356 [
+        fontsize = 8
+    ]
+
+    44973744 -> 45190356 [
+        fontsize = 8
+    ]
+
+    46949532 -> 45190356 [
+        fontsize = 8
+    ]
+
+    47265660 -> 45190356 [
         fontsize = 8
     ]
 }
