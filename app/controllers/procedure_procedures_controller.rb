@@ -13,7 +13,7 @@ class ProcedureProceduresController < ApplicationController
       result.add_edge  x.prepro.name, x.sucpro.name }
     result.write_to_graphic_file('png')
     require 'graphviz'
-    GraphViz.parse( "graph.dot", :path => @project.gvp.to_s ).output(:png => "graph.png", :path => @project.gvp.to_s)
+    GraphViz.parse( "graph.dot", :path => @project.gvp.to_s ).output(:png => "app/assets/images/graph.png", :path => @project.gvp.to_s)
   end
 
 
