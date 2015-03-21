@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 require 'spec_helper'
 
 describe "Rcpsps" do
@@ -35,7 +37,7 @@ describe "Rcpsps" do
     it_should_behave_like "all pages"
   end
 
-  describe "Ressource page" do
+  describe "Resource page" do
     before { visit resource_path }
     let(:heading) { 'Übersicht der Ressourcen' }
     let(:page_title) { '' }
@@ -43,7 +45,7 @@ describe "Rcpsps" do
     it_should_behave_like "all pages"
   end
 
-  describe "Procedure_ressource" do
+  describe "Procedure_resource page" do
     before { visit procedure_resource_path }
     let(:heading) { 'Übersicht der Zuordnung der Vorgänge zu den Ressourcen' }
     let(:page_title) { '' }
