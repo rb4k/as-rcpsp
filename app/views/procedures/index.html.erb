@@ -19,7 +19,7 @@
     <th>SA*</th>
     <th>FE*</th>
     <th>SE*</th>
-    <th><b>Kritischer Pfad</b></th>
+    <th><b>Optimaler Pfad</b></th>
     <th></th>
     <th></th>
     <th></th>
@@ -37,7 +37,7 @@
     <td><%= procedure.sa %></td>
     <td><%= procedure.fe %></td>
     <td><%= procedure.se %></td>
-    <td><b><%= procedure.crip %></b></td>
+    <td><b><%= procedure.optp %></b></td>
     <td><%= link_to 'Anzeigen', procedure %></td>
     <td><%= link_to 'Ändern', edit_procedure_path(procedure) %></td>
     <td><%= link_to 'Löschen', procedure, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>

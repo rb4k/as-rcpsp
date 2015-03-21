@@ -1,5 +1,5 @@
 class Procedure < ActiveRecord::Base
-  attr_accessible :created_at, :fa, :fe, :name, :prot, :sa, :se, :updated_at, :crip
+  attr_accessible :created_at, :fa, :fe, :name, :prot, :sa, :se, :updated_at, :optp
 
   has_many :procedure_resources, :dependent => :destroy
   has_many :resources, through: :procedure_resources

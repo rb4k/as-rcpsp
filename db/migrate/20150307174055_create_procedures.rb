@@ -9,7 +9,7 @@ class CreateProcedures < ActiveRecord::Migration
       t.integer :sa, :default => 0
       t.integer :fe, :default => 0
       t.integer :se, :default => 0
-      t.integer :crip, :default => 0
+      t.integer :optp, :default => 0
 
       t.timestamps
     end

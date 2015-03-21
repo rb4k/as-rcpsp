@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20150310092848) do
     t.integer  "sa",         :default => 0
     t.integer  "fe",         :default => 0
     t.integer  "se",         :default => 0
-    t.integer  "crip",       :default => 0
+    t.integer  "optp",       :default => 0
   end
 
   create_table "projects", :force => true do |t|

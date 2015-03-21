@@ -106,7 +106,7 @@ class RcpspsController < ApplicationController
       sa1=sa[1]
       sa2=sa[2].delete "t" + " \n"
       procedure=Procedure.find_by_name(sa1)
-      procedure.crip = sa2
+      procedure.optp = sa2
       procedure.save
       end
       }
@@ -272,7 +272,7 @@ class RcpspsController < ApplicationController
           sa1=sa[1]
           sa2=sa[2].delete "t" + " \n"
           procedure=Procedure.find_by_name(sa1)
-          procedure.crip = sa2
+          procedure.optp = sa2
           procedure.save
         end
       }
