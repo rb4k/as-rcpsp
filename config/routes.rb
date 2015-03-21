@@ -21,11 +21,9 @@ SampleApp::Application.routes.draw do
 
   match 'procedure_procedure/graph', :to => 'procedure_procedures#graph'
 
-  match 'rcpsp/read_optimization_results', :to => 'rcpsps#read_optimization_results'
   match 'rcpsp/optimize', :to => 'rcpsps#optimize'
   match 'rcpsp/solution', to: 'rcpsps#solution'
 
-  match 'rcpsp/read_optimization_results2', :to => 'rcpsps#read_optimization_results2'
   match 'rcpsp/optimize2', :to => 'rcpsps#optimize2'
   match 'rcpsp/solution2', to: 'rcpsps#solution2'
 end

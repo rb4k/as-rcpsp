@@ -6,7 +6,7 @@ class RcpspsController < ApplicationController
   before_filter :admin_user
 
    def optimize
-    if File.exist?("RCPSP1_solution_x.txt")
+         if File.exist?("RCPSP1_solution_x.txt")
       File.delete("RCPSP1_solution_x.txt")
     end
     if File.exist?("RCPSP1_solution_zeit.txt")
@@ -91,7 +91,6 @@ class RcpspsController < ApplicationController
       File.delete("RCPSP1_solution.txt")
     end
 
-
     system @project.path.to_s +  " RCPSP1"
 
     redirect_to url_for(:controller => :rcpsps, :action => :solution)
@@ -142,7 +141,6 @@ class RcpspsController < ApplicationController
     #else
      # flash.now[:not_available] = "Die Lösung wurde noch nicht berechnet!"
     end
-
 
   end
 

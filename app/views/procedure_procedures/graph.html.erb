@@ -1,4 +1,13 @@
 <% provide(:title, 'Graph zur aktuellen Projektplanung') %>
 <h1>Graph zur aktuellen Projektplanung</h1>
 
-<img src="app/assets/images/graph.png">
+<br/>
+
+<div class="center">
+<img src="/assets/graph.png" />
+</div>
+
+<div class="btn-group btn-lg">
+  <%= link_to 'Zurück zu den Vorgangsrelationen', procedure_procedures_path, :class => "btn"%>
+  <%= link_to 'Zurück zur Projektplanung', rcpsp_path, :class => "btn"%>
+</div>
