@@ -2,7 +2,7 @@
 <h1>Übersicht der Vorgänge</h1>
 
 <% if @project.zwt!=nil %>
-    Die minimale Projektdauer beträgt <strong><%=  @project.zwt %></strong> Zeiteinheiten. Die Optimierung erfolgte mit einem Datenstand vom <strong><%=  @project.updated_at.strftime("%d.%m.%Y") %>. </strong><br> <br>
+    Die minimale Projektdauer beträgt <strong><%=  Procedure.maximum("optp") %></strong> Zeiteinheiten. Die Optimierung erfolgte mit einem Datenstand vom <strong><%=  @project.updated_at.strftime("%d.%m.%Y") %>. </strong><br> <br>
 <% end %>
 
 
@@ -19,7 +19,7 @@
     <th>SA*</th>
     <th>FE*</th>
     <th>SE*</th>
-    <th><b>Optimaler Pfad</b></th>
+    <th><b>Vorgangs- abschluss</b></th>
     <th></th>
     <th></th>
     <th></th>
