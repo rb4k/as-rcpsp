@@ -1,12 +1,15 @@
 <% provide(:title, 'Übersicht der Vorgänge') %>
 <h1>Übersicht der Vorgänge</h1>
 
+<div class="center">
+  <th><%= link_to "Graph anzeigen", procedure_procedure_graph_path, class: "btn btn-info btn-large" %></th>
+</div>
+
+<br/>
+
 <% if @project.zwt!=nil %>
     Die minimale Projektdauer beträgt <strong><%=  Procedure.maximum("optp") %></strong> Zeiteinheiten. Die Optimierung erfolgte mit einem Datenstand vom <strong><%=  @project.updated_at.strftime("%d.%m.%Y") %>. </strong><br> <br>
 <% end %>
-
-
-
 
 <table id="procedures" class="table table-hover">
   <thead>

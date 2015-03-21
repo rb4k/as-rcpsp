@@ -37,6 +37,11 @@ class RcpspsController < ApplicationController
       projekt.save
     }
 
+    @resources.each { |resources|
+      resources.oce=0
+      resources.save
+    }
+
     if File.exist?("RCSPSP1_Input.inc")
       File.delete("RCPSP1_Input.inc")
     end

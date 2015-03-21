@@ -1,5 +1,3 @@
-
-
 <% if @project.zwc!=nil %>
     Die Projektzusatzkosten betragen <strong><%=  @project.zwc %></strong> Geldeinheiten. Die Optimierung erfolgte mit einem Datenstand vom <strong><%=  @project.updated_at.strftime("%d.%m.%Y") %>.</strong><br> <br>
 <% end %>
@@ -22,13 +20,11 @@
   </thead>
   <tbody>
 
-  <% elements = [] %>
   <% @resources.each do |resource| %>
       <tr>
         <td><%= resource.name %></td>
         <td><%= User.sum(:capacity, :conditions => {:resource_id => resource}) %></td>
         <td><%= resource.cost %></td>
-        <!-- elements.push(resource.cost * resource.procedures.sum(&:prot)) %> -->
         <th><%= resource.cost * resource.procedures.sum(&:prot) %></th>
         <td><%= resource.ocr %></td>
         <td><%= resource.oce %></td>
@@ -40,10 +36,22 @@
             <td><%= link_to 'Löschen', resource, method: :delete, data: { confirm: 'Sind sie sicher?' } %></td>
         <% end %>
       </tr>
-
   <% end %>
   </tbody>
 </table>
+
+<br/>
+<br/>
+
+<% begin %>
+<% if @project.zwc!=nil %>
+    <%= javascript_include_tag "//www.google.com/jsapi" %>
+    <%= javascript_include_tag "chartkick" %>
+    <% require 'chartkick' %>
+    <b>Benötigte Zusatzeinheiten:</b>
+    <%= bar_chart Resource.group(:name).sum(:oce) %>
+<% end %>
+<% end %>
 
 <br />
 

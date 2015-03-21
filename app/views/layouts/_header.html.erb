@@ -7,6 +7,7 @@
           <li><%= link_to "Startseite", root_path, id: "main_links" %></li>
           <li><%= link_to "Hilfe", help_path, id: "main_links" %></li>
           <li><%= link_to "Ressource", resources_path, id: "main_links" %></li>
+
           <% if signed_in? %>
               <li><%= link_to "Mitarbeiter", users_path, id: "main_links" %></li>
               <li id="fat-menu" class="dropdown">
@@ -16,7 +17,7 @@
                   <li><%= link_to "Profil", current_user %></li>
                   <li><%= link_to "Einstellungen", edit_user_path(current_user) %></li>
                   <% if current_user.admin? %>
-                  <li><%= link_to "Projektplanung", rcpsp_path %></li>
+                      <li><%= link_to "Projektplanung", rcpsp_path %></li>
                   <% end %>
                   <li class="divider"></li>
                   <li>
