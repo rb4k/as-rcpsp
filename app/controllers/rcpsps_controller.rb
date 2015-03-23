@@ -31,7 +31,6 @@ class RcpspsController < ApplicationController
       proc.save
     }
 
-
     @projects.each { |projekt|
       projekt.zwc=nil
       projekt.save
@@ -60,7 +59,6 @@ class RcpspsController < ApplicationController
     printf(f, " /;"+ "\n\n")
 
     printf(f, "VN(h,i)=no;\n\n")
-
 
     @procedure_procedures.each { |proc_proc|
       printf(f, "VN('" + proc_proc.prepro.name+"','" + proc_proc.sucpro.name+"')=yes;\n")
@@ -91,7 +89,6 @@ class RcpspsController < ApplicationController
 
     f.close
 
-
     if File.exist?("RCPSP1_solution.txt")
       File.delete("RCPSP1_solution.txt")
     end
@@ -99,7 +96,6 @@ class RcpspsController < ApplicationController
     system @project.path.to_s +  " RCPSP1"
 
     redirect_to url_for(:controller => :rcpsps, :action => :solution)
-
 
     if (File.exist?("RCPSP1_solution_zeit.txt") and File.exists?("RCPSP1_solution_zw.txt"))
 
@@ -217,7 +213,6 @@ class RcpspsController < ApplicationController
 
     printf(f, "VN(h,i)=no;\n\n")
 
-
     @procedure_procedures.each { |proc_proc|
       printf(f, "VN('" + proc_proc.prepro.name+"','" + proc_proc.sucpro.name+"')=yes;\n")
     }
@@ -253,17 +248,13 @@ class RcpspsController < ApplicationController
 
     printf(f, "Deadline=" + deadline.to_s + ";\n")
 
-
     f.close
-
 
     if File.exist?("RCPSP2_solution.txt")
       File.delete("RCPSP2_solution.txt")
     end
 
-
     system @project.path.to_s +  " RCPSP2"
-
 
     redirect_to url_for(:controller => :rcpsps, :action => :solution2)
 

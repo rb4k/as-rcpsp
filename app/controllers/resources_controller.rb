@@ -12,7 +12,6 @@ class ResourcesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @resources }
     end
-
   end
 # GET /resources/1
 # GET /resources/1.json

@@ -12,12 +12,10 @@
         </div>
     <% end %>
 
-
     <div class="field">
       <%= f.label 'Vorgang' %><br />
       <%= f.collection_select :procedure_id, Procedure.all, :id, :name %>
     </div>
-
 
     <div class="field">
       <%= f.label 'Ressource' %><br />

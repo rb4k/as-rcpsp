@@ -11,14 +11,12 @@ namespace :db do
                          resource_id: 1)
     admin.toggle!(:admin)
 
-
     User.create!(name: "Susi Sorglos",
                  email: "susi@sorglos.de",
                  password: "foobar",
                  password_confirmation: "foobar",
                  capacity: 2,
                  resource_id: 1)
-
 
     (3..5).each do |n|
 #      name = Faker::Name.name
@@ -50,7 +48,6 @@ namespace :db do
                    resource_id: resource_id)
     end
 
-
     (1..12).each do |n|
       name = "Beispielvorgang#{n}"
       prot = rand(2..5)
@@ -66,7 +63,6 @@ namespace :db do
                    ocr: ocr,
                    cost: cost)
     end
-
 
     ProPro1 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 2)
     ProPro2 = ProcedureProcedure.create!(prepro_id: 1, sucpro_id: 5)
@@ -97,7 +93,6 @@ namespace :db do
     ProRes10 = ProcedureResource.create!(procedure_id: 10, resource_id: 1, capa_demand: 9)
     ProRes11 = ProcedureResource.create!(procedure_id: 11, resource_id: 1, capa_demand: 8)
     ProRes12 = ProcedureResource.create!(procedure_id: 12, resource_id: 1, capa_demand: 8)
-
 
     Proj1 = Project.create!(gvp: "C:\\Program Files (x86)\\Graphviz2.38\\bin", path: "C:\\GAMS\\win64\\24.3\\gams", startdate: Date.today, deadline: Date.today + 19.days)
 

@@ -18,7 +18,7 @@ Beispielvorgang11
 Beispielvorgang12
 /;
 
-set t / t0*t42 /;
+set t / t0*t39 /;
 
 VN(h,i)=no;
 
@@ -39,18 +39,18 @@ VN('Beispielvorgang9','Beispielvorgang12')=yes;
 VN('Beispielvorgang10','Beispielvorgang11')=yes;
 VN('Beispielvorgang11','Beispielvorgang12')=yes;
 
-d('Beispielvorgang1')= 3;
+d('Beispielvorgang1')= 5;
 d('Beispielvorgang2')= 3;
-d('Beispielvorgang3')= 4;
-d('Beispielvorgang4')= 2;
-d('Beispielvorgang5')= 4;
-d('Beispielvorgang6')= 4;
-d('Beispielvorgang7')= 4;
+d('Beispielvorgang3')= 3;
+d('Beispielvorgang4')= 3;
+d('Beispielvorgang5')= 5;
+d('Beispielvorgang6')= 3;
+d('Beispielvorgang7')= 3;
 d('Beispielvorgang8')= 4;
-d('Beispielvorgang9')= 5;
+d('Beispielvorgang9')= 2;
 d('Beispielvorgang10')= 2;
-d('Beispielvorgang11')= 5;
-d('Beispielvorgang12')= 2;
+d('Beispielvorgang11')= 3;
+d('Beispielvorgang12')= 3;
 
 k(i,r)=0;
 
@@ -70,7 +70,7 @@ k('Beispielvorgang12','Ressource1')= 8;
 KP('Ressource1')= 10;
 KP('Ressource2')= 10;
 
-oc('Ressource1')= 6;
-oc('Ressource2')= 6;
+oc('Ressource1')= 10;
+oc('Ressource2')= 9;
 
 Deadline=19;

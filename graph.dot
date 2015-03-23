@@ -1,125 +1,125 @@
 digraph RGL__DirectedAdjacencyGraph {
-    38676060 [
+    38037084 [
         fontsize = 8,
         label = Beispielvorgang1
     ]
 
-    38676012 [
+    38037012 [
         fontsize = 8,
         label = Beispielvorgang2
     ]
 
-    38908812 [
+    38082432 [
         fontsize = 8,
         label = Beispielvorgang5
     ]
 
-    38942640 [
+    38704620 [
         fontsize = 8,
         label = Beispielvorgang8
     ]
 
-    38954592 [
+    38737620 [
         fontsize = 8,
         label = Beispielvorgang10
     ]
 
-    38985804 [
+    38776128 [
         fontsize = 8,
         label = Beispielvorgang3
     ]
 
-    39008424 [
+    38854284 [
         fontsize = 8,
         label = Beispielvorgang6
     ]
 
-    38996124 [
+    38911404 [
         fontsize = 8,
         label = Beispielvorgang4
     ]
 
-    39248460 [
+    38955648 [
         fontsize = 8,
         label = Beispielvorgang7
     ]
 
-    39232656 [
+    38958732 [
         fontsize = 8,
         label = Beispielvorgang12
     ]
 
-    39312972 [
+    39033816 [
         fontsize = 8,
         label = Beispielvorgang9
     ]
 
-    39321684 [
+    39223056 [
         fontsize = 8,
         label = Beispielvorgang11
     ]
 
-    38676060 -> 38676012 [
+    38037084 -> 38037012 [
         fontsize = 8
     ]
 
-    38676060 -> 38908812 [
+    38037084 -> 38082432 [
         fontsize = 8
     ]
 
-    38676060 -> 38942640 [
+    38037084 -> 38704620 [
         fontsize = 8
     ]
 
-    38676060 -> 38954592 [
+    38037084 -> 38737620 [
         fontsize = 8
     ]
 
-    38676012 -> 38985804 [
+    38037012 -> 38776128 [
         fontsize = 8
     ]
 
-    38676012 -> 39008424 [
+    38037012 -> 38854284 [
         fontsize = 8
     ]
 
-    38908812 -> 39008424 [
+    38082432 -> 38854284 [
         fontsize = 8
     ]
 
-    38942640 -> 39312972 [
+    38704620 -> 39033816 [
         fontsize = 8
     ]
 
-    38954592 -> 39321684 [
+    38737620 -> 39223056 [
         fontsize = 8
     ]
 
-    38985804 -> 38996124 [
+    38776128 -> 38911404 [
         fontsize = 8
     ]
 
-    39008424 -> 39248460 [
+    38854284 -> 38955648 [
         fontsize = 8
     ]
 
-    38996124 -> 39248460 [
+    38911404 -> 38955648 [
         fontsize = 8
     ]
 
-    38996124 -> 39232656 [
+    38911404 -> 38958732 [
         fontsize = 8
     ]
 
-    39248460 -> 39232656 [
+    38955648 -> 38958732 [
         fontsize = 8
     ]
 
-    39312972 -> 39232656 [
+    39033816 -> 38958732 [
         fontsize = 8
     ]
 
-    39321684 -> 39232656 [
+    39223056 -> 38958732 [
         fontsize = 8
     ]
 }

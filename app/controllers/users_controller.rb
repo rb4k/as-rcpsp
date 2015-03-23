@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_filter :correct_user, only: [:edit, :update]
   before_filter :admin_user, only: [:destroy]
 
-
   def show
     @user = User.find(params[:id])
     @resource = Resource.find(@user.resource_id)
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
 
   def edit
   end

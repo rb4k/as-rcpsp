@@ -12,7 +12,6 @@ class ProcedureResourcesController < ApplicationController
       format.json { render json: @procedure_resources }
     end
   end
-
   # GET /procedure_resources/1
   # GET /procedure_resources/1.json
   def show
@@ -23,7 +22,6 @@ class ProcedureResourcesController < ApplicationController
       format.json { render json: @procedure_resource }
     end
   end
-
   # GET /procedure_resources/new
   # GET /procedure_resources/new.json
     def new
@@ -34,7 +32,6 @@ class ProcedureResourcesController < ApplicationController
         format.json { render json: @procedure_resource }
       end
     end
-
   # GET /procedure_resources/1/edit
   def edit
     @procedure_resource = ProcedureResource.find(params[:id])
@@ -55,7 +52,6 @@ class ProcedureResourcesController < ApplicationController
         end
       end
     end
-
   # PUT /procedure_resources/1
   # PUT /procedure_resources/1.json
   def update
@@ -71,7 +67,6 @@ class ProcedureResourcesController < ApplicationController
       end
     end
   end
-
   # DELETE /procedure_resources/1
   # DELETE /procedure_resources/1.json
     def destroy
@@ -83,7 +78,6 @@ class ProcedureResourcesController < ApplicationController
        format.json { head :no_content }
      end
    end
-
 
   private
 

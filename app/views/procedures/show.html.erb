@@ -31,7 +31,6 @@
   </thead>
   <tbody>
 
-
   <% @procedure.procedure_resources.each do |procedure_resource| %>
       <tr>
         <td><%= Resource.find(procedure_resource.resource_id).name %></td>

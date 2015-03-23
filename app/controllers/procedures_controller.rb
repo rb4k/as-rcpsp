@@ -30,7 +30,6 @@ class ProceduresController < ApplicationController
       format.json { render json: @procedure }
     end
   end
-
 # GET /procedures/1/edit
   def edit
     @procedure = Procedure.find(params[:id])
