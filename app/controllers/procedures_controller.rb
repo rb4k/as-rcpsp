@@ -10,7 +10,6 @@ class ProceduresController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @procedures }
-      format.json {render json: timeline }
     end
   end
 # GET /procedures/1
@@ -31,8 +30,6 @@ class ProceduresController < ApplicationController
       format.json { render json: @procedure }
     end
   end
-
-
 
 # GET /procedures/1/edit
   def edit

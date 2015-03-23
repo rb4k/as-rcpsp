@@ -1,7 +1,7 @@
 class ProcedureProceduresController < ApplicationController
     respond_to :html, :json
     before_filter :signed_in_user
-  before_filter :admin_user
+    before_filter :admin_user
 
   def graph
     @procedure_procedures = ProcedureProcedure.all
@@ -15,7 +15,6 @@ class ProcedureProceduresController < ApplicationController
     require 'graphviz'
     GraphViz.parse( "graph.dot", :path => @project.gvp.to_s ).output(:png => "app/assets/images/graph.png", :path => @project.gvp.to_s)
   end
-
 
   def index
     @procedure_procedures = ProcedureProcedure.all

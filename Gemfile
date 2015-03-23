@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+git source 'http://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.0.4'
@@ -49,7 +49,6 @@ group :test do
   gem 'rb-notifu', '0.0.4'
   gem 'win32console', '1.3.0'
 end
-
 
 group :production do
   gem 'pg', '0.12.2'

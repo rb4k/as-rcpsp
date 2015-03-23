@@ -36,7 +36,6 @@ free variables
 positive variables
     O(r,t)  Zusatzkapazitaet von Ressource r in Periode t;
 
-
 $include "RCPSP2_Input.inc";
 
 * Zeitrechnung
@@ -58,11 +57,8 @@ loop(i,
      );
 );
 
-
-
 SE(i)=max(MinimaleDauer, Deadline);
 SA(i)=SE(i)-d(i);
-
 
 for(ihilf=card(i) downto 1,
      loop(i$(ord(i)=round(ihilf)),
@@ -75,10 +71,7 @@ for(ihilf=card(i) downto 1,
      );
 );
 
-
-
 display d, FA, FE, SA, SE, Deadline, MinimaleDauer;
-
 
 Equations
     ZielfunktionKosten,
@@ -86,7 +79,6 @@ Equations
     Projektstruktur(h,i)
     Kapazitaetsrestriktion(r,t)
     KapazitaetsrestriktionFlex(r,t);
-
 
 ZielfunktionKosten..
     z=e=sum((r,t),oc(r)*O(r,t));
@@ -100,23 +92,17 @@ Projektstruktur(h,i)$VN(h,i)..
     sum(t$(FE(i)<=ord(t)-1 and ord(t)-1 <= SE(i)),
           (ord(t)-1-d(i))*x(i,t));
 
-
 KapazitaetsrestriktionFlex(r,t)..
     sum(i,
     sum(tau$((ord(tau)-1 >= max(ord(t)-1, FE(i)))  and
               (ord(tau)-1 <= min(ord(t)-1+d(i)-1, SE(i)))),
           k(i,r)*x(i,tau)))=l=KP(r)+O(r,t);
 
-
 model RCPSP2 /
     ZielfunktionKosten
     JederVorgangEinmal
     Projektstruktur
     KapazitaetsrestriktionFlex/;
-
-
-
-
 
 RCPSP2.optcr=0.0;
 RCPSP2.limrow=500;
@@ -128,11 +114,7 @@ parameter
 
 zkr(r) = sum(t,O.l(r,t));
 
-
-
 display x.l, O.l, zkr;
-
-
 
 file outputfile1 / 'RCPSP2_solution_kosten.txt'/;
 put outputfile1;

@@ -31,7 +31,6 @@ binary variables
 free variables
     z       Zielfunktionswert;
 
-
 $include "RCPSP1_Input.inc";
 
 * Zeitrechnung
@@ -40,7 +39,6 @@ $include "RCPSP1_Input.inc";
 MinimaleDauer=0;
 FA(i)=0;
 FE(i)=d(i);
-
 
 loop(i,
      loop(h$VN(h,i),
@@ -58,7 +56,6 @@ loop(i,
 SE(i)=max(MinimaleDauer, Deadline);
 SA(i)=SE(i)-d(i);
 
-
 for(ihilf=card(i) downto 1,
      loop(i$(ord(i)=round(ihilf)),
          loop(h$VN(i,h),
@@ -70,9 +67,7 @@ for(ihilf=card(i) downto 1,
      );
 );
 
-
 display d, FA, FE, SA, SE, MinimaleDauer;
-
 
 Equations
     ZielfunktionZeit,
@@ -84,7 +79,6 @@ ZielfunktionZeit..
     z=e=sum(i$(ord(i)=card(I)),
         sum(t$(FE(i)<=ord(t)-1 and ord(t)-1 <= SE(i)),
              (ord(t)-1)*x(i,t)));
-
 
 JederVorgangEinmal(i)..
     sum(t$(FE(i)<=ord(t)-1 and ord(t)-1 <= SE(i)), x(i,t)) =e= 1;
@@ -101,24 +95,18 @@ Kapazitaetsrestriktion(r,t)..
               (ord(tau)-1 <= min(ord(t)-1+d(i)-1, SE(i)))),
           k(i,r)*x(i,tau)))=l=KP(r);
 
-
 model RCPSP1 /
     ZielfunktionZeit
     JederVorgangEinmal
     Projektstruktur
     Kapazitaetsrestriktion/;
 
-
 RCPSP1.optcr=0.0;
 RCPSP1.limrow=500;
 
-
 solve RCPSP1 minimizing z using mip;
 
-
 display z.l, x.l;
-
-
 
 file outputfile1 / 'RCPSP1_solution_zeit.txt'/;
 put outputfile1;
